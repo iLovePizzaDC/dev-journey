@@ -29,11 +29,18 @@ export const SECTION_IDS = {
 	about: 'about',
 } as const;
 
+export const NAV_SECTION_IDS = [
+	SECTION_IDS.experience,
+	SECTION_IDS.projects,
+	SECTION_IDS.journey,
+	SECTION_IDS.about,
+] as const;
+
 export const NAV_LINKS: readonly NavLink[] = [
-	{ href: `#${SECTION_IDS.experience}`, labelKey: 'experience' },
-	{ href: `#${SECTION_IDS.projects}`, labelKey: 'projects' },
-	{ href: `#${SECTION_IDS.journey}`, labelKey: 'journey' },
-	{ href: `#${SECTION_IDS.about}`, labelKey: 'about' },
+	{ sectionId: SECTION_IDS.experience, labelKey: 'experience' },
+	{ sectionId: SECTION_IDS.projects, labelKey: 'projects' },
+	{ sectionId: SECTION_IDS.journey, labelKey: 'journey' },
+	{ sectionId: SECTION_IDS.about, labelKey: 'about' },
 ] as const;
 
 export const GITHUB_API = {

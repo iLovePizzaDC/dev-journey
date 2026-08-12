@@ -3,13 +3,18 @@ import { profile } from '@/shared/content';
 import { SECTION_IDS } from '@/shared/constants';
 import { Button, Icon } from '@/shared/components/atoms';
 import { useLocale } from '@/shared/i18n';
+import { scrollToSection } from '@/shared/utils/scroll';
 
 export function HeroActions() {
 	const { m } = useLocale();
 
 	return (
 		<div className='flex flex-wrap gap-3'>
-			<Button href={`#${SECTION_IDS.projects}`} variant='primary' className='group'>
+			<Button
+				onClick={() => scrollToSection(SECTION_IDS.projects)}
+				variant='primary'
+				className='group'
+			>
 				{m.hero.viewProjects}
 				<Icon
 					icon={ArrowRightIcon}

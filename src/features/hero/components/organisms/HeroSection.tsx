@@ -11,7 +11,7 @@ export function HeroSection() {
 	return (
 		<section
 			id={SECTION_IDS.top}
-			className='relative grid min-h-[min(88svh,52rem)] items-end py-12'
+			className='relative grid min-h-[min(88svh,52rem)] scroll-mt-20 items-end py-12'
 			aria-labelledby='hero-name'
 		>
 			<div

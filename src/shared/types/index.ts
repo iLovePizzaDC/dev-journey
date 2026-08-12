@@ -72,9 +72,11 @@ export type GitHubRepoInfo = {
 	topics: string[];
 };
 
+export type NavSectionId = 'experience' | 'projects' | 'journey' | 'about';
+
 export type NavLink = {
-	href: string;
-	labelKey: 'experience' | 'projects' | 'journey' | 'about';
+	sectionId: NavSectionId;
+	labelKey: NavSectionId;
 };
 
 export type TextVariant = 'display' | 'title' | 'subtitle' | 'body' | 'meta' | 'label';
