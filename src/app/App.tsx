@@ -8,16 +8,18 @@ import { SiteFooter, SiteHeader } from '@/shared/components/organisms';
 
 export default function App() {
 	return (
-		<AppShell>
+		<>
 			<SiteHeader />
-			<main>
-				<HeroSection />
-				<ExperienceSection />
-				<ProjectsSection />
-				<TechTimeline />
-				<AboutSection />
-			</main>
-			<SiteFooter />
-		</AppShell>
+			<AppShell>
+				<main>
+					<HeroSection />
+					<ExperienceSection />
+					<ProjectsSection />
+					<TechTimeline />
+					<AboutSection />
+				</main>
+				<SiteFooter />
+			</AppShell>
+		</>
 	);
 }

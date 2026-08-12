@@ -113,29 +113,52 @@
 	html {
 		scroll-behavior: smooth;
 		color-scheme: light;
+		background-color: var(--paper);
+		min-height: 100%;
 	}
 
 	html.dark {
 		color-scheme: dark;
 	}
 
+	html::before {
+		content: '';
+		position: fixed;
+		inset: 0;
+		z-index: -2;
+		pointer-events: none;
+		background:
+			radial-gradient(ellipse 130% 85% at 50% -18%, var(--glow-a), transparent 58%),
+			radial-gradient(ellipse 70% 55% at 0% 100%, var(--glow-b), transparent 48%),
+			radial-gradient(ellipse 70% 55% at 100% 100%, var(--glow-b), transparent 48%),
+			linear-gradient(
+				180deg,
+				color-mix(in srgb, var(--paper) 90%, var(--glow-a)) 0%,
+				var(--paper) 32%,
+				var(--paper) 100%
+			);
+	}
+
+	html::after {
+		content: '';
+		position: fixed;
+		inset: 0;
+		z-index: -1;
+		pointer-events: none;
+		opacity: var(--grain-opacity);
+		background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.45'/%3E%3C/svg%3E");
+		mix-blend-mode: var(--grain-blend);
+	}
+
 	body {
 		margin: 0;
 		min-height: 100svh;
+		overflow-x: clip;
 		font-family: var(--font-body);
 		font-size: 17px;
 		line-height: 1.55;
 		color: var(--ink-soft);
-		background:
-			radial-gradient(ellipse 80% 50% at 10% -10%, var(--glow-a), transparent 55%),
-			radial-gradient(ellipse 60% 40% at 90% 0%, var(--glow-b), transparent 50%),
-			linear-gradient(
-				180deg,
-				color-mix(in srgb, var(--paper) 88%, var(--glow-a)) 0%,
-				var(--paper) 28%,
-				var(--paper) 100%
-			);
-		background-attachment: fixed;
+		background: transparent;
 		font-synthesis: none;
 		text-rendering: optimizeLegibility;
 		-webkit-font-smoothing: antialiased;
@@ -144,20 +167,9 @@
 			color 280ms ease;
 	}
 
-	body::before {
-		content: '';
-		position: fixed;
-		inset: 0;
-		pointer-events: none;
-		opacity: var(--grain-opacity);
-		background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.45'/%3E%3C/svg%3E");
-		mix-blend-mode: var(--grain-blend);
-		z-index: 0;
-	}
-
 	#root {
 		position: relative;
-		z-index: 1;
+		z-index: 0;
 		min-height: 100svh;
 	}
 

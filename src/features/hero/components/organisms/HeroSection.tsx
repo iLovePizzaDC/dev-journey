@@ -11,11 +11,11 @@ export function HeroSection() {
 	return (
 		<section
 			id={SECTION_IDS.top}
-			className='relative grid min-h-[min(88svh,52rem)] items-end overflow-clip py-12'
+			className='relative grid min-h-[min(88svh,52rem)] items-end py-12'
 			aria-labelledby='hero-name'
 		>
 			<div
-				className='pointer-events-none absolute inset-[8%_-10%_auto_auto] h-[min(52vw,28rem)] w-[min(52vw,28rem)] animate-drift rounded-full bg-[radial-gradient(circle,var(--color-glow-a)_0%,transparent_70%)] blur-md dark:opacity-70'
+				className='pointer-events-none fixed top-[10svh] -right-[min(12vw,7rem)] h-[min(52vw,28rem)] w-[min(52vw,28rem)] animate-drift rounded-full bg-[radial-gradient(circle,var(--color-glow-a)_0%,transparent_70%)] blur-md dark:opacity-70'
 				aria-hidden='true'
 			/>
 			<div className='relative max-w-xl'>
