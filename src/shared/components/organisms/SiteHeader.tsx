@@ -3,7 +3,10 @@ import { profile } from '@/shared/content';
 import { Button, Icon, LanguageToggle, ThemeToggle } from '@/shared/components/atoms';
 import { NAV_LINKS } from '@/shared/constants';
 import { useLocale } from '@/shared/i18n';
-import type { ISiteHeaderProps } from '@/shared/components/organisms/SiteHeader.types';
+
+interface ISiteHeaderProps {
+	brand?: string;
+}
 
 export function SiteHeader({ brand = profile.name }: ISiteHeaderProps) {
 	const { m } = useLocale();

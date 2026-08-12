@@ -1,9 +1,12 @@
 import { MoonIcon, SunIcon } from '@heroicons/react/24/outline';
 import { Icon } from '@/shared/components/atoms/Icon';
-import type { IThemeToggleProps } from '@/shared/components/atoms/Toggle.types';
 import { useLocale } from '@/shared/i18n';
 import { cn } from '@/shared/utils/cn';
 import { useTheme } from '@/shared/theme';
+
+interface IThemeToggleProps {
+	className?: string;
+}
 
 export function ThemeToggle({ className }: IThemeToggleProps) {
 	const { theme, toggleTheme } = useTheme();

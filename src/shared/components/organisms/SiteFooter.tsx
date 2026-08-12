@@ -1,6 +1,10 @@
+import type { ReactNode } from 'react';
 import { profile } from '@/shared/content';
 import { Text } from '@/shared/components/atoms';
-import type { ISiteFooterProps } from '@/shared/components/organisms/SiteFooter.types';
+
+interface ISiteFooterProps {
+	children?: ReactNode;
+}
 
 export function SiteFooter({ children }: ISiteFooterProps) {
 	const year = new Date().getFullYear();

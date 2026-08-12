@@ -1,7 +1,21 @@
-import { useEffect, useRef, useState, type CSSProperties, type ElementType } from 'react';
+import {
+	useEffect,
+	useRef,
+	useState,
+	type ComponentPropsWithoutRef,
+	type CSSProperties,
+	type ElementType,
+	type ReactNode,
+} from 'react';
 import { cn } from '@/shared/utils/cn';
-import type { IRevealProps } from '@/shared/components/molecules/Reveal.types';
 import type { RevealTag } from '@/shared/types';
+
+type IRevealProps<T extends RevealTag = 'div'> = {
+	children: ReactNode;
+	className?: string;
+	delay?: number;
+	as?: T;
+} & Omit<ComponentPropsWithoutRef<T>, 'children' | 'className'>;
 
 function prefersReducedMotion(): boolean {
 	return window.matchMedia('(prefers-reduced-motion: reduce)').matches;

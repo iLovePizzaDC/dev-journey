@@ -1,5 +1,13 @@
-import type { IIconProps } from '@/shared/components/atoms/Icon.types';
+import type { ComponentType, SVGProps } from 'react';
 import { cn } from '@/shared/utils/cn';
+
+export type IconComponent = ComponentType<SVGProps<SVGSVGElement>>;
+
+interface IIconProps {
+	icon: IconComponent;
+	className?: string;
+	title?: string;
+}
 
 export function Icon({ icon: IconSvg, className, title }: IIconProps) {
 	return (
@@ -10,5 +18,3 @@ export function Icon({ icon: IconSvg, className, title }: IIconProps) {
 		/>
 	);
 }
-
-export type { IconComponent } from '@/shared/components/atoms/Icon.types';

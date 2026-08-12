@@ -1,6 +1,11 @@
 import { TechBadge } from '@/shared/components/atoms';
 import { useLocale } from '@/shared/i18n';
-import type { IStackListProps } from '@/shared/components/molecules/StackList.types';
+import type { TechCategory } from '@/shared/types';
+
+interface IStackListProps {
+	items: string[];
+	categories?: Record<string, TechCategory>;
+}
 
 export function StackList({ items, categories }: IStackListProps) {
 	const { m } = useLocale();

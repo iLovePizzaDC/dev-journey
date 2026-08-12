@@ -1,5 +1,12 @@
+import type { ReactNode } from 'react';
 import { Text } from '@/shared/components/atoms';
-import type { ISectionHeaderProps } from '@/shared/components/molecules/SectionHeader.types';
+
+interface ISectionHeaderProps {
+	eyebrow?: string;
+	title: string;
+	description?: string;
+	action?: ReactNode;
+}
 
 export function SectionHeader({ eyebrow, title, description, action }: ISectionHeaderProps) {
 	return (

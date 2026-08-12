@@ -1,6 +1,15 @@
+import type { ReactNode } from 'react';
 import { Reveal, SectionHeader } from '@/shared/components/molecules';
 import { cn } from '@/shared/utils/cn';
-import type { ISectionProps } from '@/shared/components/organisms/Section.types';
+
+interface ISectionProps {
+	id: string;
+	eyebrow?: string;
+	title: string;
+	description?: string;
+	children: ReactNode;
+	className?: string;
+}
 
 export function Section({ id, eyebrow, title, description, children, className }: ISectionProps) {
 	return (

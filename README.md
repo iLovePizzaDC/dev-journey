@@ -23,12 +23,12 @@ src/
       hooks/                    # When needed
       types/                    # Feature props + domain shapes
   shared/
-    api/                        # e.g. github client
+    api/                        # e.g. github client (+ *.types.ts)
     components/
-      atoms|molecules|organisms/  # Shared UI + colocated *.types / *.constants
+      atoms|molecules|organisms/  # Shared UI; props interfaces live in the .tsx
     content/                    # Data only (+ small content helpers)
     constants/
-    hooks/
+    hooks/                      # Re-exports useLocale, useTheme
     i18n/
       LocaleContext.tsx         # Context + useLocale
       LocaleProvider.tsx        # Provider (separate file)
@@ -37,7 +37,7 @@ src/
       ThemeContext.tsx
       ThemeProvider.tsx
     types/                      # Domain + shared UI types (`type` only)
-    utils/
+    utils/                      # Helpers (+ date.types / date.constants)
   test/
 ```
 
@@ -47,7 +47,7 @@ Use the `@/` alias for **all** app imports (maps to `src/`).
 
 - **Context vs Provider**: always split (`FooContext.tsx` + `FooProvider.tsx`) with matching `*.types.ts`
 - **Types**: use `type` everywhere; use `interface` **only** for React props, named `IComponentProps` (e.g. `IButtonProps`)
-- **Colocation**: no types/constants inline in component files — use `Component.types.ts` / `Component.constants.ts` (or feature `*.types.ts`)
+- **Component props**: props interfaces live in the component `.tsx` file; component-only style maps are private `const`s there. Domain/shared types stay in `shared/types`, `shared/api`, Context/Provider `*.types.ts`, and feature `types/`
 - **Tests**: Vitest unit tests for pure modules; Testing Library for UI components (colocated `*.test.ts(x)`)
 
 ## Getting started
