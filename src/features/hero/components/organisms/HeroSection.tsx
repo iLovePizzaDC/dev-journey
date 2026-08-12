@@ -1,7 +1,7 @@
-import { profile } from '@/content';
-import { HeroKicker } from '@/features/hero/atoms/HeroKicker';
-import { HeroActions } from '@/features/hero/molecules/HeroActions';
-import { Text } from '@/shared/atoms';
+import { profile } from '@/shared/content';
+import { HeroKicker } from '@/features/hero/components/atoms/HeroKicker';
+import { HeroActions } from '@/features/hero/components/molecules/HeroActions';
+import { Text } from '@/shared/components/atoms';
 import { SECTION_IDS } from '@/shared/constants';
 import { t, useLocale } from '@/shared/i18n';
 

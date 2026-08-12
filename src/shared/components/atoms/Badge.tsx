@@ -1,8 +1,8 @@
-import { BADGE_CATEGORY_BORDER } from '@/shared/atoms/Badge.constants';
-import type { IBadgeProps, ITechBadgeProps } from '@/shared/atoms/Badge.types';
+import { BADGE_CATEGORY_BORDER } from '@/shared/components/atoms/Badge.constants';
+import type { IBadgeProps, ITechBadgeProps } from '@/shared/components/atoms/Badge.types';
 import { useLocale } from '@/shared/i18n';
-import { categoryLabel } from '@/shared/lib/labels';
-import { cn } from '@/shared/lib/cn';
+import { categoryLabel } from '@/shared/utils/labels';
+import { cn } from '@/shared/utils/cn';
 
 export function Badge({ children, category, tone = 'neutral', className }: IBadgeProps) {
 	const { m } = useLocale();

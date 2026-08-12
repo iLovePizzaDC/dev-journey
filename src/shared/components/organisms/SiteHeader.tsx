@@ -1,9 +1,9 @@
 import { ArrowTopRightOnSquareIcon, CodeBracketIcon } from '@heroicons/react/24/outline';
-import { profile } from '@/content';
-import { Button, Icon, LanguageToggle, ThemeToggle } from '@/shared/atoms';
+import { profile } from '@/shared/content';
+import { Button, Icon, LanguageToggle, ThemeToggle } from '@/shared/components/atoms';
 import { NAV_LINKS } from '@/shared/constants';
 import { useLocale } from '@/shared/i18n';
-import type { ISiteHeaderProps } from '@/shared/organisms/SiteHeader.types';
+import type { ISiteHeaderProps } from '@/shared/components/organisms/SiteHeader.types';
 
 export function SiteHeader({ brand = profile.name }: ISiteHeaderProps) {
 	const { m } = useLocale();

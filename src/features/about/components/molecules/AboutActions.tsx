@@ -1,6 +1,6 @@
 import { ArrowTopRightOnSquareIcon, EnvelopeIcon } from '@heroicons/react/24/outline';
-import { profile } from '@/content';
-import { Button, Icon } from '@/shared/atoms';
+import { profile } from '@/shared/content';
+import { Button, Icon } from '@/shared/components/atoms';
 import { useLocale } from '@/shared/i18n';
 
 export function AboutActions() {

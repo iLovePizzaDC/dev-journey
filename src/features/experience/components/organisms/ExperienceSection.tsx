@@ -1,13 +1,13 @@
-import { experiences } from '@/content';
-import { CertificateList } from '@/features/experience/molecules/CertificateList';
-import { EducationList } from '@/features/experience/molecules/EducationList';
-import { WorkRoleCard } from '@/features/experience/molecules/WorkRoleCard';
-import type { IExperienceSectionProps } from '@/features/experience/experience.types';
-import { Text } from '@/shared/atoms';
+import { experiences } from '@/shared/content';
+import { CertificateList } from '@/features/experience/components/molecules/CertificateList';
+import { EducationList } from '@/features/experience/components/molecules/EducationList';
+import { WorkRoleCard } from '@/features/experience/components/molecules/WorkRoleCard';
+import type { IExperienceSectionProps } from '@/features/experience/types';
+import { Text } from '@/shared/components/atoms';
 import { SECTION_IDS } from '@/shared/constants';
 import { useLocale } from '@/shared/i18n';
-import { sortByStartDesc } from '@/shared/lib/date';
-import { Section } from '@/shared/organisms';
+import { sortByStartDesc } from '@/shared/utils/date';
+import { Section } from '@/shared/components/organisms';
 
 export function ExperienceSection({ items = experiences }: IExperienceSectionProps) {
 	const { m } = useLocale();

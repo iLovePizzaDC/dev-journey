@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
-import { EducationList } from '@/features/experience/molecules/EducationList';
-import { CertificateList } from '@/features/experience/molecules/CertificateList';
+import { EducationList } from '@/features/experience/components/molecules/EducationList';
+import { CertificateList } from '@/features/experience/components/molecules/CertificateList';
 import { renderWithProviders } from '@/test/render';
 
 describe('EducationList', () => {

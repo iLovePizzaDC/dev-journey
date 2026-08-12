@@ -1,5 +1,5 @@
-import type { IStatusDotProps } from '@/shared/atoms/StatusDot.types';
-import { cn } from '@/shared/lib/cn';
+import type { IStatusDotProps } from '@/shared/components/atoms/StatusDot.types';
+import { cn } from '@/shared/utils/cn';
 
 export function StatusDot({ className, tone = 'accent' }: IStatusDotProps) {
 	return (

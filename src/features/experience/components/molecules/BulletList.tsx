@@ -1,5 +1,5 @@
-import { StatusDot, Text } from '@/shared/atoms';
-import type { IBulletListProps } from '@/features/experience/experience.types';
+import { StatusDot, Text } from '@/shared/components/atoms';
+import type { IBulletListProps } from '@/features/experience/types';
 
 export function BulletList({ items }: IBulletListProps) {
 	return (

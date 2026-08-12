@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { Badge, StatusDot, TechBadge } from '@/shared/atoms';
+import { Badge, StatusDot, TechBadge } from '@/shared/components/atoms';
 import { renderWithProviders } from '@/test/render';
 
 describe('Badge', () => {

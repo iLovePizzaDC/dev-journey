@@ -1,7 +1,7 @@
 import { EnvelopeIcon, LanguageIcon, MapPinIcon } from '@heroicons/react/24/outline';
-import { profile } from '@/content';
-import type { AboutFact } from '@/features/about/about.types';
-import { Icon, Text } from '@/shared/atoms';
+import { profile } from '@/shared/content';
+import type { AboutFact } from '@/features/about/types';
+import { Icon, Text } from '@/shared/components/atoms';
 import { t, useLocale } from '@/shared/i18n';
 
 export function AboutFacts() {

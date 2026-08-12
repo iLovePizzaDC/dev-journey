@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
-import { SectionHeader, StackList, CommitMeta } from '@/shared/molecules';
-import { SiteHeader, SiteFooter, Section } from '@/shared/organisms';
+import { SectionHeader, StackList, CommitMeta } from '@/shared/components/molecules';
+import { SiteHeader, SiteFooter, Section } from '@/shared/components/organisms';
 import { renderWithProviders } from '@/test/render';
 
 describe('SectionHeader', () => {

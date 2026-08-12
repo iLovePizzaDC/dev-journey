@@ -1,10 +1,10 @@
 import { ArrowTopRightOnSquareIcon } from '@heroicons/react/24/outline';
-import { ProjectHighlights } from '@/features/projects/molecules/ProjectHighlights';
-import type { IProjectCardProps } from '@/features/projects/projects.types';
-import { Button, Icon, Text } from '@/shared/atoms';
+import { ProjectHighlights } from '@/features/projects/components/molecules/ProjectHighlights';
+import type { IProjectCardProps } from '@/features/projects/types';
+import { Button, Icon, Text } from '@/shared/components/atoms';
 import { t, useLocale } from '@/shared/i18n';
-import { githubRepoUrl } from '@/shared/lib/github';
-import { CommitMeta, Reveal, StackList } from '@/shared/molecules';
+import { githubRepoUrl } from '@/shared/api/github';
+import { CommitMeta, Reveal, StackList } from '@/shared/components/molecules';
 
 export function ProjectCard({ project, github, loading, delay = 0 }: IProjectCardProps) {
 	const { locale, m } = useLocale();

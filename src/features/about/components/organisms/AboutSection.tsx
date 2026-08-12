@@ -1,10 +1,10 @@
-import { profile } from '@/content';
-import { AboutActions } from '@/features/about/molecules/AboutActions';
-import { AboutFacts } from '@/features/about/molecules/AboutFacts';
+import { profile } from '@/shared/content';
+import { AboutActions } from '@/features/about/components/molecules/AboutActions';
+import { AboutFacts } from '@/features/about/components/molecules/AboutFacts';
 import { SECTION_IDS } from '@/shared/constants';
 import { t, useLocale } from '@/shared/i18n';
-import { Reveal } from '@/shared/molecules';
-import { Section } from '@/shared/organisms';
+import { Reveal } from '@/shared/components/molecules';
+import { Section } from '@/shared/components/organisms';
 
 export function AboutSection() {
 	const { locale, m } = useLocale();

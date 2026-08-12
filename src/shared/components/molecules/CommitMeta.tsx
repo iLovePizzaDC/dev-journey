@@ -1,7 +1,7 @@
-import { Text } from '@/shared/atoms';
+import { Text } from '@/shared/components/atoms';
 import { useLocale } from '@/shared/i18n';
-import { formatRelativeTime } from '@/shared/lib/date';
-import type { ICommitMetaProps } from '@/shared/molecules/CommitMeta.types';
+import { formatRelativeTime } from '@/shared/utils/date';
+import type { ICommitMetaProps } from '@/shared/components/molecules/CommitMeta.types';
 
 export function CommitMeta({ pushedAt, loading, error }: ICommitMetaProps) {
 	const { m } = useLocale();

@@ -1,8 +1,8 @@
-import { YearMarker } from '@/features/tech-timeline/atoms/YearMarker';
-import { TechItem } from '@/features/tech-timeline/molecules/TechItem';
-import type { ITechYearGroupProps } from '@/features/tech-timeline/tech-timeline.types';
-import { Text } from '@/shared/atoms';
-import { Reveal } from '@/shared/molecules';
+import { YearMarker } from '@/features/tech-timeline/components/atoms/YearMarker';
+import { TechItem } from '@/features/tech-timeline/components/molecules/TechItem';
+import type { ITechYearGroupProps } from '@/features/tech-timeline/types';
+import { Text } from '@/shared/components/atoms';
+import { Reveal } from '@/shared/components/molecules';
 
 export function TechYearGroup({ year, techs, delay = 0 }: ITechYearGroupProps) {
 	return (

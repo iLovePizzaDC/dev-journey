@@ -1,8 +1,8 @@
 import { AcademicCapIcon } from '@heroicons/react/24/outline';
-import { education } from '@/content';
-import { Icon, Text } from '@/shared/atoms';
+import { education } from '@/shared/content';
+import { Icon, Text } from '@/shared/components/atoms';
 import { t, useLocale } from '@/shared/i18n';
-import { formatDateRange, sortByStartDesc } from '@/shared/lib/date';
+import { formatDateRange, sortByStartDesc } from '@/shared/utils/date';
 
 export function EducationList() {
 	const { locale, m } = useLocale();

@@ -1,5 +1,5 @@
-import { StatusDot, Text } from '@/shared/atoms';
-import type { IProjectHighlightsProps } from '@/features/projects/projects.types';
+import { StatusDot, Text } from '@/shared/components/atoms';
+import type { IProjectHighlightsProps } from '@/features/projects/types';
 
 export function ProjectHighlights({ items }: IProjectHighlightsProps) {
 	return (

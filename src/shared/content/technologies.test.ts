@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { groupTechnologiesByYear, sortTechnologiesByAcquisition, type Technology } from '@/content';
+import { groupTechnologiesByYear, sortTechnologiesByAcquisition, type Technology } from '@/shared/content';
 
 const sample: Technology[] = [
 	{

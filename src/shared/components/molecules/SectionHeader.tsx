@@ -1,5 +1,5 @@
-import { Text } from '@/shared/atoms';
-import type { ISectionHeaderProps } from '@/shared/molecules/SectionHeader.types';
+import { Text } from '@/shared/components/atoms';
+import type { ISectionHeaderProps } from '@/shared/components/molecules/SectionHeader.types';
 
 export function SectionHeader({ eyebrow, title, description, action }: ISectionHeaderProps) {
 	return (

@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { categoryLabel } from '@/shared/lib/labels';
+import { categoryLabel } from '@/shared/utils/labels';
 import { messages } from '@/shared/i18n';
 
 describe('categoryLabel()', () => {

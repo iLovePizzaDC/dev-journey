@@ -1,6 +1,6 @@
-import { profile } from '@/content';
-import { Text } from '@/shared/atoms';
-import type { ISiteFooterProps } from '@/shared/organisms/SiteFooter.types';
+import { profile } from '@/shared/content';
+import { Text } from '@/shared/components/atoms';
+import type { ISiteFooterProps } from '@/shared/components/organisms/SiteFooter.types';
 
 export function SiteFooter({ children }: ISiteFooterProps) {
 	const year = new Date().getFullYear();

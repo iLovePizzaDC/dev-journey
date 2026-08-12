@@ -1,7 +1,7 @@
 import type { AnchorHTMLAttributes, ButtonHTMLAttributes } from 'react';
-import { BUTTON_VARIANT_CLASS } from '@/shared/atoms/Button.constants';
-import type { IButtonProps } from '@/shared/atoms/Button.types';
-import { cn } from '@/shared/lib/cn';
+import { BUTTON_VARIANT_CLASS } from '@/shared/components/atoms/Button.constants';
+import type { IButtonProps } from '@/shared/components/atoms/Button.types';
+import { cn } from '@/shared/utils/cn';
 
 export function Button(props: IButtonProps) {
 	const { children, variant = 'primary', className, ...rest } = props;

@@ -15,15 +15,20 @@ Personal portfolio site: technologies ordered by when they were learned, work ex
 
 ```
 src/
-  content/                      # Data only (+ small content helpers)
+  app/                          # App shell + global CSS (index.css)
   features/
     hero|experience|projects|tech-timeline|about/
-      atoms|molecules|organisms|hooks/
-      *.types.ts                # Feature props + domain shapes
+      components/
+        atoms|molecules|organisms/
+      hooks/                    # When needed
+      types/                    # Feature props + domain shapes
   shared/
-    types/                      # Domain + shared UI types (`type` only)
+    api/                        # e.g. github client
+    components/
+      atoms|molecules|organisms/  # Shared UI + colocated *.types / *.constants
+    content/                    # Data only (+ small content helpers)
     constants/
-    atoms|molecules|organisms/  # Component + colocated *.types / *.constants
+    hooks/
     i18n/
       LocaleContext.tsx         # Context + useLocale
       LocaleProvider.tsx        # Provider (separate file)
@@ -31,9 +36,8 @@ src/
     theme/
       ThemeContext.tsx
       ThemeProvider.tsx
-    lib/
-    styles/
-  app/
+    types/                      # Domain + shared UI types (`type` only)
+    utils/
   test/
 ```
 
@@ -72,7 +76,7 @@ Also install Heroicons if needed: `npm install @heroicons/react`
 
 ### Add a technology
 
-Edit `src/content/technologies.ts`:
+Edit `src/shared/content/technologies.ts`:
 
 ```ts
 {
@@ -87,12 +91,12 @@ Edit `src/content/technologies.ts`:
 
 ### Add a project + GitHub link
 
-Edit `src/content/projects.ts` and set `githubRepo: 'owner/repo'`. The UI loads `pushed_at` from the public GitHub API.
+Edit `src/shared/content/projects.ts` and set `githubRepo: 'owner/repo'`. The UI loads `pushed_at` from the public GitHub API.
 
 ### Localization & theme
 
 - UI copy: `src/shared/i18n/messages.ts`
-- Content strings: `Localized<T>` objects (`{ de, en }`) in `src/content/*`
+- Content strings: `Localized<T>` objects (`{ de, en }`) in `src/shared/content/*`
 - Language toggle + theme toggle in the header (both persisted in `localStorage`)
 
 ## Testing

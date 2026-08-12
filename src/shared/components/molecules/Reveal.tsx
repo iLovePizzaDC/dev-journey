@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState, type CSSProperties, type ElementType } from 'react';
-import { cn } from '@/shared/lib/cn';
-import type { IRevealProps } from '@/shared/molecules/Reveal.types';
+import { cn } from '@/shared/utils/cn';
+import type { IRevealProps } from '@/shared/components/molecules/Reveal.types';
 import type { RevealTag } from '@/shared/types';
 
 function prefersReducedMotion(): boolean {

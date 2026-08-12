@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
-import { experiences } from '@/content';
-import { sortByStartDesc } from '@/shared/lib/date';
+import { experiences } from '@/shared/content';
+import { sortByStartDesc } from '@/shared/utils/date';
 
 describe('career content', () => {
 	it('lists work stations newest-first when sorted', () => {

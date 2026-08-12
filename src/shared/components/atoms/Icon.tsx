@@ -1,5 +1,5 @@
-import type { IIconProps } from '@/shared/atoms/Icon.types';
-import { cn } from '@/shared/lib/cn';
+import type { IIconProps } from '@/shared/components/atoms/Icon.types';
+import { cn } from '@/shared/utils/cn';
 
 export function Icon({ icon: IconSvg, className, title }: IIconProps) {
 	return (
@@ -11,4 +11,4 @@ export function Icon({ icon: IconSvg, className, title }: IIconProps) {
 	);
 }
 
-export type { IconComponent } from '@/shared/atoms/Icon.types';
+export type { IconComponent } from '@/shared/components/atoms/Icon.types';

@@ -1,1 +1,1 @@
-export { TechTimeline } from '@/features/tech-timeline/organisms/TechTimeline';
+export { TechTimeline } from '@/features/tech-timeline/components/organisms/TechTimeline';

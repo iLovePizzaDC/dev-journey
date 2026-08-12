@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
-import { AboutFacts } from '@/features/about/molecules/AboutFacts';
-import { AboutActions } from '@/features/about/molecules/AboutActions';
+import { AboutFacts } from '@/features/about/components/molecules/AboutFacts';
+import { AboutActions } from '@/features/about/components/molecules/AboutActions';
 import { renderWithProviders } from '@/test/render';
 
 describe('AboutFacts', () => {

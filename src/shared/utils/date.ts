@@ -1,5 +1,5 @@
-import { MONTH_LABELS } from '@/shared/lib/date.constants';
-import type { RelativeTimeMessages } from '@/shared/lib/date.types';
+import { MONTH_LABELS } from '@/shared/utils/date.constants';
+import type { RelativeTimeMessages } from '@/shared/utils/date.types';
 import type { Locale } from '@/shared/types';
 
 export function formatMonthYear(value: string, locale: Locale = 'de'): string {

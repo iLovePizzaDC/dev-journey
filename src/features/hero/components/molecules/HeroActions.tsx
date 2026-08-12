@@ -1,7 +1,7 @@
 import { ArrowRightIcon, EnvelopeIcon } from '@heroicons/react/24/outline';
-import { profile } from '@/content';
+import { profile } from '@/shared/content';
 import { SECTION_IDS } from '@/shared/constants';
-import { Button, Icon } from '@/shared/atoms';
+import { Button, Icon } from '@/shared/components/atoms';
 import { useLocale } from '@/shared/i18n';
 
 export function HeroActions() {

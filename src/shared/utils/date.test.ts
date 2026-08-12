@@ -5,7 +5,7 @@ import {
 	formatMonthYear,
 	formatRelativeTime,
 	sortByStartDesc,
-} from '@/shared/lib/date';
+} from '@/shared/utils/date';
 import { messages } from '@/shared/i18n';
 
 describe('formatMonthYear', () => {

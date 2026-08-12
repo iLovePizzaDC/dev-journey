@@ -1,6 +1,6 @@
-import { Reveal, SectionHeader } from '@/shared/molecules';
-import { cn } from '@/shared/lib/cn';
-import type { ISectionProps } from '@/shared/organisms/Section.types';
+import { Reveal, SectionHeader } from '@/shared/components/molecules';
+import { cn } from '@/shared/utils/cn';
+import type { ISectionProps } from '@/shared/components/organisms/Section.types';
 
 export function Section({ id, eyebrow, title, description, children, className }: ISectionProps) {
 	return (

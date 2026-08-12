@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { BulletList } from '@/features/experience/molecules/BulletList';
+import { BulletList } from '@/features/experience/components/molecules/BulletList';
 import { renderWithProviders } from '@/test/render';
 
 describe('BulletList', () => {

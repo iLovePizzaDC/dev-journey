@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { HeroKicker } from '@/features/hero/atoms/HeroKicker';
+import { HeroKicker } from '@/features/hero/components/atoms/HeroKicker';
 import { renderWithProviders } from '@/test/render';
 
 describe('HeroKicker', () => {

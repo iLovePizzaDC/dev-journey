@@ -1,6 +1,6 @@
-import { TechBadge } from '@/shared/atoms';
+import { TechBadge } from '@/shared/components/atoms';
 import { useLocale } from '@/shared/i18n';
-import type { IStackListProps } from '@/shared/molecules/StackList.types';
+import type { IStackListProps } from '@/shared/components/molecules/StackList.types';
 
 export function StackList({ items, categories }: IStackListProps) {
 	const { m } = useLocale();

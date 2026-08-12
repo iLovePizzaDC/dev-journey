@@ -1,7 +1,7 @@
 import { screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { describe, expect, it } from 'vitest';
-import { LanguageToggle } from '@/shared/atoms';
+import { LanguageToggle } from '@/shared/components/atoms';
 import { renderWithProviders } from '@/test/render';
 
 describe('LanguageToggle (Vitest + Testing Library)', () => {

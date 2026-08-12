@@ -1,6 +1,6 @@
 import { LOCALE_LABELS, LOCALES, useLocale } from '@/shared/i18n';
-import type { ILanguageToggleProps } from '@/shared/atoms/Toggle.types';
-import { cn } from '@/shared/lib/cn';
+import type { ILanguageToggleProps } from '@/shared/components/atoms/Toggle.types';
+import { cn } from '@/shared/utils/cn';
 
 export function LanguageToggle({ className }: ILanguageToggleProps) {
 	const { locale, setLocale, m } = useLocale();

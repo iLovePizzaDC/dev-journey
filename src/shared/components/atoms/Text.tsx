@@ -1,6 +1,6 @@
-import { TEXT_VARIANT_CLASS } from '@/shared/atoms/Text.constants';
-import type { ITextProps } from '@/shared/atoms/Text.types';
-import { cn } from '@/shared/lib/cn';
+import { TEXT_VARIANT_CLASS } from '@/shared/components/atoms/Text.constants';
+import type { ITextProps } from '@/shared/components/atoms/Text.types';
+import { cn } from '@/shared/utils/cn';
 
 export function Text({
 	as: Tag = 'p',

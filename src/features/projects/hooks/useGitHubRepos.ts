@@ -1,5 +1,5 @@
-import { fetchGitHubRepos } from '@/shared/lib/github';
-import type { GitHubRepoStatusMap, UseGitHubReposResult } from '@/features/projects/projects.types';
+import { fetchGitHubRepos } from '@/shared/api/github';
+import type { GitHubRepoStatusMap, UseGitHubReposResult } from '@/features/projects/types';
 import { useEffect, useState } from 'react';
 
 const EMPTY_REPOS: GitHubRepoStatusMap = new Map();

@@ -1,1 +1,1 @@
-export { HeroSection } from '@/features/hero/organisms/HeroSection';
+export { HeroSection } from '@/features/hero/components/organisms/HeroSection';

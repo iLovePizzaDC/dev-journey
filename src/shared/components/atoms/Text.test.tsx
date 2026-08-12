@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { Text } from '@/shared/atoms';
+import { Text } from '@/shared/components/atoms';
 import { renderWithProviders } from '@/test/render';
 
 describe('Text', () => {

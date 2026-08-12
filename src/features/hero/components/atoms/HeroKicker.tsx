@@ -1,5 +1,5 @@
-import { Text } from '@/shared/atoms';
-import type { IHeroKickerProps } from '@/features/hero/hero.types';
+import { Text } from '@/shared/components/atoms';
+import type { IHeroKickerProps } from '@/features/hero/types';
 
 export function HeroKicker({ children }: IHeroKickerProps) {
 	return (

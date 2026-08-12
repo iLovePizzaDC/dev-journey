@@ -1,10 +1,10 @@
-import { projects as defaultProjects } from '@/content';
+import { projects as defaultProjects } from '@/shared/content';
 import { useGitHubRepos } from '@/features/projects/hooks/useGitHubRepos';
-import { ProjectCard } from '@/features/projects/molecules/ProjectCard';
-import type { IProjectsSectionProps } from '@/features/projects/projects.types';
+import { ProjectCard } from '@/features/projects/components/molecules/ProjectCard';
+import type { IProjectsSectionProps } from '@/features/projects/types';
 import { SECTION_IDS } from '@/shared/constants';
 import { useLocale } from '@/shared/i18n';
-import { Section } from '@/shared/organisms';
+import { Section } from '@/shared/components/organisms';
 
 export function ProjectsSection({ items = defaultProjects }: IProjectsSectionProps) {
 	const { m } = useLocale();

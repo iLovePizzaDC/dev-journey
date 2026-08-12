@@ -1,9 +1,9 @@
-import { BulletList } from '@/features/experience/molecules/BulletList';
-import type { IWorkRoleCardProps } from '@/features/experience/experience.types';
-import { Text } from '@/shared/atoms';
+import { BulletList } from '@/features/experience/components/molecules/BulletList';
+import type { IWorkRoleCardProps } from '@/features/experience/types';
+import { Text } from '@/shared/components/atoms';
 import { t, useLocale } from '@/shared/i18n';
-import { formatCareerRange } from '@/shared/lib/date';
-import { Reveal, StackList } from '@/shared/molecules';
+import { formatCareerRange } from '@/shared/utils/date';
+import { Reveal, StackList } from '@/shared/components/molecules';
 
 export function WorkRoleCard({ job, delay = 0, isLast = false }: IWorkRoleCardProps) {
 	const { locale, m } = useLocale();

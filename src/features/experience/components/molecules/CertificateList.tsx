@@ -1,8 +1,8 @@
 import { CheckBadgeIcon } from '@heroicons/react/24/outline';
-import { certificates } from '@/content';
-import { Icon, Text } from '@/shared/atoms';
+import { certificates } from '@/shared/content';
+import { Icon, Text } from '@/shared/components/atoms';
 import { t, useLocale } from '@/shared/i18n';
-import { formatMonthYear } from '@/shared/lib/date';
+import { formatMonthYear } from '@/shared/utils/date';
 
 export function CertificateList() {
 	const { locale, m } = useLocale();
