@@ -9,12 +9,12 @@ interface ICommitMeta {
 }
 
 export function CommitMeta({ pushedAt, loading, error }: ICommitMeta) {
-	const { m } = useLocale();
+	const { messages } = useLocale();
 
 	if (loading) {
 		return (
 			<Text as='span' variant='meta' className='opacity-70'>
-				{m.projects.commitLoading}
+				{messages.projects.commitLoading}
 			</Text>
 		);
 	}
@@ -22,15 +22,15 @@ export function CommitMeta({ pushedAt, loading, error }: ICommitMeta) {
 	if (error || !pushedAt) {
 		return (
 			<Text as='span' variant='meta' className='opacity-80'>
-				{m.projects.commitUnavailable}
+				{messages.projects.commitUnavailable}
 			</Text>
 		);
 	}
 
 	return (
 		<Text as='span' variant='meta'>
-			{m.projects.lastPush}{' '}
-			<time dateTime={pushedAt}>{formatRelativeTime(pushedAt, m.common)}</time>
+			{messages.projects.lastPush}{' '}
+			<time dateTime={pushedAt}>{formatRelativeTime(pushedAt, messages.common)}</time>
 		</Text>
 	);
 }

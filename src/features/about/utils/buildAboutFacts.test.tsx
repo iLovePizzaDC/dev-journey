@@ -7,7 +7,7 @@ describe('buildAboutFacts', () => {
 	it('returns 3 facts with expected de labels', () => {
 		const facts = buildAboutFacts('de', messages.de, profile);
 		expect(facts).toHaveLength(3);
-		expect(facts.map((f) => f.label)).toEqual([
+		expect(facts.map((fact) => fact.label)).toEqual([
 			messages.de.about.location,
 			messages.de.about.email,
 			messages.de.about.languages,

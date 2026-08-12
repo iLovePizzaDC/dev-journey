@@ -2,18 +2,18 @@ import { EnvelopeIcon, LanguageIcon, MapPinIcon } from '@heroicons/react/24/outl
 import type { AboutFact } from '@/features/about/types';
 import type { Messages } from '@/shared/i18n/messages.types';
 import type { Locale, Profile } from '@/shared/types';
-import { t } from '@/shared/i18n';
+import { localize } from '@/shared/i18n';
 
-export function buildAboutFacts(locale: Locale, m: Messages, profile: Profile): AboutFact[] {
+export function buildAboutFacts(locale: Locale, messages: Messages, profile: Profile): AboutFact[] {
 	return [
 		{
 			icon: MapPinIcon,
-			label: m.about.location,
+			label: messages.about.location,
 			value: profile.location,
 		},
 		{
 			icon: EnvelopeIcon,
-			label: m.about.email,
+			label: messages.about.email,
 			value: (
 				<a href={`mailto:${profile.email}`} className='transition-colors'>
 					{profile.email}
@@ -22,9 +22,9 @@ export function buildAboutFacts(locale: Locale, m: Messages, profile: Profile): 
 		},
 		{
 			icon: LanguageIcon,
-			label: m.about.languages,
+			label: messages.about.languages,
 			value: profile.languages
-				.map((l) => `${t(locale, l.name)} (${t(locale, l.level)})`)
+				.map((language) => `${localize(locale, language.name)} (${localize(locale, language.level)})`)
 				.join(' · '),
 		},
 	];

@@ -4,8 +4,8 @@ import { Icon, Text } from '@/shared/components/atoms';
 import { useLocale } from '@/shared/i18n';
 
 export function AboutFacts() {
-	const { locale, m } = useLocale();
-	const facts = buildAboutFacts(locale, m, profile);
+	const { locale, messages } = useLocale();
+	const facts = buildAboutFacts(locale, messages, profile);
 
 	return (
 		<dl className='m-0 grid gap-4'>

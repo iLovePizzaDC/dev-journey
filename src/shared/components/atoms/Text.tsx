@@ -12,14 +12,7 @@ interface IText {
 	id?: string;
 }
 
-export function Text({
-	as: Tag = 'p',
-	variant = 'body',
-	children,
-	className,
-	style,
-	id,
-}: IText) {
+export function Text({ as: Tag = 'p', variant = 'body', children, className, style, id }: IText) {
 	return (
 		<Tag id={id} className={cn('m-0', TEXT_VARIANT_CLASS[variant], className)} style={style}>
 			{children}

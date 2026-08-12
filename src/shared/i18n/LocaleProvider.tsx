@@ -26,7 +26,7 @@ export function LocaleProvider({ children, initialLocale }: ILocaleProvider) {
 		() => ({
 			locale,
 			setLocale,
-			m: messages[locale],
+			messages: messages[locale],
 		}),
 		[locale, setLocale],
 	);

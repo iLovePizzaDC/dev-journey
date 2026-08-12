@@ -7,18 +7,12 @@ describe('prefersReducedMotion()', () => {
 	});
 
 	it('returns true when reduced motion is preferred', () => {
-		vi.stubGlobal(
-			'matchMedia',
-			vi.fn().mockReturnValue({ matches: true }),
-		);
+		vi.stubGlobal('matchMedia', vi.fn().mockReturnValue({ matches: true }));
 		expect(prefersReducedMotion()).toBe(true);
 	});
 
 	it('returns false when reduced motion is not preferred', () => {
-		vi.stubGlobal(
-			'matchMedia',
-			vi.fn().mockReturnValue({ matches: false }),
-		);
+		vi.stubGlobal('matchMedia', vi.fn().mockReturnValue({ matches: false }));
 		expect(prefersReducedMotion()).toBe(false);
 	});
 });

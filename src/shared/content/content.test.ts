@@ -14,7 +14,7 @@ describe('content profile', () => {
 
 describe('content projects', () => {
 	it('includes github repos where linked', () => {
-		const withRepo = projects.filter((p) => p.githubRepo);
+		const withRepo = projects.filter((project) => project.githubRepo);
 		expect(withRepo.length).toBeGreaterThan(0);
 	});
 });

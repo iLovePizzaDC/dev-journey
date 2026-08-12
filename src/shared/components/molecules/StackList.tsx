@@ -8,10 +8,10 @@ interface IStackList {
 }
 
 export function StackList({ items, categories }: IStackList) {
-	const { m } = useLocale();
+	const { messages } = useLocale();
 
 	return (
-		<ul className='mt-3 flex flex-wrap gap-2' aria-label={m.common.stackAria}>
+		<ul className='mt-3 flex flex-wrap gap-2' aria-label={messages.common.stackAria}>
 			{items.map((item) => (
 				<li key={item}>
 					<TechBadge name={item} category={categories?.[item]} />

@@ -1,7 +1,7 @@
 import { BulletList } from '@/features/experience/components/molecules/BulletList';
 import type { Experience } from '@/shared/types';
 import { Text } from '@/shared/components/atoms';
-import { t, useLocale } from '@/shared/i18n';
+import { localize, useLocale } from '@/shared/i18n';
 import { formatCareerRange } from '@/shared/utils/date';
 import { Reveal, StackList } from '@/shared/components/molecules';
 
@@ -12,12 +12,12 @@ interface IWorkRoleCard {
 }
 
 export function WorkRoleCard({ job, delay = 0, isLast = false }: IWorkRoleCard) {
-	const { locale, m } = useLocale();
+	const { locale, messages } = useLocale();
 	const { startLabel, endLabel, rangeLabel } = formatCareerRange(
 		job.start,
 		job.end,
 		locale,
-		m.experience.present,
+		messages.experience.present,
 	);
 
 	return (
@@ -45,14 +45,14 @@ export function WorkRoleCard({ job, delay = 0, isLast = false }: IWorkRoleCard) 
 					aria-hidden='true'
 				/>
 				<Text as='h3' variant='subtitle' className='text-[1.25rem]'>
-					{t(locale, job.role)}
+					{localize(locale, job.role)}
 				</Text>
 				<Text variant='body' className='mt-1 font-medium text-ink'>
 					{job.company}
 					<span className='font-normal text-muted'> · {job.location}</span>
 				</Text>
 				<div className='mt-4'>
-					<BulletList items={t(locale, job.bullets)} />
+					<BulletList items={localize(locale, job.bullets)} />
 				</div>
 				{job.stack ? <StackList items={job.stack} /> : null}
 			</div>

@@ -2,18 +2,18 @@ import { CheckBadgeIcon } from '@heroicons/react/24/outline';
 import { certificates } from '@/shared/content';
 import { sortCertificatesByDateDesc } from '@/features/experience/utils/sortCertificates';
 import { Icon, Text } from '@/shared/components/atoms';
-import { t, useLocale } from '@/shared/i18n';
+import { localize, useLocale } from '@/shared/i18n';
 import { formatMonthYear } from '@/shared/utils/date';
 
 export function CertificateList() {
-	const { locale, m } = useLocale();
+	const { locale, messages } = useLocale();
 	const items = sortCertificatesByDateDesc(certificates);
 
 	return (
 		<div>
 			<Text as='h3' variant='label' className='mb-4 flex items-center gap-2'>
 				<Icon icon={CheckBadgeIcon} className='h-3.5 w-3.5' />
-				{m.experience.certificates}
+				{messages.experience.certificates}
 			</Text>
 			<ul className='grid gap-0'>
 				{items.map((cert) => (
@@ -25,7 +25,7 @@ export function CertificateList() {
 							{formatMonthYear(cert.date, locale)}
 						</Text>
 						<Text as='span' variant='subtitle'>
-							{t(locale, cert.title)}
+							{localize(locale, cert.title)}
 						</Text>
 						<Text variant='meta'>{cert.issuer}</Text>
 					</li>

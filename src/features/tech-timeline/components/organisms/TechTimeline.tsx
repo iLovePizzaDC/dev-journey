@@ -10,16 +10,16 @@ interface ITechTimeline {
 }
 
 export function TechTimeline({ items = technologies }: ITechTimeline) {
-	const { m } = useLocale();
+	const { messages } = useLocale();
 	const groups = groupTechnologiesByYear(items);
 	const years = [...groups.keys()];
 
 	return (
 		<Section
 			id={SECTION_IDS.journey}
-			eyebrow={m.journey.eyebrow}
-			title={m.journey.title}
-			description={m.journey.description}
+			eyebrow={messages.journey.eyebrow}
+			title={messages.journey.title}
+			description={messages.journey.description}
 		>
 			<ol className='grid gap-8 border-l border-line pl-5 md:pl-6'>
 				{years.map((year, index) => (

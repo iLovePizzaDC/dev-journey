@@ -6,7 +6,7 @@ import { useLocale } from '@/shared/i18n';
 import { scrollToSection } from '@/shared/utils/scroll';
 
 export function HeroActions() {
-	const { m } = useLocale();
+	const { messages } = useLocale();
 
 	return (
 		<div className='flex flex-wrap gap-3'>
@@ -15,7 +15,7 @@ export function HeroActions() {
 				variant='primary'
 				className='group'
 			>
-				{m.hero.viewProjects}
+				{messages.hero.viewProjects}
 				<Icon
 					icon={ArrowRightIcon}
 					className='transition-transform duration-300 group-hover:translate-x-0.5'
@@ -23,7 +23,7 @@ export function HeroActions() {
 			</Button>
 			<Button href={`mailto:${profile.email}`} variant='ghost'>
 				<Icon icon={EnvelopeIcon} />
-				{m.hero.contact}
+				{messages.hero.contact}
 			</Button>
 		</div>
 	);

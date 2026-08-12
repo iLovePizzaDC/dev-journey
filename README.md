@@ -27,12 +27,12 @@ Imports use the `@/` alias (`src/`).
 
 ### Conventions
 
-| Rule | Detail |
-| --- | --- |
+| Rule               | Detail                                                                                                                         |
+| ------------------ | ------------------------------------------------------------------------------------------------------------------------------ |
 | Context / Provider | Split files (`FooContext.tsx` + `FooProvider.tsx`). Value types live in the Context file; `IFooProvider` in the Provider file. |
-| Props | `interface IButton` (etc.) in the same `.tsx` as the component — no `Props` suffix. |
-| Everything else | `type` for domain/helpers. Constants & utils → `shared/*` if shared, else `features/<name>/{constants,utils,types}/`. |
-| Tests | Colocated `*.test.ts(x)` — unit for pure logic, Testing Library for UI. |
+| Props              | `interface IButton` (etc.) in the same `.tsx` as the component — no `Props` suffix.                                            |
+| Everything else    | `type` for domain/helpers. Constants & utils → `shared/*` if shared, else `features/<name>/{constants,utils,types}/`.          |
+| Tests              | Colocated `*.test.ts(x)` — unit for pure logic, Testing Library for UI.                                                        |
 
 ## Setup
 
@@ -41,13 +41,13 @@ npm install
 npm run dev
 ```
 
-| Script | |
-| --- | --- |
-| `npm run dev` | Dev server |
-| `npm run build` | Typecheck + production build |
-| `npm test` | Vitest |
-| `npm run lint` | ESLint |
-| `npm run format` | Prettier |
+| Script           |                              |
+| ---------------- | ---------------------------- |
+| `npm run dev`    | Dev server                   |
+| `npm run build`  | Typecheck + production build |
+| `npm test`       | Vitest                       |
+| `npm run lint`   | ESLint                       |
+| `npm run format` | Prettier                     |
 
 ## Content
 

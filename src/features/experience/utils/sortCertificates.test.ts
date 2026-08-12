@@ -10,6 +10,10 @@ describe('sortCertificatesByDateDesc', () => {
 			{ id: 'c', title: { de: 'C', en: 'C' }, issuer: 'Z', date: '2024-03' },
 		];
 
-		expect(sortCertificatesByDateDesc(certs).map((c) => c.id)).toEqual(['b', 'c', 'a']);
+		expect(sortCertificatesByDateDesc(certs).map((certificate) => certificate.id)).toEqual([
+			'b',
+			'c',
+			'a',
+		]);
 	});
 });

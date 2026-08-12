@@ -18,8 +18,8 @@ interface ITechBadge {
 }
 
 export function Badge({ children, category, tone = 'neutral', className }: IBadge) {
-	const { m } = useLocale();
-	const label = category ? categoryLabel(category, m.categories) : (children ?? '');
+	const { messages } = useLocale();
+	const label = category ? categoryLabel(category, messages.categories) : (children ?? '');
 
 	return (
 		<span

@@ -12,16 +12,16 @@ interface IProjectsSection {
 }
 
 export function ProjectsSection({ items = defaultProjects }: IProjectsSection) {
-	const { m } = useLocale();
+	const { messages } = useLocale();
 	const repoIds = getProjectGithubRepoIds(items);
 	const { repos, loading } = useGitHubRepos(repoIds);
 
 	return (
 		<Section
 			id={SECTION_IDS.projects}
-			eyebrow={m.projects.eyebrow}
-			title={m.projects.title}
-			description={m.projects.description}
+			eyebrow={messages.projects.eyebrow}
+			title={messages.projects.title}
+			description={messages.projects.description}
 		>
 			<div className='grid gap-5 md:grid-cols-2'>
 				{items.map((project, index) => (

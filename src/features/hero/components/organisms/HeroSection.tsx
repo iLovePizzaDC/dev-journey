@@ -3,10 +3,10 @@ import { HeroKicker } from '@/features/hero/components/atoms/HeroKicker';
 import { HeroActions } from '@/features/hero/components/molecules/HeroActions';
 import { Text } from '@/shared/components/atoms';
 import { SECTION_IDS } from '@/shared/constants';
-import { t, useLocale } from '@/shared/i18n';
+import { localize, useLocale } from '@/shared/i18n';
 
 export function HeroSection() {
-	const { locale, m } = useLocale();
+	const { locale, messages } = useLocale();
 
 	return (
 		<section
@@ -20,7 +20,7 @@ export function HeroSection() {
 			/>
 			<div className='relative max-w-xl'>
 				<div className='animate-fade-up' style={{ animationDelay: '40ms' }}>
-					<HeroKicker>{m.hero.kicker}</HeroKicker>
+					<HeroKicker>{messages.hero.kicker}</HeroKicker>
 				</div>
 				<div className='animate-fade-up' style={{ animationDelay: '120ms' }}>
 					<Text as='h1' variant='display' className='mb-3' id='hero-name'>
@@ -29,12 +29,12 @@ export function HeroSection() {
 				</div>
 				<div className='animate-fade-up' style={{ animationDelay: '200ms' }}>
 					<Text as='p' variant='subtitle' className='mb-5 text-accent-strong'>
-						{t(locale, profile.title)}
+						{localize(locale, profile.title)}
 					</Text>
 				</div>
 				<div className='animate-fade-up' style={{ animationDelay: '280ms' }}>
 					<Text variant='body' className='mb-6 max-w-md text-[1.05rem]'>
-						{t(locale, profile.summary)}
+						{localize(locale, profile.summary)}
 					</Text>
 				</div>
 				<div className='animate-fade-up' style={{ animationDelay: '360ms' }}>

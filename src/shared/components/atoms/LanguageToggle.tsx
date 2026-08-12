@@ -6,7 +6,7 @@ interface ILanguageToggle {
 }
 
 export function LanguageToggle({ className }: ILanguageToggle) {
-	const { locale, setLocale, m } = useLocale();
+	const { locale, setLocale, messages } = useLocale();
 
 	return (
 		<div
@@ -15,7 +15,7 @@ export function LanguageToggle({ className }: ILanguageToggle) {
 				className,
 			)}
 			role='group'
-			aria-label={m.common.languageSwitch}
+			aria-label={messages.common.languageSwitch}
 		>
 			{LOCALES.map((code) => (
 				<button

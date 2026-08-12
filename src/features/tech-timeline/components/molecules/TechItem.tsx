@@ -1,6 +1,6 @@
 import type { Technology } from '@/shared/types';
 import { Text } from '@/shared/components/atoms';
-import { t, useLocale } from '@/shared/i18n';
+import { localize, useLocale } from '@/shared/i18n';
 import { categoryLabel } from '@/shared/utils/labels';
 
 interface ITechItem {
@@ -8,7 +8,7 @@ interface ITechItem {
 }
 
 export function TechItem({ tech }: ITechItem) {
-	const { locale, m } = useLocale();
+	const { locale, messages } = useLocale();
 
 	return (
 		<li className='flex flex-wrap items-baseline gap-x-3 gap-y-1 py-1.5 transition duration-300 hover:translate-x-0.5'>
@@ -16,7 +16,7 @@ export function TechItem({ tech }: ITechItem) {
 				{tech.name}
 			</Text>
 			<Text as='span' variant='meta'>
-				{categoryLabel(tech.category, m.categories)}
+				{categoryLabel(tech.category, messages.categories)}
 			</Text>
 			{tech.note ? (
 				<>
@@ -24,7 +24,7 @@ export function TechItem({ tech }: ITechItem) {
 						—
 					</span>
 					<Text as='span' variant='meta' className='w-full text-muted/90 md:w-auto'>
-						{t(locale, tech.note)}
+						{localize(locale, tech.note)}
 					</Text>
 				</>
 			) : null}

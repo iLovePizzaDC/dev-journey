@@ -10,7 +10,7 @@ interface IThemeToggle {
 
 export function ThemeToggle({ className }: IThemeToggle) {
 	const { theme, toggleTheme } = useTheme();
-	const { m } = useLocale();
+	const { messages } = useLocale();
 	const isDark = theme === 'dark';
 
 	return (
@@ -22,8 +22,8 @@ export function ThemeToggle({ className }: IThemeToggle) {
 				'[&_svg]:transition-transform [&_svg]:duration-300 hover:[&_svg]:rotate-12',
 				className,
 			)}
-			aria-label={isDark ? m.common.themeToLight : m.common.themeToDark}
-			title={isDark ? m.common.themeToLight : m.common.themeToDark}
+			aria-label={isDark ? messages.common.themeToLight : messages.common.themeToDark}
+			title={isDark ? messages.common.themeToLight : messages.common.themeToDark}
 		>
 			<Icon icon={isDark ? SunIcon : MoonIcon} className='h-[1.05rem] w-[1.05rem]' />
 		</button>

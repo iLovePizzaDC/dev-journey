@@ -7,7 +7,7 @@ describe('career content', () => {
 		const sorted = sortByStartDesc(experiences);
 		expect(sorted[0]?.company).toBe('EckStack');
 		expect(sorted.map((job) => job.start)).toEqual(
-			[...sorted.map((job) => job.start)].sort((a, b) => b.localeCompare(a)),
+			[...sorted.map((job) => job.start)].sort((left, right) => right.localeCompare(left)),
 		);
 	});
 

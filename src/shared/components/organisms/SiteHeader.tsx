@@ -12,7 +12,7 @@ interface ISiteHeader {
 }
 
 export function SiteHeader({ brand = profile.name }: ISiteHeader) {
-	const { m } = useLocale();
+	const { messages } = useLocale();
 	const activeSectionId = useScrollSpy(NAV_SECTION_IDS);
 
 	return (
@@ -25,7 +25,7 @@ export function SiteHeader({ brand = profile.name }: ISiteHeader) {
 				>
 					{brand}
 				</button>
-				<nav className='hidden gap-4 md:flex' aria-label={m.nav.aria}>
+				<nav className='hidden gap-4 md:flex' aria-label={messages.nav.aria}>
 					{NAV_LINKS.map((link) => {
 						const isActive = activeSectionId === link.sectionId;
 
@@ -40,7 +40,7 @@ export function SiteHeader({ brand = profile.name }: ISiteHeader) {
 									isActive ? 'text-ink' : 'text-muted hover:text-ink',
 								)}
 							>
-								{m.nav[link.labelKey]}
+								{messages.nav[link.labelKey]}
 								<span
 									className={cn(
 										'absolute inset-x-0 -bottom-1 h-px origin-left bg-accent transition-transform duration-300',

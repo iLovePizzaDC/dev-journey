@@ -1,7 +1,7 @@
 import type { Locale, Localized } from '@/shared/types';
 import { LOCALES, STORAGE_KEYS } from '@/shared/constants';
 
-export function t<T>(locale: Locale, value: Localized<T>): T {
+export function localize<T>(locale: Locale, value: Localized<T>): T {
 	return value[locale];
 }
 

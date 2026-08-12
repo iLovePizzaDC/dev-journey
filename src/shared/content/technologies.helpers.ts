@@ -1,11 +1,11 @@
 import type { Technology } from '@/shared/types';
 
 export function sortTechnologiesByAcquisition(items: Technology[]): Technology[] {
-	return [...items].sort((a, b) => {
-		const aKey = a.acquiredYear * 100 + (a.acquiredMonth ?? 1);
-		const bKey = b.acquiredYear * 100 + (b.acquiredMonth ?? 1);
-		if (aKey !== bKey) return aKey - bKey;
-		return a.name.localeCompare(b.name);
+	return [...items].sort((left, right) => {
+		const leftKey = left.acquiredYear * 100 + (left.acquiredMonth ?? 1);
+		const rightKey = right.acquiredYear * 100 + (right.acquiredMonth ?? 1);
+		if (leftKey !== rightKey) return leftKey - rightKey;
+		return left.name.localeCompare(right.name);
 	});
 }
 

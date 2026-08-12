@@ -1,7 +1,7 @@
 import { ArrowTopRightOnSquareIcon } from '@heroicons/react/24/outline';
 import { ProjectHighlights } from '@/features/projects/components/molecules/ProjectHighlights';
 import { Button, Icon, Text } from '@/shared/components/atoms';
-import { t, useLocale } from '@/shared/i18n';
+import { localize, useLocale } from '@/shared/i18n';
 import { githubRepoUrl } from '@/shared/api/github';
 import { CommitMeta, Reveal, StackList } from '@/shared/components/molecules';
 import type { GitHubRepoInfo, Project } from '@/shared/types';
@@ -14,9 +14,9 @@ interface IProjectCard {
 }
 
 export function ProjectCard({ project, github, loading, delay = 0 }: IProjectCard) {
-	const { locale, m } = useLocale();
+	const { locale, messages } = useLocale();
 	const repoUrl = project.githubRepo ? githubRepoUrl(project.githubRepo) : project.url;
-	const description = t(locale, project.description) || github?.description || '';
+	const description = localize(locale, project.description) || github?.description || '';
 
 	return (
 		<Reveal
@@ -33,7 +33,7 @@ export function ProjectCard({ project, github, loading, delay = 0 }: IProjectCar
 					<CommitMeta pushedAt={github?.pushedAt} loading={loading} error={!loading && !github} />
 				) : (
 					<Text as='span' variant='meta' className='opacity-80'>
-						{m.projects.noRepo}
+						{messages.projects.noRepo}
 					</Text>
 				)}
 			</div>
@@ -42,7 +42,9 @@ export function ProjectCard({ project, github, loading, delay = 0 }: IProjectCar
 				{description}
 			</Text>
 
-			{project.highlights ? <ProjectHighlights items={t(locale, project.highlights)} /> : null}
+			{project.highlights ? (
+				<ProjectHighlights items={localize(locale, project.highlights)} />
+			) : null}
 
 			<StackList items={project.stack} />
 
@@ -55,7 +57,7 @@ export function ProjectCard({ project, github, loading, delay = 0 }: IProjectCar
 						rel='noreferrer'
 						className='group/link inline-flex items-center gap-1.5'
 					>
-						{m.projects.openGithub}
+						{messages.projects.openGithub}
 						<Icon
 							icon={ArrowTopRightOnSquareIcon}
 							className='h-3.5 w-3.5 transition-transform duration-300 group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5'

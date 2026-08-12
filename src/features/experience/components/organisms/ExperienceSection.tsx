@@ -14,19 +14,19 @@ interface IExperienceSection {
 }
 
 export function ExperienceSection({ items = experiences }: IExperienceSection) {
-	const { m } = useLocale();
+	const { messages } = useLocale();
 	const jobs = sortByStartDesc(items);
 
 	return (
 		<Section
 			id={SECTION_IDS.experience}
-			eyebrow={m.experience.eyebrow}
-			title={m.experience.title}
-			description={m.experience.description}
+			eyebrow={messages.experience.eyebrow}
+			title={messages.experience.title}
+			description={messages.experience.description}
 		>
 			<div className='mb-4'>
 				<Text as='h3' variant='label' className='mb-6 block'>
-					{m.experience.work}
+					{messages.experience.work}
 				</Text>
 				<div className='grid'>
 					{jobs.map((job, index) => (
