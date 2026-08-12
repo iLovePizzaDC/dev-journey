@@ -24,7 +24,9 @@ export function buildAboutFacts(locale: Locale, messages: Messages, profile: Pro
 			icon: LanguageIcon,
 			label: messages.about.languages,
 			value: profile.languages
-				.map((language) => `${localize(locale, language.name)} (${localize(locale, language.level)})`)
+				.map(
+					(language) => `${localize(locale, language.name)} (${localize(locale, language.level)})`,
+				)
 				.join(' · '),
 		},
 	];
