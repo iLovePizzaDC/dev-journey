@@ -1,12 +1,18 @@
-import { createContext, useContext } from 'react';
-import type { ThemeContextValue } from '@/shared/theme/ThemeContext.types';
+import { createContext, useContext } from 'react'
+import type { Theme } from '@/shared/types'
 
-export const ThemeContext = createContext<ThemeContextValue | null>(null);
+export type ThemeContextValue = {
+  theme: Theme
+  setTheme: (theme: Theme) => void
+  toggleTheme: () => void
+}
+
+export const ThemeContext = createContext<ThemeContextValue | null>(null)
 
 export function useTheme(): ThemeContextValue {
-	const ctx = useContext(ThemeContext);
-	if (!ctx) {
-		throw new Error('useTheme must be used within ThemeProvider');
-	}
-	return ctx;
+  const ctx = useContext(ThemeContext)
+  if (!ctx) {
+    throw new Error('useTheme must be used within ThemeProvider')
+  }
+  return ctx
 }

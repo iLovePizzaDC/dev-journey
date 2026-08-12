@@ -1,12 +1,19 @@
 import { ArrowTopRightOnSquareIcon } from '@heroicons/react/24/outline';
 import { ProjectHighlights } from '@/features/projects/components/molecules/ProjectHighlights';
-import type { IProjectCardProps } from '@/features/projects/types';
 import { Button, Icon, Text } from '@/shared/components/atoms';
 import { t, useLocale } from '@/shared/i18n';
 import { githubRepoUrl } from '@/shared/api/github';
 import { CommitMeta, Reveal, StackList } from '@/shared/components/molecules';
+import type { GitHubRepoInfo, Project } from '@/shared/types';
 
-export function ProjectCard({ project, github, loading, delay = 0 }: IProjectCardProps) {
+interface IProjectCard {
+	project: Project;
+	github?: GitHubRepoInfo | null;
+	loading?: boolean;
+	delay?: number;
+}
+
+export function ProjectCard({ project, github, loading, delay = 0 }: IProjectCard) {
 	const { locale, m } = useLocale();
 	const repoUrl = project.githubRepo ? githubRepoUrl(project.githubRepo) : project.url;
 	const description = t(locale, project.description) || github?.description || '';

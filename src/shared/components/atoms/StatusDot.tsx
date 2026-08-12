@@ -1,12 +1,12 @@
 import type { StatusDotTone } from '@/shared/types';
 import { cn } from '@/shared/utils/cn';
 
-interface IStatusDotProps {
+interface IStatusDot {
 	className?: string;
 	tone?: StatusDotTone;
 }
 
-export function StatusDot({ className, tone = 'accent' }: IStatusDotProps) {
+export function StatusDot({ className, tone = 'accent' }: IStatusDot) {
 	return (
 		<span
 			aria-hidden='true'

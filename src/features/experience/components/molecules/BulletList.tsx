@@ -1,7 +1,10 @@
 import { StatusDot, Text } from '@/shared/components/atoms';
-import type { IBulletListProps } from '@/features/experience/types';
 
-export function BulletList({ items }: IBulletListProps) {
+interface IBulletList {
+	items: string[];
+}
+
+export function BulletList({ items }: IBulletList) {
 	return (
 		<ul className='mt-2 grid gap-2'>
 			{items.map((item) => (

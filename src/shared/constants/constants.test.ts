@@ -1,11 +1,15 @@
 import { describe, expect, it } from 'vitest';
 import {
+	BADGE_CATEGORY_BORDER,
+	BUTTON_VARIANT_CLASS,
 	GITHUB_API,
 	LOCALES,
 	NAV_LINKS,
 	NAV_SECTION_IDS,
+	SCROLL_SPY_THRESHOLDS,
 	STORAGE_KEYS,
 	TECH_CATEGORIES,
+	TEXT_VARIANT_CLASS,
 	THEMES,
 } from '@/shared/constants';
 
@@ -34,5 +38,17 @@ describe('shared constants', () => {
 
 	it('builds github repo urls', () => {
 		expect(GITHUB_API.repoUrl('owner/repo')).toBe('https://api.github.com/repos/owner/repo');
+	});
+
+	it('exposes scroll spy thresholds', () => {
+		expect(SCROLL_SPY_THRESHOLDS).toHaveLength(11);
+		expect(SCROLL_SPY_THRESHOLDS[0]).toBe(0);
+		expect(SCROLL_SPY_THRESHOLDS[10]).toBe(1);
+	});
+
+	it('exposes UI variant and category class maps', () => {
+		expect(BUTTON_VARIANT_CLASS.primary).toBeTruthy();
+		expect(TEXT_VARIANT_CLASS.body).toBeTruthy();
+		expect(BADGE_CATEGORY_BORDER.frontend).toBeTruthy();
 	});
 });

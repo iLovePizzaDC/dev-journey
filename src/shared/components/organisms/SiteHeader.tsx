@@ -7,11 +7,11 @@ import { useLocale } from '@/shared/i18n';
 import { cn } from '@/shared/utils/cn';
 import { scrollToSection } from '@/shared/utils/scroll';
 
-interface ISiteHeaderProps {
+interface ISiteHeader {
 	brand?: string;
 }
 
-export function SiteHeader({ brand = profile.name }: ISiteHeaderProps) {
+export function SiteHeader({ brand = profile.name }: ISiteHeader) {
 	const { m } = useLocale();
 	const activeSectionId = useScrollSpy(NAV_SECTION_IDS);
 

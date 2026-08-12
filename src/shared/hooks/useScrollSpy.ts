@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react';
-
-const SPY_THRESHOLDS = [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1] as const;
+import { SCROLL_SPY_THRESHOLDS } from '@/shared/constants';
 
 export function useScrollSpy(sectionIds: readonly string[], rootMargin = '-20% 0px -65% 0px') {
 	const [activeId, setActiveId] = useState<string | null>(null);
@@ -32,7 +31,7 @@ export function useScrollSpy(sectionIds: readonly string[], rootMargin = '-20% 0
 
 				setActiveId(bestRatio > 0 ? nextActiveId : null);
 			},
-			{ rootMargin, threshold: [...SPY_THRESHOLDS] },
+			{ rootMargin, threshold: [...SCROLL_SPY_THRESHOLDS] },
 		);
 
 		for (const element of elements) observer.observe(element);

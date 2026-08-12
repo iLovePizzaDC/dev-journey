@@ -1,9 +1,13 @@
-import type { ITechItemProps } from '@/features/tech-timeline/types';
+import type { Technology } from '@/shared/types';
 import { Text } from '@/shared/components/atoms';
 import { t, useLocale } from '@/shared/i18n';
 import { categoryLabel } from '@/shared/utils/labels';
 
-export function TechItem({ tech }: ITechItemProps) {
+interface ITechItem {
+	tech: Technology;
+}
+
+export function TechItem({ tech }: ITechItem) {
 	const { locale, m } = useLocale();
 
 	return (

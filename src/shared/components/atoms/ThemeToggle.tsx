@@ -4,11 +4,11 @@ import { useLocale } from '@/shared/i18n';
 import { cn } from '@/shared/utils/cn';
 import { useTheme } from '@/shared/theme';
 
-interface IThemeToggleProps {
+interface IThemeToggle {
 	className?: string;
 }
 
-export function ThemeToggle({ className }: IThemeToggleProps) {
+export function ThemeToggle({ className }: IThemeToggle) {
 	const { theme, toggleTheme } = useTheme();
 	const { m } = useLocale();
 	const isDark = theme === 'dark';

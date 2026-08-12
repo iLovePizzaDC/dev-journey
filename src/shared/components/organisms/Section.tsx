@@ -2,7 +2,7 @@ import type { ReactNode } from 'react';
 import { Reveal, SectionHeader } from '@/shared/components/molecules';
 import { cn } from '@/shared/utils/cn';
 
-interface ISectionProps {
+interface ISection {
 	id: string;
 	eyebrow?: string;
 	title: string;
@@ -11,7 +11,7 @@ interface ISectionProps {
 	className?: string;
 }
 
-export function Section({ id, eyebrow, title, description, children, className }: ISectionProps) {
+export function Section({ id, eyebrow, title, description, children, className }: ISection) {
 	return (
 		<section id={id} className={cn('scroll-mt-20 pt-16', className)}>
 			<Reveal>

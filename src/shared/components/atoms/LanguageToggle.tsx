@@ -1,11 +1,11 @@
 import { LOCALE_LABELS, LOCALES, useLocale } from '@/shared/i18n';
 import { cn } from '@/shared/utils/cn';
 
-interface ILanguageToggleProps {
+interface ILanguageToggle {
 	className?: string;
 }
 
-export function LanguageToggle({ className }: ILanguageToggleProps) {
+export function LanguageToggle({ className }: ILanguageToggle) {
 	const { locale, setLocale, m } = useLocale();
 
 	return (

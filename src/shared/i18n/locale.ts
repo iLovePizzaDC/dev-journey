@@ -1,5 +1,5 @@
 import type { Locale, Localized } from '@/shared/types';
-import { LOCALES } from '@/shared/constants';
+import { LOCALES, STORAGE_KEYS } from '@/shared/constants';
 
 export function t<T>(locale: Locale, value: Localized<T>): T {
 	return value[locale];
@@ -7,4 +7,11 @@ export function t<T>(locale: Locale, value: Localized<T>): T {
 
 export function isLocale(value: string): value is Locale {
 	return (LOCALES as readonly string[]).includes(value);
+}
+
+export function readInitialLocale(): Locale {
+	if (typeof window === 'undefined') return 'de';
+	const stored = window.localStorage.getItem(STORAGE_KEYS.locale);
+	if (stored && isLocale(stored)) return stored;
+	return navigator.language.toLowerCase().startsWith('de') ? 'de' : 'en';
 }

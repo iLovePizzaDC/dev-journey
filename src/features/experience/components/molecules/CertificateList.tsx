@@ -1,12 +1,13 @@
 import { CheckBadgeIcon } from '@heroicons/react/24/outline';
 import { certificates } from '@/shared/content';
+import { sortCertificatesByDateDesc } from '@/features/experience/utils/sortCertificates';
 import { Icon, Text } from '@/shared/components/atoms';
 import { t, useLocale } from '@/shared/i18n';
 import { formatMonthYear } from '@/shared/utils/date';
 
 export function CertificateList() {
 	const { locale, m } = useLocale();
-	const items = [...certificates].sort((a, b) => b.date.localeCompare(a.date));
+	const items = sortCertificatesByDateDesc(certificates);
 
 	return (
 		<div>

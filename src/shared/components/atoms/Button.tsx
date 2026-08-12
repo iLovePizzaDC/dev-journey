@@ -1,6 +1,7 @@
-import type { AnchorHTMLAttributes, ButtonHTMLAttributes, ReactNode } from 'react';
+import { BUTTON_VARIANT_CLASS } from '@/shared/constants';
 import type { ButtonVariant } from '@/shared/types';
 import { cn } from '@/shared/utils/cn';
+import type { AnchorHTMLAttributes, ButtonHTMLAttributes, ReactNode } from 'react';
 
 type ButtonCommon = {
 	children: ReactNode;
@@ -12,17 +13,9 @@ type ButtonAsButton = ButtonCommon & ButtonHTMLAttributes<HTMLButtonElement> & {
 
 type ButtonAsLink = ButtonCommon & AnchorHTMLAttributes<HTMLAnchorElement> & { href: string };
 
-/** Discriminated union — `type` required (cannot express as interface). */
-type IButtonProps = ButtonAsButton | ButtonAsLink;
+type IButton = ButtonAsButton | ButtonAsLink;
 
-const BUTTON_VARIANT_CLASS: Record<ButtonVariant, string> = {
-	primary:
-		'border-transparent bg-ink text-paper hover:-translate-y-px hover:bg-accent-strong hover:text-white dark:hover:text-ink',
-	ghost: 'border-line bg-transparent text-ink hover:border-ink hover:bg-surface',
-	link: 'border-none bg-transparent p-0 font-semibold text-accent-strong hover:text-ink',
-};
-
-export function Button(props: IButtonProps) {
+export function Button(props: IButton) {
 	const { children, variant = 'primary', className, ...rest } = props;
 	const classes = cn(
 		'inline-flex cursor-pointer items-center justify-center gap-2 rounded-sm border px-[1.15rem] py-[0.7rem] font-body text-[0.95rem] font-medium no-underline transition duration-200',

@@ -1,7 +1,10 @@
 import { Text } from '@/shared/components/atoms';
-import type { IHeroKickerProps } from '@/features/hero/types';
 
-export function HeroKicker({ children }: IHeroKickerProps) {
+interface IHeroKicker {
+	children: string;
+}
+
+export function HeroKicker({ children }: IHeroKicker) {
 	return (
 		<Text as='p' variant='label' className='mb-4'>
 			{children}

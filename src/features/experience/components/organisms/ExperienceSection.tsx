@@ -2,14 +2,18 @@ import { experiences } from '@/shared/content';
 import { CertificateList } from '@/features/experience/components/molecules/CertificateList';
 import { EducationList } from '@/features/experience/components/molecules/EducationList';
 import { WorkRoleCard } from '@/features/experience/components/molecules/WorkRoleCard';
-import type { IExperienceSectionProps } from '@/features/experience/types';
+import type { Experience } from '@/shared/types';
 import { Text } from '@/shared/components/atoms';
 import { SECTION_IDS } from '@/shared/constants';
 import { useLocale } from '@/shared/i18n';
 import { sortByStartDesc } from '@/shared/utils/date';
 import { Section } from '@/shared/components/organisms';
 
-export function ExperienceSection({ items = experiences }: IExperienceSectionProps) {
+interface IExperienceSection {
+	items?: Experience[];
+}
+
+export function ExperienceSection({ items = experiences }: IExperienceSection) {
 	const { m } = useLocale();
 	const jobs = sortByStartDesc(items);
 

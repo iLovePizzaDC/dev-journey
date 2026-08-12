@@ -2,12 +2,12 @@ import { TechBadge } from '@/shared/components/atoms';
 import { useLocale } from '@/shared/i18n';
 import type { TechCategory } from '@/shared/types';
 
-interface IStackListProps {
+interface IStackList {
 	items: string[];
 	categories?: Record<string, TechCategory>;
 }
 
-export function StackList({ items, categories }: IStackListProps) {
+export function StackList({ items, categories }: IStackList) {
 	const { m } = useLocale();
 
 	return (

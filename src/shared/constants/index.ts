@@ -50,3 +50,11 @@ export const GITHUB_API = {
 } as const;
 
 export const THEMES = ['light', 'dark'] as const satisfies readonly Theme[];
+
+export const SCROLL_SPY_THRESHOLDS = [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1] as const;
+
+export {
+	BADGE_CATEGORY_BORDER,
+	BUTTON_VARIANT_CLASS,
+	TEXT_VARIANT_CLASS,
+} from '@/shared/constants/ui';

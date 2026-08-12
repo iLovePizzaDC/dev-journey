@@ -8,18 +8,15 @@ import {
 	type ReactNode,
 } from 'react';
 import { cn } from '@/shared/utils/cn';
+import { prefersReducedMotion } from '@/shared/utils/motion';
 import type { RevealTag } from '@/shared/types';
 
-type IRevealProps<T extends RevealTag = 'div'> = {
+type IReveal<T extends RevealTag = 'div'> = {
 	children: ReactNode;
 	className?: string;
 	delay?: number;
 	as?: T;
 } & Omit<ComponentPropsWithoutRef<T>, 'children' | 'className'>;
-
-function prefersReducedMotion(): boolean {
-	return window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-}
 
 export function Reveal<T extends RevealTag = 'div'>({
 	children,
@@ -28,7 +25,7 @@ export function Reveal<T extends RevealTag = 'div'>({
 	as,
 	style,
 	...rest
-}: IRevealProps<T>) {
+}: IReveal<T>) {
 	const Tag = (as ?? 'div') as ElementType;
 	const ref = useRef<HTMLElement | null>(null);
 	const [visible, setVisible] = useState(prefersReducedMotion);

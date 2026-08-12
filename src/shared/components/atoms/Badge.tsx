@@ -1,31 +1,23 @@
 import type { BadgeTone, TechCategory } from '@/shared/types';
+import { BADGE_CATEGORY_BORDER } from '@/shared/constants';
 import { useLocale } from '@/shared/i18n';
 import { categoryLabel } from '@/shared/utils/labels';
 import { cn } from '@/shared/utils/cn';
 
-interface IBadgeProps {
+interface IBadge {
 	children?: string;
 	category?: TechCategory;
 	tone?: BadgeTone;
 	className?: string;
 }
 
-interface ITechBadgeProps {
+interface ITechBadge {
 	name: string;
 	category?: TechCategory;
 	className?: string;
 }
 
-const BADGE_CATEGORY_BORDER: Record<TechCategory, string> = {
-	frontend: 'border-cat-frontend/35',
-	backend: 'border-cat-backend/35',
-	testing: 'border-cat-testing/35',
-	devops: 'border-cat-devops/35',
-	tools: 'border-cat-tools/35',
-	process: 'border-cat-process/35',
-};
-
-export function Badge({ children, category, tone = 'neutral', className }: IBadgeProps) {
+export function Badge({ children, category, tone = 'neutral', className }: IBadge) {
 	const { m } = useLocale();
 	const label = category ? categoryLabel(category, m.categories) : (children ?? '');
 
@@ -44,7 +36,7 @@ export function Badge({ children, category, tone = 'neutral', className }: IBadg
 	);
 }
 
-export function TechBadge({ name, category, className }: ITechBadgeProps) {
+export function TechBadge({ name, category, className }: ITechBadge) {
 	return (
 		<span
 			className={cn(

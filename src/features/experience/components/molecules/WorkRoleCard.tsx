@@ -1,11 +1,17 @@
 import { BulletList } from '@/features/experience/components/molecules/BulletList';
-import type { IWorkRoleCardProps } from '@/features/experience/types';
+import type { Experience } from '@/shared/types';
 import { Text } from '@/shared/components/atoms';
 import { t, useLocale } from '@/shared/i18n';
 import { formatCareerRange } from '@/shared/utils/date';
 import { Reveal, StackList } from '@/shared/components/molecules';
 
-export function WorkRoleCard({ job, delay = 0, isLast = false }: IWorkRoleCardProps) {
+interface IWorkRoleCard {
+	job: Experience;
+	delay?: number;
+	isLast?: boolean;
+}
+
+export function WorkRoleCard({ job, delay = 0, isLast = false }: IWorkRoleCard) {
 	const { locale, m } = useLocale();
 	const { startLabel, endLabel, rangeLabel } = formatCareerRange(
 		job.start,

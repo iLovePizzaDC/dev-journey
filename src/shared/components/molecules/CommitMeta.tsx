@@ -2,13 +2,13 @@ import { Text } from '@/shared/components/atoms';
 import { useLocale } from '@/shared/i18n';
 import { formatRelativeTime } from '@/shared/utils/date';
 
-interface ICommitMetaProps {
+interface ICommitMeta {
 	pushedAt?: string | null;
 	loading?: boolean;
 	error?: boolean;
 }
 
-export function CommitMeta({ pushedAt, loading, error }: ICommitMetaProps) {
+export function CommitMeta({ pushedAt, loading, error }: ICommitMeta) {
 	const { m } = useLocale();
 
 	if (loading) {

@@ -1,10 +1,16 @@
 import { YearMarker } from '@/features/tech-timeline/components/atoms/YearMarker';
 import { TechItem } from '@/features/tech-timeline/components/molecules/TechItem';
-import type { ITechYearGroupProps } from '@/features/tech-timeline/types';
+import type { Technology } from '@/shared/types';
 import { Text } from '@/shared/components/atoms';
 import { Reveal } from '@/shared/components/molecules';
 
-export function TechYearGroup({ year, techs, delay = 0 }: ITechYearGroupProps) {
+interface ITechYearGroup {
+	year: number;
+	techs: Technology[];
+	delay?: number;
+}
+
+export function TechYearGroup({ year, techs, delay = 0 }: ITechYearGroup) {
 	return (
 		<Reveal as='li' delay={delay} className='relative'>
 			<YearMarker />

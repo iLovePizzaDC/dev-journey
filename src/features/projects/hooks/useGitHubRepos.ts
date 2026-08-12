@@ -1,8 +1,7 @@
 import { fetchGitHubRepos } from '@/shared/api/github';
+import { EMPTY_GITHUB_REPOS } from '@/features/projects/constants';
 import type { GitHubRepoStatusMap, UseGitHubReposResult } from '@/features/projects/types';
 import { useEffect, useState } from 'react';
-
-const EMPTY_REPOS: GitHubRepoStatusMap = new Map();
 
 export function useGitHubRepos(repoIds: string[]): UseGitHubReposResult {
 	const key = repoIds.join(',');
@@ -25,12 +24,12 @@ export function useGitHubRepos(repoIds: string[]): UseGitHubReposResult {
 	}, [key]);
 
 	if (!key) {
-		return { repos: EMPTY_REPOS, loading: false };
+		return { repos: EMPTY_GITHUB_REPOS, loading: false };
 	}
 
 	const ready = data?.key === key;
 	return {
-		repos: ready ? data.repos : EMPTY_REPOS,
+		repos: ready ? data.repos : EMPTY_GITHUB_REPOS,
 		loading: !ready,
 	};
 }
