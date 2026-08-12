@@ -1,0 +1,183 @@
+@import url('https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600&family=Syne:wght@500;600;700&display=swap');
+@import 'tailwindcss';
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+	--ink: #1a1f1c;
+	--ink-soft: #3d4741;
+	--muted: #6b756f;
+	--paper: #f3f6f4;
+	--paper-elevated: #fafcfb;
+	--line: #d5ddd8;
+	--accent: #0f766e;
+	--accent-soft: rgba(15, 118, 110, 0.12);
+	--accent-strong: #0b5c56;
+	--glow-a: #c8e6df;
+	--glow-b: #e8efe6;
+	--surface: rgba(255, 255, 255, 0.55);
+	--grain-opacity: 0.35;
+	--grain-blend: multiply;
+}
+
+.dark {
+	--ink: #e8eeea;
+	--ink-soft: #c2cdc6;
+	--muted: #8a968f;
+	--paper: #121614;
+	--paper-elevated: #1a1f1c;
+	--line: #2c3430;
+	--accent: #2dd4bf;
+	--accent-soft: rgba(45, 212, 191, 0.12);
+	--accent-strong: #5eead4;
+	--glow-a: #16352f;
+	--glow-b: #1c2822;
+	--surface: rgba(26, 31, 28, 0.65);
+	--grain-opacity: 0.18;
+	--grain-blend: soft-light;
+}
+
+@theme {
+	--color-ink: var(--ink);
+	--color-ink-soft: var(--ink-soft);
+	--color-muted: var(--muted);
+	--color-paper: var(--paper);
+	--color-paper-elevated: var(--paper-elevated);
+	--color-line: var(--line);
+	--color-accent: var(--accent);
+	--color-accent-soft: var(--accent-soft);
+	--color-accent-strong: var(--accent-strong);
+	--color-glow-a: var(--glow-a);
+	--color-glow-b: var(--glow-b);
+	--color-surface: var(--surface);
+	--color-cat-frontend: #0f766e;
+	--color-cat-backend: #1d4f7a;
+	--color-cat-testing: #8a5a00;
+	--color-cat-devops: #5b4b8a;
+	--color-cat-tools: #5c6b63;
+	--color-cat-process: #7a4e3a;
+
+	--font-display: 'Syne', sans-serif;
+	--font-body: 'Figtree', sans-serif;
+
+	--animate-rise: rise 700ms ease both;
+	--animate-drift: drift 12s ease-in-out infinite alternate;
+	--animate-fade-up: fade-up 600ms cubic-bezier(0.22, 1, 0.36, 1) both;
+	--animate-soft-pulse: soft-pulse 2.8s ease-in-out infinite;
+
+	@keyframes rise {
+		from {
+			opacity: 0;
+			transform: translateY(14px);
+		}
+		to {
+			opacity: 1;
+			transform: translateY(0);
+		}
+	}
+
+	@keyframes fade-up {
+		from {
+			opacity: 0;
+			transform: translateY(18px);
+		}
+		to {
+			opacity: 1;
+			transform: translateY(0);
+		}
+	}
+
+	@keyframes drift {
+		from {
+			transform: translate(0, 0) scale(1);
+		}
+		to {
+			transform: translate(-8%, 6%) scale(1.08);
+		}
+	}
+
+	@keyframes soft-pulse {
+		0%,
+		100% {
+			opacity: 0.55;
+			transform: scale(1);
+		}
+		50% {
+			opacity: 0.85;
+			transform: scale(1.04);
+		}
+	}
+}
+
+@layer base {
+	html {
+		scroll-behavior: smooth;
+		color-scheme: light;
+	}
+
+	html.dark {
+		color-scheme: dark;
+	}
+
+	body {
+		margin: 0;
+		min-height: 100svh;
+		font-family: var(--font-body);
+		font-size: 17px;
+		line-height: 1.55;
+		color: var(--ink-soft);
+		background:
+			radial-gradient(ellipse 80% 50% at 10% -10%, var(--glow-a), transparent 55%),
+			radial-gradient(ellipse 60% 40% at 90% 0%, var(--glow-b), transparent 50%),
+			linear-gradient(
+				180deg,
+				color-mix(in srgb, var(--paper) 88%, var(--glow-a)) 0%,
+				var(--paper) 28%,
+				var(--paper) 100%
+			);
+		background-attachment: fixed;
+		font-synthesis: none;
+		text-rendering: optimizeLegibility;
+		-webkit-font-smoothing: antialiased;
+		transition:
+			background-color 280ms ease,
+			color 280ms ease;
+	}
+
+	body::before {
+		content: '';
+		position: fixed;
+		inset: 0;
+		pointer-events: none;
+		opacity: var(--grain-opacity);
+		background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.45'/%3E%3C/svg%3E");
+		mix-blend-mode: var(--grain-blend);
+		z-index: 0;
+	}
+
+	#root {
+		position: relative;
+		z-index: 1;
+		min-height: 100svh;
+	}
+
+	a {
+		color: var(--accent-strong);
+		text-decoration-thickness: 1px;
+		text-underline-offset: 0.18em;
+	}
+
+	a:hover {
+		color: var(--ink);
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		*,
+		*::before,
+		*::after {
+			animation: none !important;
+			transition: none !important;
+			scroll-behavior: auto !important;
+		}
+	}
+}
