@@ -37,6 +37,7 @@ export type Messages = {
 		commitLoading: string;
 		commitUnavailable: string;
 		lastPush: string;
+		stars: string;
 	};
 	about: {
 		eyebrow: string;

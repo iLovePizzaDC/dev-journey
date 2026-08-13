@@ -30,7 +30,13 @@ export function ProjectCard({ project, github, loading, delay = 0 }: IProjectCar
 					{project.name}
 				</Text>
 				{project.githubRepo ? (
-					<CommitMeta pushedAt={github?.pushedAt} loading={loading} error={!loading && !github} />
+					<CommitMeta
+						pushedAt={github?.pushedAt}
+						language={github?.language}
+						stars={github?.stars}
+						loading={loading}
+						error={!loading && !github}
+					/>
 				) : (
 					<Text as='span' variant='meta' className='opacity-80'>
 						{messages.projects.noRepo}
