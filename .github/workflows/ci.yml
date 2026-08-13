@@ -129,7 +129,7 @@ jobs:
 
       - name: Health check
         run: |
-          curl --fail --retry 20 --retry-delay 2 https://migrainetracker.de
+          curl --fail --retry 20 --retry-delay 2 https://nicobetz.de
 
       - name: Rollback on failure
         if: failure()
