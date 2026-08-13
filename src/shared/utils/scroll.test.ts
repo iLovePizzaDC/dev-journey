@@ -56,9 +56,7 @@ describe('pickActiveSectionId', () => {
 	});
 
 	it('does not force last section when it was never observed', () => {
-		const visibility = new Map([
-			['experience', 0.5],
-		]);
+		const visibility = new Map([['experience', 0.5]]);
 
 		expect(pickActiveSectionId(visibility, ['experience', 'about'], true)).toBe('experience');
 	});

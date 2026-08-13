@@ -92,3 +92,12 @@ export type BadgeTone = 'neutral' | 'accent';
 export type RevealTag = 'div' | 'li' | 'article' | 'section';
 
 export type IconComponent = ComponentType<SVGProps<SVGSVGElement>>;
+
+export type RelativeTimeMessages = {
+	today: string;
+	yesterday: string;
+	daysAgo: (count: number) => string;
+	weeksAgo: (count: number) => string;
+	monthsAgo: (count: number) => string;
+	yearsAgo: (count: number) => string;
+};

@@ -1,6 +1,6 @@
 import { afterEach, describe, expect, it } from 'vitest';
 import { STORAGE_KEYS } from '@/shared/constants';
-import { applyTheme, getPreferredTheme } from '@/shared/theme/theme.utils';
+import { applyTheme, getPreferredTheme } from '@/shared/utils/theme';
 
 describe('getPreferredTheme', () => {
 	afterEach(() => {

@@ -1,4 +1,5 @@
 import { ArrowTopRightOnSquareIcon, CodeBracketIcon } from '@heroicons/react/24/outline';
+import { githubProfileUrl } from '@/shared/api/github';
 import { Button, Icon, LanguageToggle, ThemeToggle } from '@/shared/components/atoms';
 import { NAV_LINKS, NAV_SECTION_IDS, SECTION_IDS } from '@/shared/constants';
 import { profile } from '@/shared/content';
@@ -54,7 +55,7 @@ export function SiteHeader({ brand = profile.name }: ISiteHeader) {
 				<LanguageToggle />
 				<ThemeToggle />
 				<Button
-					href={`https://github.com/${profile.githubUsername}`}
+					href={githubProfileUrl(profile.githubUsername)}
 					variant='ghost'
 					target='_blank'
 					rel='noreferrer'

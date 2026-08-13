@@ -1,6 +1,5 @@
-import { MONTH_LABELS } from '@/shared/utils/date.constants';
-import type { RelativeTimeMessages } from '@/shared/utils/date.types';
-import type { Locale } from '@/shared/types';
+import { MONTH_LABELS } from '@/shared/constants';
+import type { Locale, RelativeTimeMessages } from '@/shared/types';
 
 export function formatMonthYear(value: string, locale: Locale = 'de'): string {
 	const [year, month] = value.split('-').map(Number);

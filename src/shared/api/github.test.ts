@@ -2,6 +2,7 @@ import { describe, expect, it, vi } from 'vitest';
 import {
 	fetchGitHubRepo,
 	fetchGitHubRepos,
+	githubProfileUrl,
 	githubRepoUrl,
 	GitHubApiError,
 } from '@/shared/api/github';
@@ -19,6 +20,12 @@ describe('githubRepoUrl', () => {
 		expect(githubRepoUrl('iLovePizzaDC/trading-dashboard')).toBe(
 			'https://github.com/iLovePizzaDC/trading-dashboard',
 		);
+	});
+});
+
+describe('githubProfileUrl', () => {
+	it('builds a github profile url', () => {
+		expect(githubProfileUrl('iLovePizzaDC')).toBe('https://github.com/iLovePizzaDC');
 	});
 });
 

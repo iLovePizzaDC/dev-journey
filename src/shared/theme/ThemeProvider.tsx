@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useMemo, useState, type ReactNode } from 'react';
 import { STORAGE_KEYS } from '@/shared/constants';
 import { ThemeContext } from '@/shared/theme/ThemeContext';
-import { applyTheme, getPreferredTheme } from '@/shared/theme/theme.utils';
+import { applyTheme, getPreferredTheme } from '@/shared/utils/theme';
 import type { Theme } from '@/shared/types';
 
 interface IThemeProvider {

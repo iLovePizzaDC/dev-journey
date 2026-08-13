@@ -1,5 +1,5 @@
-import { GITHUB_API } from '@/shared/constants';
 import type { GitHubApiRepo } from '@/shared/api/github.types';
+import { GITHUB_API } from '@/shared/constants';
 import type { GitHubRepoInfo } from '@/shared/types';
 
 export class GitHubApiError extends Error {
@@ -12,10 +12,12 @@ export class GitHubApiError extends Error {
 	}
 }
 
-export type { GitHubRepoInfo };
-
 export function githubRepoUrl(repo: string): string {
 	return `https://github.com/${repo}`;
+}
+
+export function githubProfileUrl(username: string): string {
+	return `https://github.com/${username}`;
 }
 
 export async function fetchGitHubRepo(

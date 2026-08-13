@@ -57,6 +57,8 @@ export const SCROLL_SPY_ROOT_MARGIN = '-18% 0px -50% 0px';
 
 export const SCROLL_SPY_BOTTOM_OFFSET_PX = 80;
 
+export { MONTH_LABELS } from '@/shared/constants/date';
+
 export {
 	BADGE_CATEGORY_BORDER,
 	BUTTON_VARIANT_CLASS,
