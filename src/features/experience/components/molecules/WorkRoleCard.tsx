@@ -1,17 +1,23 @@
-import { BulletList } from '@/features/experience/molecules/BulletList';
-import type { IWorkRoleCardProps } from '@/features/experience/experience.types';
-import { Text } from '@/shared/atoms';
-import { t, useLocale } from '@/shared/i18n';
-import { formatCareerRange } from '@/shared/lib/date';
-import { Reveal, StackList } from '@/shared/molecules';
+import { BulletList } from '@/features/experience/components/molecules/BulletList';
+import type { Experience } from '@/shared/types';
+import { Text } from '@/shared/components/atoms';
+import { localize, useLocale } from '@/shared/i18n';
+import { formatCareerRange } from '@/shared/utils/date';
+import { Reveal, StackList } from '@/shared/components/molecules';
 
-export function WorkRoleCard({ job, delay = 0, isLast = false }: IWorkRoleCardProps) {
-	const { locale, m } = useLocale();
+interface IWorkRoleCard {
+	job: Experience;
+	delay?: number;
+	isLast?: boolean;
+}
+
+export function WorkRoleCard({ job, delay = 0, isLast = false }: IWorkRoleCard) {
+	const { locale, messages } = useLocale();
 	const { startLabel, endLabel, rangeLabel } = formatCareerRange(
 		job.start,
 		job.end,
 		locale,
-		m.experience.present,
+		messages.experience.present,
 	);
 
 	return (
@@ -39,14 +45,14 @@ export function WorkRoleCard({ job, delay = 0, isLast = false }: IWorkRoleCardPr
 					aria-hidden='true'
 				/>
 				<Text as='h3' variant='subtitle' className='text-[1.25rem]'>
-					{t(locale, job.role)}
+					{localize(locale, job.role)}
 				</Text>
 				<Text variant='body' className='mt-1 font-medium text-ink'>
 					{job.company}
 					<span className='font-normal text-muted'> · {job.location}</span>
 				</Text>
 				<div className='mt-4'>
-					<BulletList items={t(locale, job.bullets)} />
+					<BulletList items={localize(locale, job.bullets)} />
 				</div>
 				{job.stack ? <StackList items={job.stack} /> : null}
 			</div>

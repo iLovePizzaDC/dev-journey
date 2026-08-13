@@ -1,9 +1,21 @@
-import type { AnchorHTMLAttributes, ButtonHTMLAttributes } from 'react';
-import { BUTTON_VARIANT_CLASS } from '@/shared/atoms/Button.constants';
-import type { IButtonProps } from '@/shared/atoms/Button.types';
-import { cn } from '@/shared/lib/cn';
+import { BUTTON_VARIANT_CLASS } from '@/shared/constants';
+import type { ButtonVariant } from '@/shared/types';
+import { cn } from '@/shared/utils/cn';
+import type { AnchorHTMLAttributes, ButtonHTMLAttributes, ReactNode } from 'react';
 
-export function Button(props: IButtonProps) {
+type ButtonCommon = {
+	children: ReactNode;
+	variant?: ButtonVariant;
+	className?: string;
+};
+
+type ButtonAsButton = ButtonCommon & ButtonHTMLAttributes<HTMLButtonElement> & { href?: undefined };
+
+type ButtonAsLink = ButtonCommon & AnchorHTMLAttributes<HTMLAnchorElement> & { href: string };
+
+type IButton = ButtonAsButton | ButtonAsLink;
+
+export function Button(props: IButton) {
 	const { children, variant = 'primary', className, ...rest } = props;
 	const classes = cn(
 		'inline-flex cursor-pointer items-center justify-center gap-2 rounded-sm border px-[1.15rem] py-[0.7rem] font-body text-[0.95rem] font-medium no-underline transition duration-200',

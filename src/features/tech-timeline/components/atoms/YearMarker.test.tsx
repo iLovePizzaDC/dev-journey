@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { YearMarker } from '@/features/tech-timeline/atoms/YearMarker';
+import { YearMarker } from '@/features/tech-timeline/components/atoms/YearMarker';
 import { renderWithProviders } from '@/test/render';
 
 describe('YearMarker', () => {

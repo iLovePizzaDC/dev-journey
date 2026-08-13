@@ -1,9 +1,12 @@
 import { LOCALE_LABELS, LOCALES, useLocale } from '@/shared/i18n';
-import type { ILanguageToggleProps } from '@/shared/atoms/Toggle.types';
-import { cn } from '@/shared/lib/cn';
+import { cn } from '@/shared/utils/cn';
 
-export function LanguageToggle({ className }: ILanguageToggleProps) {
-	const { locale, setLocale, m } = useLocale();
+interface ILanguageToggle {
+	className?: string;
+}
+
+export function LanguageToggle({ className }: ILanguageToggle) {
+	const { locale, setLocale, messages } = useLocale();
 
 	return (
 		<div
@@ -12,7 +15,7 @@ export function LanguageToggle({ className }: ILanguageToggleProps) {
 				className,
 			)}
 			role='group'
-			aria-label={m.common.languageSwitch}
+			aria-label={messages.common.languageSwitch}
 		>
 			{LOCALES.map((code) => (
 				<button

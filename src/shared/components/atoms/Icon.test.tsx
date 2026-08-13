@@ -1,6 +1,6 @@
 import { CodeBracketIcon } from '@heroicons/react/24/outline';
 import { describe, expect, it } from 'vitest';
-import { Icon } from '@/shared/atoms';
+import { Icon } from '@/shared/components/atoms';
 import { renderWithProviders } from '@/test/render';
 
 describe('Icon', () => {

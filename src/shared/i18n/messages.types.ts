@@ -51,10 +51,10 @@ export type Messages = {
 		stackAria: string;
 		today: string;
 		yesterday: string;
-		daysAgo: (n: number) => string;
-		weeksAgo: (n: number) => string;
-		monthsAgo: (n: number) => string;
-		yearsAgo: (n: number) => string;
+		daysAgo: (count: number) => string;
+		weeksAgo: (count: number) => string;
+		monthsAgo: (count: number) => string;
+		yearsAgo: (count: number) => string;
 		languageSwitch: string;
 		themeToLight: string;
 		themeToDark: string;

@@ -1,7 +1,10 @@
-import { StatusDot, Text } from '@/shared/atoms';
-import type { IProjectHighlightsProps } from '@/features/projects/projects.types';
+import { StatusDot, Text } from '@/shared/components/atoms';
 
-export function ProjectHighlights({ items }: IProjectHighlightsProps) {
+interface IProjectHighlights {
+	items: string[];
+}
+
+export function ProjectHighlights({ items }: IProjectHighlights) {
 	return (
 		<ul className='mb-3 grid gap-2'>
 			{items.map((item) => (

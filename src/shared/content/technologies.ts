@@ -20,7 +20,7 @@ export const technologies: Technology[] = [
 		name: 'JavaScript (ES6+)',
 		category: 'frontend',
 		acquiredYear: 2021,
-		acquiredMonth: 10,
+		acquiredMonth: 9,
 	},
 	{
 		id: 'git',
@@ -42,10 +42,6 @@ export const technologies: Technology[] = [
 		category: 'backend',
 		acquiredYear: 2022,
 		acquiredMonth: 1,
-		note: {
-			de: 'Ausbildung Fachinformatiker',
-			en: 'Software development apprenticeship',
-		},
 	},
 	{
 		id: 'spring-boot',
@@ -60,6 +56,13 @@ export const technologies: Technology[] = [
 		category: 'backend',
 		acquiredYear: 2022,
 		acquiredMonth: 6,
+	},
+	{
+		id: 'python',
+		name: 'Python',
+		category: 'backend',
+		acquiredYear: 2022,
+		acquiredMonth: 8,
 	},
 	{
 		id: 'sass',
@@ -91,8 +94,8 @@ export const technologies: Technology[] = [
 	},
 	{
 		id: 'gitlab',
-		name: 'GitLab / CI/CD',
-		category: 'devops',
+		name: 'GitLab',
+		category: 'tools',
 		acquiredYear: 2023,
 		acquiredMonth: 9,
 	},
@@ -116,10 +119,13 @@ export const technologies: Technology[] = [
 		category: 'backend',
 		acquiredYear: 2024,
 		acquiredMonth: 7,
-		note: {
-			de: 'Würth IT – B2B-Marktplatz',
-			en: 'Würth IT – B2B marketplace',
-		},
+	},
+	{
+		id: 'sonarqube',
+		name: 'SonarQube',
+		category: 'tools',
+		acquiredYear: 2024,
+		acquiredMonth: 7,
 	},
 	{
 		id: 'bff',
@@ -132,13 +138,6 @@ export const technologies: Technology[] = [
 		id: 'cypress',
 		name: 'Cypress',
 		category: 'testing',
-		acquiredYear: 2024,
-		acquiredMonth: 8,
-	},
-	{
-		id: 'sonarqube',
-		name: 'SonarQube',
-		category: 'tools',
 		acquiredYear: 2024,
 		acquiredMonth: 8,
 	},
@@ -164,14 +163,10 @@ export const technologies: Technology[] = [
 		acquiredMonth: 3,
 	},
 	{
-		id: 'python',
-		name: 'Python',
-		category: 'backend',
-		acquiredYear: 2025,
+		id: 'sentry',
+		name: 'Sentry',
+		category: 'tools',
+		acquiredYear: 2026,
 		acquiredMonth: 6,
-		note: {
-			de: 'Market Data Dashboard',
-			en: 'Market Data Dashboard',
-		},
 	},
 ];

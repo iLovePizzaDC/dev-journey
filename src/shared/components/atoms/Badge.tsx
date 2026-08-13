@@ -1,12 +1,25 @@
-import { BADGE_CATEGORY_BORDER } from '@/shared/atoms/Badge.constants';
-import type { IBadgeProps, ITechBadgeProps } from '@/shared/atoms/Badge.types';
+import type { BadgeTone, TechCategory } from '@/shared/types';
+import { BADGE_CATEGORY_BORDER } from '@/shared/constants';
 import { useLocale } from '@/shared/i18n';
-import { categoryLabel } from '@/shared/lib/labels';
-import { cn } from '@/shared/lib/cn';
+import { categoryLabel } from '@/shared/utils/labels';
+import { cn } from '@/shared/utils/cn';
 
-export function Badge({ children, category, tone = 'neutral', className }: IBadgeProps) {
-	const { m } = useLocale();
-	const label = category ? categoryLabel(category, m.categories) : (children ?? '');
+interface IBadge {
+	children?: string;
+	category?: TechCategory;
+	tone?: BadgeTone;
+	className?: string;
+}
+
+interface ITechBadge {
+	name: string;
+	category?: TechCategory;
+	className?: string;
+}
+
+export function Badge({ children, category, tone = 'neutral', className }: IBadge) {
+	const { messages } = useLocale();
+	const label = category ? categoryLabel(category, messages.categories) : (children ?? '');
 
 	return (
 		<span
@@ -23,7 +36,7 @@ export function Badge({ children, category, tone = 'neutral', className }: IBadg
 	);
 }
 
-export function TechBadge({ name, category, className }: ITechBadgeProps) {
+export function TechBadge({ name, category, className }: ITechBadge) {
 	return (
 		<span
 			className={cn(

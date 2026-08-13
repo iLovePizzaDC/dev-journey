@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
-import { profile } from '@/content/profile';
-import { projects } from '@/content/projects';
+import { profile } from '@/shared/content/profile';
+import { projects } from '@/shared/content/projects';
 import { messages } from '@/shared/i18n/messages';
 
 describe('content profile', () => {
@@ -14,7 +14,7 @@ describe('content profile', () => {
 
 describe('content projects', () => {
 	it('includes github repos where linked', () => {
-		const withRepo = projects.filter((p) => p.githubRepo);
+		const withRepo = projects.filter((project) => project.githubRepo);
 		expect(withRepo.length).toBeGreaterThan(0);
 	});
 });

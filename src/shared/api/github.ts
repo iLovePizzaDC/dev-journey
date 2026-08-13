@@ -1,5 +1,5 @@
 import { GITHUB_API } from '@/shared/constants';
-import type { GitHubApiRepo } from '@/shared/lib/github.types';
+import type { GitHubApiRepo } from '@/shared/api/github.types';
 import type { GitHubRepoInfo } from '@/shared/types';
 
 export class GitHubApiError extends Error {

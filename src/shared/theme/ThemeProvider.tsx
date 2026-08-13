@@ -1,21 +1,15 @@
-import { useCallback, useEffect, useMemo, useState } from 'react';
+import { useCallback, useEffect, useMemo, useState, type ReactNode } from 'react';
 import { STORAGE_KEYS } from '@/shared/constants';
 import { ThemeContext } from '@/shared/theme/ThemeContext';
-import type { IThemeProviderProps } from '@/shared/theme/ThemeProvider.types';
+import { applyTheme, getPreferredTheme } from '@/shared/theme/theme.utils';
 import type { Theme } from '@/shared/types';
 
-function getPreferredTheme(): Theme {
-	if (typeof window === 'undefined') return 'light';
-	const stored = window.localStorage.getItem(STORAGE_KEYS.theme);
-	if (stored === 'light' || stored === 'dark') return stored;
-	return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+interface IThemeProvider {
+	children: ReactNode;
+	initialTheme?: Theme;
 }
 
-function applyTheme(theme: Theme) {
-	document.documentElement.classList.toggle('dark', theme === 'dark');
-}
-
-export function ThemeProvider({ children, initialTheme }: IThemeProviderProps) {
+export function ThemeProvider({ children, initialTheme }: IThemeProvider) {
 	const [theme, setThemeState] = useState<Theme>(() => initialTheme ?? getPreferredTheme());
 
 	useEffect(() => {

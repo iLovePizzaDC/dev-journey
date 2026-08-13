@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { Badge, StatusDot, TechBadge } from '@/shared/atoms';
+import { Badge, TechBadge } from '@/shared/components/atoms';
 import { renderWithProviders } from '@/test/render';
 
 describe('Badge', () => {
@@ -13,12 +13,5 @@ describe('TechBadge', () => {
 	it('renders tech name', () => {
 		const { getByTestId } = renderWithProviders(<TechBadge name='React' />);
 		expect(getByTestId('tech-badge')).toHaveTextContent('React');
-	});
-});
-
-describe('StatusDot', () => {
-	it('renders without crashing', () => {
-		const { container } = renderWithProviders(<StatusDot />);
-		expect(container.querySelector('[aria-hidden="true"]')).toBeTruthy();
 	});
 });

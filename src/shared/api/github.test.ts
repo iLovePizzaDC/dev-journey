@@ -4,7 +4,7 @@ import {
 	fetchGitHubRepos,
 	githubRepoUrl,
 	GitHubApiError,
-} from '@/shared/lib/github';
+} from '@/shared/api/github';
 
 function jsonResponse(body: unknown, status = 200): Response {
 	return {

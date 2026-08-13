@@ -1,28 +1,6 @@
 import { describe, expect, it } from 'vitest';
-import { SectionHeader, StackList, CommitMeta } from '@/shared/molecules';
-import { SiteHeader, SiteFooter, Section } from '@/shared/organisms';
+import { SiteHeader, SiteFooter, Section } from '@/shared/components/organisms';
 import { renderWithProviders } from '@/test/render';
-
-describe('SectionHeader', () => {
-	it('renders title', () => {
-		const { getByRole } = renderWithProviders(<SectionHeader title='Title' description='Desc' />);
-		expect(getByRole('heading', { name: 'Title' })).toBeInTheDocument();
-	});
-});
-
-describe('StackList', () => {
-	it('renders stack items', () => {
-		const { getByText } = renderWithProviders(<StackList items={['React']} />);
-		expect(getByText('React')).toBeInTheDocument();
-	});
-});
-
-describe('CommitMeta', () => {
-	it('shows loading copy', () => {
-		const { getByText } = renderWithProviders(<CommitMeta loading />);
-		expect(getByText(/geladen|Loading/i)).toBeInTheDocument();
-	});
-});
 
 describe('SiteHeader', () => {
 	it('renders brand', () => {

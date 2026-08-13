@@ -1,1 +1,1 @@
-export { ExperienceSection } from '@/features/experience/organisms/ExperienceSection';
+export { ExperienceSection } from '@/features/experience/components/organisms/ExperienceSection';

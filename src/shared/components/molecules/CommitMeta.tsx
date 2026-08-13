@@ -1,15 +1,20 @@
-import { Text } from '@/shared/atoms';
+import { Text } from '@/shared/components/atoms';
 import { useLocale } from '@/shared/i18n';
-import { formatRelativeTime } from '@/shared/lib/date';
-import type { ICommitMetaProps } from '@/shared/molecules/CommitMeta.types';
+import { formatRelativeTime } from '@/shared/utils/date';
 
-export function CommitMeta({ pushedAt, loading, error }: ICommitMetaProps) {
-	const { m } = useLocale();
+interface ICommitMeta {
+	pushedAt?: string | null;
+	loading?: boolean;
+	error?: boolean;
+}
+
+export function CommitMeta({ pushedAt, loading, error }: ICommitMeta) {
+	const { messages } = useLocale();
 
 	if (loading) {
 		return (
 			<Text as='span' variant='meta' className='opacity-70'>
-				{m.projects.commitLoading}
+				{messages.projects.commitLoading}
 			</Text>
 		);
 	}
@@ -17,15 +22,15 @@ export function CommitMeta({ pushedAt, loading, error }: ICommitMetaProps) {
 	if (error || !pushedAt) {
 		return (
 			<Text as='span' variant='meta' className='opacity-80'>
-				{m.projects.commitUnavailable}
+				{messages.projects.commitUnavailable}
 			</Text>
 		);
 	}
 
 	return (
 		<Text as='span' variant='meta'>
-			{m.projects.lastPush}{' '}
-			<time dateTime={pushedAt}>{formatRelativeTime(pushedAt, m.common)}</time>
+			{messages.projects.lastPush}{' '}
+			<time dateTime={pushedAt}>{formatRelativeTime(pushedAt, messages.common)}</time>
 		</Text>
 	);
 }

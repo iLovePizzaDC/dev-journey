@@ -2,6 +2,34 @@ import type { Certificate, Education, Experience } from '@/shared/types';
 
 export const experiences: Experience[] = [
 	{
+		id: 'eckstack-senior-fullstack',
+		role: {
+			de: 'Softwareentwickler (Full-Stack)',
+			en: 'Software Developer (Full-Stack)',
+		},
+		company: 'EckStack',
+		location: 'Waiblingen',
+		start: '2026-09',
+		end: null,
+		stack: ['React', 'TypeScript', 'ProvideX'],
+		bullets: {
+			de: [
+				'Eigenständige Full-Stack-Entwicklung von Anwendungen mit React JS im Frontend und ProvideX im fachnahen Systemkontext',
+				'Umsetzung von Produkt- und Nutzeranforderungen in wartbare, getestete und produktionsreife Software',
+				'Technische Konzeption und Gestaltung von Schnittstellen zwischen UI, Business-Logik, Datenhaltung und bestehenden Systemen',
+				'Enge Zusammenarbeit mit Produktmanagement und Fachbereichen',
+				'Qualitätssicherung durch Tests sowie Fokus auf Nutzerfreundlichkeit und UX in der Umsetzung',
+			],
+			en: [
+				'Independent full-stack development of applications with React JS in the frontend and ProvideX in the domain-specific system context',
+				'Translating product and user requirements into maintainable, tested and production-ready software',
+				'Technical design of interfaces between UI, business logic, data storage and existing systems',
+				'Close collaboration with product management and business units',
+				'Quality assurance through testing with a focus on usability and UX in implementation',
+			],
+		},
+	},
+	{
 		id: 'wuerth-frontend',
 		role: {
 			de: 'Frontend Developer',

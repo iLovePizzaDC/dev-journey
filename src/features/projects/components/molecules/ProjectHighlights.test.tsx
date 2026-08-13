@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { ProjectHighlights } from '@/features/projects/molecules/ProjectHighlights';
+import { ProjectHighlights } from '@/features/projects/components/molecules/ProjectHighlights';
 import { renderWithProviders } from '@/test/render';
 
 describe('ProjectHighlights', () => {

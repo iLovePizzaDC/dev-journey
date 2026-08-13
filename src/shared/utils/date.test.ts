@@ -5,7 +5,7 @@ import {
 	formatMonthYear,
 	formatRelativeTime,
 	sortByStartDesc,
-} from '@/shared/lib/date';
+} from '@/shared/utils/date';
 import { messages } from '@/shared/i18n';
 
 describe('formatMonthYear', () => {
@@ -41,7 +41,7 @@ describe('sortByStartDesc', () => {
 			{ start: '2021-09', id: 'a' },
 			{ start: '2024-07', id: 'b' },
 		]);
-		expect(sorted.map((i) => i.id)).toEqual(['b', 'a']);
+		expect(sorted.map((item) => item.id)).toEqual(['b', 'a']);
 	});
 });
 

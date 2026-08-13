@@ -1,6 +1,6 @@
 import { screen } from '@testing-library/react';
 import { describe, expect, it } from 'vitest';
-import type { Project } from '@/content';
+import type { Project } from '@/shared/content';
 import { ProjectCard } from '@/features/projects';
 import { renderWithProviders } from '@/test/render';
 

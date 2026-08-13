@@ -1,3 +1,3 @@
-export { SiteHeader } from '@/shared/organisms/SiteHeader';
-export { SiteFooter } from '@/shared/organisms/SiteFooter';
-export { Section } from '@/shared/organisms/Section';
+export { SiteHeader } from '@/shared/components/organisms/SiteHeader';
+export { SiteFooter } from '@/shared/components/organisms/SiteFooter';
+export { Section } from '@/shared/components/organisms/Section';

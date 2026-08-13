@@ -1,6 +1,7 @@
-import type { ComponentType, ReactNode, SVGProps } from 'react';
+import type { ReactNode } from 'react';
+import type { IconComponent } from '@/shared/types';
 
-export type AboutFactIcon = ComponentType<SVGProps<SVGSVGElement>>;
+export type AboutFactIcon = IconComponent;
 
 export type AboutFact = {
 	icon: AboutFactIcon;

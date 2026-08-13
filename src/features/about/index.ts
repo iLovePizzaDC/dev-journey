@@ -1,1 +1,1 @@
-export { AboutSection } from '@/features/about/organisms/AboutSection';
+export { AboutSection } from '@/features/about/components/organisms/AboutSection';
