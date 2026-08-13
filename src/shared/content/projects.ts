@@ -2,6 +2,28 @@ import type { Project } from '@/shared/types';
 
 export const projects: Project[] = [
 	{
+		id: 'dev-journey',
+		name: 'Dev Journey',
+		description: {
+			de: 'Öffentliches Portfolio mit Karriere-Timeline, Tech-Stack nach Lernzeitpunkt und Live-GitHub-Commit-Status.',
+			en: 'Public portfolio with career timeline, tech stack by when I learned it, and live GitHub commit status.',
+		},
+		githubRepo: 'iLovePizzaDC/dev-journey',
+		stack: ['Vite', 'React', 'TypeScript', 'Tailwind CSS', 'Vitest'],
+		highlights: {
+			de: [
+				'Feature-driven Atomic Design',
+				'DE/EN und Light/Dark Theme',
+				'CI/CD mit GitHub Actions und Cloudflare Tunnel',
+			],
+			en: [
+				'Feature-driven Atomic Design',
+				'DE/EN and light/dark theme',
+				'CI/CD with GitHub Actions and Cloudflare Tunnel',
+			],
+		},
+	},
+	{
 		id: 'migraine-tracker',
 		name: 'Migraine Tracker',
 		description: {
