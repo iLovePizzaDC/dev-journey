@@ -12,7 +12,7 @@ describe('ProjectsSection', () => {
 	it('renders projects heading', async () => {
 		const { getByRole, queryByText } = renderWithProviders(<ProjectsSection />);
 
-		expect(getByRole('heading', { name: 'Persönliche Projekte' })).toBeInTheDocument();
+		expect(getByRole('heading', { name: 'Eigene Projekte' })).toBeInTheDocument();
 
 		await waitFor(() => {
 			expect(queryByText(/Commit-Status wird geladen/)).not.toBeInTheDocument();

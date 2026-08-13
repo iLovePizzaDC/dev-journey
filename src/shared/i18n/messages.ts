@@ -17,8 +17,7 @@ export const messages: MessagesByLocale = {
 		experience: {
 			eyebrow: 'Berufsweg',
 			title: 'Wo ich gearbeitet habe',
-			description:
-				'Chronologisch von neu nach alt — Stationen, Zeiträume und Schwerpunkte auf einen Blick.',
+			description: 'Von neu nach alt — Rollen, Zeiträume und was ich dort gemacht habe.',
 			work: 'Berufliche Stationen',
 			education: 'Ausbildung & Schule',
 			certificates: 'Zertifikate',
@@ -26,13 +25,13 @@ export const messages: MessagesByLocale = {
 		},
 		journey: {
 			eyebrow: 'Skills',
-			title: 'Technologien nach Aneignung',
-			description: 'Wann welche Skills dazugekommen sind — als Ergänzung zum Berufsweg.',
+			title: 'Wann ich was gelernt habe',
+			description: 'Technologien nach dem Jahr, in dem sie dazugekommen sind.',
 			categoriesAria: 'Kategorien',
 		},
 		projects: {
-			eyebrow: 'Portfolio',
-			title: 'Persönliche Projekte',
+			eyebrow: 'Projekte',
+			title: 'Eigene Projekte',
 			description: 'Stacks, Kurzbeschreibungen und Live-Daten vom öffentlichen GitHub-Repo.',
 			openGithub: 'Auf GitHub öffnen',
 			noRepo: 'Kein öffentliches Repo verknüpft',
@@ -87,7 +86,7 @@ export const messages: MessagesByLocale = {
 		experience: {
 			eyebrow: 'Career',
 			title: 'Where I have worked',
-			description: 'Newest first — roles, time ranges and focus areas at a glance.',
+			description: 'Newest first — roles, time ranges and what I did there.',
 			work: 'Work history',
 			education: 'Education & school',
 			certificates: 'Certificates',
@@ -95,14 +94,14 @@ export const messages: MessagesByLocale = {
 		},
 		journey: {
 			eyebrow: 'Skills',
-			title: 'Technologies by when I learned them',
-			description: 'When each skill was added — as a complement to the career path.',
+			title: 'When I learned what',
+			description: 'Technologies by the year they became part of my stack.',
 			categoriesAria: 'Categories',
 		},
 		projects: {
-			eyebrow: 'Portfolio',
+			eyebrow: 'Projects',
 			title: 'Personal projects',
-			description: 'Stacks, short descriptions, and live data from the public GitHub repo.',
+			description: 'Stacks, short descriptions and live data from the public GitHub repo.',
 			openGithub: 'Open on GitHub',
 			noRepo: 'No public repository linked',
 			commitLoading: 'Loading commit status…',

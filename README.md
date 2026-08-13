@@ -1,6 +1,6 @@
 # Dev Journey
 
-Personal portfolio for **Nico Betz** — career timeline, projects with live GitHub push data, and technologies ordered by when they were learned. DE/EN + light/dark.
+Personal portfolio. Career timeline, projects with live GitHub push data, and technologies ordered by when they were learned.
 
 ## Stack
 
@@ -48,13 +48,3 @@ npm run dev
 | `npm test`       | Vitest                       |
 | `npm run lint`   | ESLint                       |
 | `npm run format` | Prettier                     |
-
-## Content
-
-Edit files under `src/shared/content/`:
-
-- **Technology** → `technologies.ts` (`acquiredYear` / `acquiredMonth`, optional `note: { de, en }`)
-- **Project** → `projects.ts` — set `githubRepo: 'owner/repo'` for live last-push via the public GitHub API
-- **Copy** → UI strings in `shared/i18n/messages.ts`; content strings as `Localized<T>` (`{ de, en }`)
-
-Language and theme toggles persist in `localStorage`.
