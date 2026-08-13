@@ -1,0 +1,14 @@
+# Changelog
+
+## [1.1.0](https://github.com/iLovePizzaDC/dev-journey/compare/v1.0.0...v1.1.0) (2026-08-13)
+
+
+### Features
+
+* add dev-journey to projects ([#5](https://github.com/iLovePizzaDC/dev-journey/issues/5)) ([507ec14](https://github.com/iLovePizzaDC/dev-journey/commit/507ec14f859af46d005a173d8f442e09987b02b8))
+* add repo language to projectcard ([39faefd](https://github.com/iLovePizzaDC/dev-journey/commit/39faefd98ef10b3bfdb304210987ad32ff8c5717))
+
+
+### Bug Fixes
+
+* last section not highlighted in nav ([#6](https://github.com/iLovePizzaDC/dev-journey/issues/6)) ([06bed0a](https://github.com/iLovePizzaDC/dev-journey/commit/06bed0a79b77f072b41c1cf412aecb741e337482))
