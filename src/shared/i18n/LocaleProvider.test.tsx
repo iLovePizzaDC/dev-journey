@@ -12,7 +12,7 @@ describe('LocaleProvider', () => {
 	it('exposes de messages by default and can switch locale', () => {
 		const { result } = renderHook(() => useLocale(), { wrapper });
 		expect(result.current.locale).toBe('de');
-		expect(result.current.m.nav.experience).toBeTruthy();
+		expect(result.current.messages.nav.experience).toBeTruthy();
 
 		act(() => {
 			result.current.setLocale('en');

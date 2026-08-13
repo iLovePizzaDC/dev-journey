@@ -1,5 +1,11 @@
 import { createContext, useContext } from 'react';
-import type { ThemeContextValue } from '@/shared/theme/ThemeContext.types';
+import type { Theme } from '@/shared/types';
+
+export type ThemeContextValue = {
+	theme: Theme;
+	setTheme: (theme: Theme) => void;
+	toggleTheme: () => void;
+};
 
 export const ThemeContext = createContext<ThemeContextValue | null>(null);
 

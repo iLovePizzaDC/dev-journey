@@ -1,5 +1,5 @@
-import { MONTH_LABELS } from '@/shared/lib/date.constants';
-import type { RelativeTimeMessages } from '@/shared/lib/date.types';
+import { MONTH_LABELS } from '@/shared/utils/date.constants';
+import type { RelativeTimeMessages } from '@/shared/utils/date.types';
 import type { Locale } from '@/shared/types';
 
 export function formatMonthYear(value: string, locale: Locale = 'de'): string {
@@ -33,7 +33,7 @@ export function formatDateRange(
 }
 
 export function sortByStartDesc<T extends { start: string }>(items: T[]): T[] {
-	return [...items].sort((a, b) => b.start.localeCompare(a.start));
+	return [...items].sort((left, right) => right.start.localeCompare(left.start));
 }
 
 export function formatRelativeTime(

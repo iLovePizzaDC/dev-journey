@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { WorkRoleCard } from '@/features/experience/molecules/WorkRoleCard';
+import { WorkRoleCard } from '@/features/experience/components/molecules/WorkRoleCard';
 import type { Experience } from '@/shared/types';
 import { renderWithProviders } from '@/test/render';
 

@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { cn } from '@/shared/lib/cn';
+import { cn } from '@/shared/utils/cn';
 
 describe('cn()', () => {
 	it('merges class names and resolves tailwind conflicts', () => {

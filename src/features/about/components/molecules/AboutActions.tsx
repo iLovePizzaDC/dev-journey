@@ -1,16 +1,16 @@
 import { ArrowTopRightOnSquareIcon, EnvelopeIcon } from '@heroicons/react/24/outline';
-import { profile } from '@/content';
-import { Button, Icon } from '@/shared/atoms';
+import { profile } from '@/shared/content';
+import { Button, Icon } from '@/shared/components/atoms';
 import { useLocale } from '@/shared/i18n';
 
 export function AboutActions() {
-	const { m } = useLocale();
+	const { messages } = useLocale();
 
 	return (
 		<div className='flex flex-col gap-3'>
 			<Button href={`mailto:${profile.email}`} variant='primary'>
 				<Icon icon={EnvelopeIcon} />
-				{m.about.writeMessage}
+				{messages.about.writeMessage}
 			</Button>
 			<Button
 				href={`https://github.com/${profile.githubUsername}`}
@@ -18,7 +18,7 @@ export function AboutActions() {
 				target='_blank'
 				rel='noreferrer'
 			>
-				{m.about.githubProfile}
+				{messages.about.githubProfile}
 				<Icon icon={ArrowTopRightOnSquareIcon} className='h-3.5 w-3.5 opacity-70' />
 			</Button>
 		</div>

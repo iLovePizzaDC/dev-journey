@@ -1,5 +1,9 @@
 import { describe, expect, it } from 'vitest';
-import { groupTechnologiesByYear, sortTechnologiesByAcquisition, type Technology } from '@/content';
+import {
+	groupTechnologiesByYear,
+	sortTechnologiesByAcquisition,
+	type Technology,
+} from '@/shared/content';
 
 const sample: Technology[] = [
 	{
@@ -28,7 +32,7 @@ const sample: Technology[] = [
 describe('sortTechnologiesByAcquisition', () => {
 	it('sorts by year then month then name', () => {
 		const sorted = sortTechnologiesByAcquisition(sample);
-		expect(sorted.map((t) => t.id)).toEqual(['a', 'c', 'b']);
+		expect(sorted.map((tech) => tech.id)).toEqual(['a', 'c', 'b']);
 	});
 });
 
@@ -36,6 +40,6 @@ describe('groupTechnologiesByYear', () => {
 	it('groups sorted technologies by year', () => {
 		const groups = groupTechnologiesByYear(sample);
 		expect([...groups.keys()]).toEqual([2021, 2023]);
-		expect(groups.get(2023)?.map((t) => t.name)).toEqual(['React', 'TypeScript']);
+		expect(groups.get(2023)?.map((tech) => tech.name)).toEqual(['React', 'TypeScript']);
 	});
 });

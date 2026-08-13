@@ -1,16 +1,16 @@
 import { describe, expect, it } from 'vitest';
-import { isLocale, t } from '@/shared/i18n/locale';
+import { isLocale, localize } from '@/shared/i18n/locale';
 
-describe('t()', () => {
+describe('localize()', () => {
 	it('picks the value for the active locale', () => {
 		const value = { de: 'Hallo', en: 'Hello' };
-		expect(t('de', value)).toBe('Hallo');
-		expect(t('en', value)).toBe('Hello');
+		expect(localize('de', value)).toBe('Hallo');
+		expect(localize('en', value)).toBe('Hello');
 	});
 
 	it('works with non-string localized values', () => {
 		const value = { de: ['a'], en: ['b'] };
-		expect(t('en', value)).toEqual(['b']);
+		expect(localize('en', value)).toEqual(['b']);
 	});
 });
 

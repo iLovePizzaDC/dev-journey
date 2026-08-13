@@ -1,109 +1,60 @@
-# Dev Journey — Nico Betz
+# Dev Journey
 
-Personal portfolio site: technologies ordered by when they were learned, work experience, and GitHub projects with live last-push data. Supports German/English and light/dark themes.
+Personal portfolio for **Nico Betz** — career timeline, projects with live GitHub push data, and technologies ordered by when they were learned. DE/EN + light/dark.
 
 ## Stack
 
-- React 19 + TypeScript + Vite
-- Tailwind CSS v4 (`@tailwindcss/vite`)
-- Heroicons
-- Vitest + Testing Library
-- ESLint + Prettier
-- Atomic Design + feature-driven modules
+React 19 · TypeScript · Vite · Tailwind CSS v4 · Heroicons · Vitest · Testing Library
 
-## Architecture
+## Project structure
 
 ```
 src/
-  content/                      # Data only (+ small content helpers)
-  features/
-    hero|experience|projects|tech-timeline|about/
-      atoms|molecules|organisms|hooks/
-      *.types.ts                # Feature props + domain shapes
+  app/                 # Shell + global CSS
+  features/<name>/
+    components/        # atoms | molecules | organisms
+    hooks/ types/ constants/ utils/   # as needed
   shared/
-    types/                      # Domain + shared UI types (`type` only)
-    constants/
-    atoms|molecules|organisms/  # Component + colocated *.types / *.constants
-    i18n/
-      LocaleContext.tsx         # Context + useLocale
-      LocaleProvider.tsx        # Provider (separate file)
-      messages.ts / messages.types.ts
-    theme/
-      ThemeContext.tsx
-      ThemeProvider.tsx
-    lib/
-    styles/
-  app/
-  test/
+    api/               # GitHub client
+    components/        # reusable UI (atomic)
+    content/           # profile, jobs, projects, techs
+    constants/ hooks/ i18n/ theme/ types/ utils/
+  test/                # Vitest setup + render helpers
+  main.tsx
 ```
 
-Use the `@/` alias for **all** app imports (maps to `src/`).
+Imports use the `@/` alias (`src/`).
 
 ### Conventions
 
-- **Context vs Provider**: always split (`FooContext.tsx` + `FooProvider.tsx`) with matching `*.types.ts`
-- **Types**: use `type` everywhere; use `interface` **only** for React props, named `IComponentProps` (e.g. `IButtonProps`)
-- **Colocation**: no types/constants inline in component files — use `Component.types.ts` / `Component.constants.ts` (or feature `*.types.ts`)
-- **Tests**: Vitest unit tests for pure modules; Testing Library for UI components (colocated `*.test.ts(x)`)
+| Rule               | Detail                                                                                                                         |
+| ------------------ | ------------------------------------------------------------------------------------------------------------------------------ |
+| Context / Provider | Split files (`FooContext.tsx` + `FooProvider.tsx`). Value types live in the Context file; `IFooProvider` in the Provider file. |
+| Props              | `interface IButton` (etc.) in the same `.tsx` as the component — no `Props` suffix.                                            |
+| Everything else    | `type` for domain/helpers. Constants & utils → `shared/*` if shared, else `features/<name>/{constants,utils,types}/`.          |
+| Tests              | Colocated `*.test.ts(x)` — unit for pure logic, Testing Library for UI.                                                        |
 
-## Getting started
+## Setup
 
 ```bash
 npm install
 npm run dev
 ```
 
-Also install Heroicons if needed: `npm install @heroicons/react`
+| Script           |                              |
+| ---------------- | ---------------------------- |
+| `npm run dev`    | Dev server                   |
+| `npm run build`  | Typecheck + production build |
+| `npm test`       | Vitest                       |
+| `npm run lint`   | ESLint                       |
+| `npm run format` | Prettier                     |
 
-### Scripts
+## Content
 
-| Script                 | Description                  |
-| ---------------------- | ---------------------------- |
-| `npm run dev`          | Vite dev server              |
-| `npm run build`        | Typecheck + production build |
-| `npm test`             | Vitest once                  |
-| `npm run test:watch`   | Vitest watch mode            |
-| `npm run lint`         | ESLint                       |
-| `npm run format`       | Prettier write               |
-| `npm run format:check` | Prettier check               |
-| `npm run preview`      | Preview production build     |
+Edit files under `src/shared/content/`:
 
-## Extending content
+- **Technology** → `technologies.ts` (`acquiredYear` / `acquiredMonth`, optional `note: { de, en }`)
+- **Project** → `projects.ts` — set `githubRepo: 'owner/repo'` for live last-push via the public GitHub API
+- **Copy** → UI strings in `shared/i18n/messages.ts`; content strings as `Localized<T>` (`{ de, en }`)
 
-### Add a technology
-
-Edit `src/content/technologies.ts`:
-
-```ts
-{
-  id: 'zod',
-  name: 'Zod',
-  category: 'frontend',
-  acquiredYear: 2026,
-  acquiredMonth: 3,
-  note: { de: 'optional', en: 'optional' },
-}
-```
-
-### Add a project + GitHub link
-
-Edit `src/content/projects.ts` and set `githubRepo: 'owner/repo'`. The UI loads `pushed_at` from the public GitHub API.
-
-### Localization & theme
-
-- UI copy: `src/shared/i18n/messages.ts`
-- Content strings: `Localized<T>` objects (`{ de, en }`) in `src/content/*`
-- Language toggle + theme toggle in the header (both persisted in `localStorage`)
-
-## Testing
-
-Tests run with **Vitest**. Prefer a colocated `*.test.ts` / `*.test.tsx` next to each meaningful module.
-
-- Unit tests (`*.test.ts`): pure logic — dates, GitHub mapping, i18n helpers, constants, content sorting
-- UI tests (`*.test.tsx`): Vitest + Testing Library where React rendering matters (atoms, sections, toggles, cards)
-- Providers: `LocaleProvider` / `ThemeProvider` tested via hooks
-
-```bash
-npm test
-npm run test:watch
-```
+Language and theme toggles persist in `localStorage`.

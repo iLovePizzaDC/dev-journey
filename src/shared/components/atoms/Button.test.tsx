@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { Button } from '@/shared/atoms';
+import { Button } from '@/shared/components/atoms';
 import { renderWithProviders } from '@/test/render';
 
 describe('Button', () => {

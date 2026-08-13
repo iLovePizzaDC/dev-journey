@@ -3,7 +3,7 @@ import { describe, expect, it, vi } from 'vitest';
 import { ProjectsSection } from '@/features/projects';
 import { renderWithProviders } from '@/test/render';
 
-vi.mock('@/shared/lib/github', () => ({
+vi.mock('@/shared/api/github', () => ({
 	fetchGitHubRepos: vi.fn(async () => new Map()),
 	githubRepoUrl: (repo: string) => `https://github.com/${repo}`,
 }));

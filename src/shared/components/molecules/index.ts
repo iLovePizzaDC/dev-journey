@@ -1,4 +1,4 @@
-export { SectionHeader } from '@/shared/molecules/SectionHeader';
-export { StackList } from '@/shared/molecules/StackList';
-export { CommitMeta } from '@/shared/molecules/CommitMeta';
-export { Reveal } from '@/shared/molecules/Reveal';
+export { SectionHeader } from '@/shared/components/molecules/SectionHeader';
+export { StackList } from '@/shared/components/molecules/StackList';
+export { CommitMeta } from '@/shared/components/molecules/CommitMeta';
+export { Reveal } from '@/shared/components/molecules/Reveal';

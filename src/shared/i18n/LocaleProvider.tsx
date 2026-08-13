@@ -1,19 +1,16 @@
-import { useCallback, useEffect, useMemo, useState } from 'react';
+import { useCallback, useEffect, useMemo, useState, type ReactNode } from 'react';
 import { STORAGE_KEYS } from '@/shared/constants';
 import { LocaleContext } from '@/shared/i18n/LocaleContext';
-import { isLocale } from '@/shared/i18n/locale';
+import { readInitialLocale } from '@/shared/i18n/locale';
 import { messages } from '@/shared/i18n/messages';
-import type { ILocaleProviderProps } from '@/shared/i18n/LocaleProvider.types';
 import type { Locale } from '@/shared/types';
 
-function readInitialLocale(): Locale {
-	if (typeof window === 'undefined') return 'de';
-	const stored = window.localStorage.getItem(STORAGE_KEYS.locale);
-	if (stored && isLocale(stored)) return stored;
-	return navigator.language.toLowerCase().startsWith('de') ? 'de' : 'en';
+interface ILocaleProvider {
+	children: ReactNode;
+	initialLocale?: Locale;
 }
 
-export function LocaleProvider({ children, initialLocale }: ILocaleProviderProps) {
+export function LocaleProvider({ children, initialLocale }: ILocaleProvider) {
 	const [locale, setLocaleState] = useState<Locale>(() => initialLocale ?? readInitialLocale());
 
 	const setLocale = useCallback((next: Locale) => {
@@ -29,7 +26,7 @@ export function LocaleProvider({ children, initialLocale }: ILocaleProviderProps
 		() => ({
 			locale,
 			setLocale,
-			m: messages[locale],
+			messages: messages[locale],
 		}),
 		[locale, setLocale],
 	);
