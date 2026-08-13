@@ -44,6 +44,13 @@ export const technologies: Technology[] = [
 		acquiredMonth: 1,
 	},
 	{
+		id: 'junit',
+		name: 'JUnit',
+		category: 'testing',
+		acquiredYear: 2022,
+		acquiredMonth: 1,
+	},
+	{
 		id: 'spring-boot',
 		name: 'Spring Boot',
 		category: 'backend',
@@ -118,7 +125,7 @@ export const technologies: Technology[] = [
 		name: 'SAP Commerce Cloud',
 		category: 'backend',
 		acquiredYear: 2024,
-		acquiredMonth: 7,
+		acquiredMonth: 6,
 	},
 	{
 		id: 'sonarqube',
@@ -131,6 +138,13 @@ export const technologies: Technology[] = [
 		id: 'bff',
 		name: 'BFF architecture',
 		category: 'backend',
+		acquiredYear: 2024,
+		acquiredMonth: 7,
+	},
+	{
+		id: 'cicd',
+		name: 'CI/CD',
+		category: 'devops',
 		acquiredYear: 2024,
 		acquiredMonth: 7,
 	},

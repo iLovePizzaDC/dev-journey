@@ -22,7 +22,7 @@ describe('ExperienceSection', () => {
 describe('TechTimeline', () => {
 	it('renders the skills section heading', () => {
 		const { getByRole } = renderWithProviders(<TechTimeline />);
-		expect(getByRole('heading', { name: 'Technologien nach Aneignung' })).toBeInTheDocument();
+		expect(getByRole('heading', { name: 'Wann ich was gelernt habe' })).toBeInTheDocument();
 	});
 });
 

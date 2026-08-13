@@ -11,8 +11,8 @@ export const profile: Profile = {
 	phone: '0178-4512503',
 	githubUsername: 'iLovePizzaDC',
 	summary: {
-		de: 'Frontend Developer mit zwei Jahren Berufserfahrung im React- und TypeScript-Umfeld. Neben der beruflichen Tätigkeit entwickle ich private Webanwendungen und erweitere kontinuierlich meine Kenntnisse.',
-		en: 'Frontend developer with two years of professional experience in React and TypeScript. Alongside my day job I build personal web apps and keep expanding my skill set.',
+		de: 'Frontend Developer aus Waiblingen mit zwei Jahren Erfahrung in React und TypeScript. Ich baue Web-Apps, arbeite mich gerne in neue Stacks ein und entwickle nebenbei eigene Projekte.',
+		en: 'Frontend developer from Waiblingen with two years of experience in React and TypeScript. I build web apps, pick up new stacks quickly and work on my own projects on the side.',
 	},
 	languages: [
 		{
