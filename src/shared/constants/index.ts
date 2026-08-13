@@ -53,6 +53,12 @@ export const THEMES = ['light', 'dark'] as const satisfies readonly Theme[];
 
 export const SCROLL_SPY_THRESHOLDS = [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1] as const;
 
+export const SCROLL_SPY_ROOT_MARGIN = '-18% 0px -50% 0px';
+
+export const SCROLL_SPY_BOTTOM_OFFSET_PX = 80;
+
+export { MONTH_LABELS } from '@/shared/constants/date';
+
 export {
 	BADGE_CATEGORY_BORDER,
 	BUTTON_VARIANT_CLASS,

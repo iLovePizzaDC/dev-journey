@@ -1,4 +1,5 @@
-import { groupTechnologiesByYear, technologies } from '@/shared/content';
+import { groupTechnologiesByYear } from '@/features/tech-timeline/utils/technologies';
+import { technologies } from '@/shared/content';
 import { TechYearGroup } from '@/features/tech-timeline/components/molecules/TechYearGroup';
 import type { Technology } from '@/shared/types';
 import { SECTION_IDS } from '@/shared/constants';

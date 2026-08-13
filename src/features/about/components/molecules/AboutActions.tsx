@@ -1,6 +1,7 @@
 import { ArrowTopRightOnSquareIcon, EnvelopeIcon } from '@heroicons/react/24/outline';
-import { profile } from '@/shared/content';
+import { githubProfileUrl } from '@/shared/api/github';
 import { Button, Icon } from '@/shared/components/atoms';
+import { profile } from '@/shared/content';
 import { useLocale } from '@/shared/i18n';
 
 export function AboutActions() {
@@ -13,7 +14,7 @@ export function AboutActions() {
 				{messages.about.writeMessage}
 			</Button>
 			<Button
-				href={`https://github.com/${profile.githubUsername}`}
+				href={githubProfileUrl(profile.githubUsername)}
 				variant='ghost'
 				target='_blank'
 				rel='noreferrer'

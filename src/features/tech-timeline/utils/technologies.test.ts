@@ -1,9 +1,9 @@
 import { describe, expect, it } from 'vitest';
+import type { Technology } from '@/shared/types';
 import {
 	groupTechnologiesByYear,
 	sortTechnologiesByAcquisition,
-	type Technology,
-} from '@/shared/content';
+} from '@/features/tech-timeline/utils/technologies';
 
 const sample: Technology[] = [
 	{

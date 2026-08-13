@@ -33,12 +33,13 @@ export const messages: MessagesByLocale = {
 		projects: {
 			eyebrow: 'Portfolio',
 			title: 'Persönliche Projekte',
-			description: 'Stacks, Kurzbeschreibungen und Live-Daten zum letzten GitHub-Push.',
+			description: 'Stacks, Kurzbeschreibungen und Live-Daten vom öffentlichen GitHub-Repo.',
 			openGithub: 'Auf GitHub öffnen',
 			noRepo: 'Kein öffentliches Repo verknüpft',
 			commitLoading: 'Commit-Status wird geladen…',
 			commitUnavailable: 'Letzter Commit nicht verfügbar',
 			lastPush: 'Letzter Push:',
+			stars: 'Sterne',
 		},
 		about: {
 			eyebrow: 'Kontakt',
@@ -101,12 +102,13 @@ export const messages: MessagesByLocale = {
 		projects: {
 			eyebrow: 'Portfolio',
 			title: 'Personal projects',
-			description: 'Stacks, short descriptions, and live last-push data from GitHub.',
+			description: 'Stacks, short descriptions, and live data from the public GitHub repo.',
 			openGithub: 'Open on GitHub',
 			noRepo: 'No public repository linked',
 			commitLoading: 'Loading commit status…',
 			commitUnavailable: 'Last commit unavailable',
 			lastPush: 'Last push:',
+			stars: 'Stars',
 		},
 		about: {
 			eyebrow: 'Contact',
