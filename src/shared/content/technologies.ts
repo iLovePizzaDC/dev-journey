@@ -79,6 +79,13 @@ export const technologies: Technology[] = [
 		acquiredMonth: 6,
 	},
 	{
+		id: 'postgresql',
+		name: 'PostgreSQL',
+		category: 'database',
+		acquiredYear: 2022,
+		acquiredMonth: 6,
+	},
+	{
 		id: 'python',
 		name: 'Python',
 		category: 'backend',
@@ -91,13 +98,6 @@ export const technologies: Technology[] = [
 		category: 'database',
 		acquiredYear: 2023,
 		acquiredMonth: 2,
-	},
-	{
-		id: 'postgresql',
-		name: 'PostgreSQL',
-		category: 'database',
-		acquiredYear: 2023,
-		acquiredMonth: 4,
 	},
 	{
 		id: 'jest',
