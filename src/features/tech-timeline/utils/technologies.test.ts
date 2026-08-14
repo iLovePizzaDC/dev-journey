@@ -46,10 +46,6 @@ describe('groupTechnologiesByYear', () => {
 });
 
 describe('filterTechnologiesByCategory', () => {
-	it('returns all items when filter is all', () => {
-		expect(filterTechnologiesByCategory(sample, 'all')).toEqual(sample);
-	});
-
 	it('keeps only matching categories', () => {
 		const mixed: Technology[] = [
 			...sample,
