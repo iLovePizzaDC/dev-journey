@@ -54,7 +54,7 @@ export function WorkRoleCard({ job, delay = 0, isLast = false }: IWorkRoleCard) 
 				<div className='mt-4'>
 					<BulletList items={localize(locale, job.bullets)} />
 				</div>
-				{job.stack ? <StackList items={job.stack} /> : null}
+				{job.stack ? <StackList className='mt-3' items={job.stack} /> : null}
 			</div>
 		</Reveal>
 	);

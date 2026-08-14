@@ -74,7 +74,7 @@ export const technologies: Technology[] = [
 	{
 		id: 'tomcat',
 		name: 'Tomcat',
-		category: 'tools',
+		category: 'backend',
 		acquiredYear: 2022,
 		acquiredMonth: 6,
 	},
@@ -88,9 +88,16 @@ export const technologies: Technology[] = [
 	{
 		id: 'mariadb',
 		name: 'MariaDB',
-		category: 'tools',
+		category: 'database',
 		acquiredYear: 2023,
 		acquiredMonth: 2,
+	},
+	{
+		id: 'postgresql',
+		name: 'PostgreSQL',
+		category: 'database',
+		acquiredYear: 2023,
+		acquiredMonth: 4,
 	},
 	{
 		id: 'jest',
@@ -114,16 +121,23 @@ export const technologies: Technology[] = [
 		acquiredMonth: 6,
 	},
 	{
+		id: 'sass',
+		name: 'Sass / SCSS',
+		category: 'frontend',
+		acquiredYear: 2023,
+		acquiredMonth: 6,
+	},
+	{
 		id: 'gitlab',
 		name: 'GitLab',
-		category: 'tools',
+		category: 'devops',
 		acquiredYear: 2023,
 		acquiredMonth: 9,
 	},
 	{
 		id: 'docker',
 		name: 'Docker',
-		category: 'tools',
+		category: 'devops',
 		acquiredYear: 2023,
 		acquiredMonth: 10,
 	},
@@ -137,7 +151,7 @@ export const technologies: Technology[] = [
 	{
 		id: 'cloudflare',
 		name: 'Cloudflare',
-		category: 'tools',
+		category: 'devops',
 		acquiredYear: 2024,
 		acquiredMonth: 2,
 	},
@@ -172,7 +186,7 @@ export const technologies: Technology[] = [
 	{
 		id: 'sonarqube',
 		name: 'SonarQube',
-		category: 'tools',
+		category: 'testing',
 		acquiredYear: 2024,
 		acquiredMonth: 7,
 	},
@@ -189,13 +203,6 @@ export const technologies: Technology[] = [
 		category: 'frontend',
 		acquiredYear: 2024,
 		acquiredMonth: 10,
-	},
-	{
-		id: 'sass',
-		name: 'Sass / SCSS',
-		category: 'frontend',
-		acquiredYear: 2025,
-		acquiredMonth: 1,
 	},
 	{
 		id: 'github-actions',
@@ -221,6 +228,13 @@ export const technologies: Technology[] = [
 	{
 		id: 'sentry',
 		name: 'Sentry',
+		category: 'devops',
+		acquiredYear: 2026,
+		acquiredMonth: 6,
+	},
+	{
+		id: 'claude',
+		name: 'Claude',
 		category: 'tools',
 		acquiredYear: 2026,
 		acquiredMonth: 6,

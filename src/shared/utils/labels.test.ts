@@ -5,6 +5,7 @@ import { messages } from '@/shared/i18n';
 describe('categoryLabel()', () => {
 	it('maps category keys to localized labels', () => {
 		expect(categoryLabel('frontend', messages.de.categories)).toBe('Frontend');
+		expect(categoryLabel('database', messages.de.categories)).toBe('Datenbank');
 		expect(categoryLabel('process', messages.en.categories)).toBe('Process');
 	});
 });

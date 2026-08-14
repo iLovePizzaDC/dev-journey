@@ -6,7 +6,14 @@ export type Localized<T = string> = Record<Locale, T>;
 
 export type Theme = 'light' | 'dark';
 
-export type TechCategory = 'frontend' | 'backend' | 'testing' | 'devops' | 'tools' | 'process';
+export type TechCategory =
+	| 'frontend'
+	| 'backend'
+	| 'database'
+	| 'testing'
+	| 'devops'
+	| 'tools'
+	| 'process';
 
 export type Technology = {
 	id: string;

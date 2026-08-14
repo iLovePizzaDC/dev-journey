@@ -5,5 +5,5 @@ interface IProjectHighlights {
 }
 
 export function ProjectHighlights({ items }: IProjectHighlights) {
-	return <DottedList items={items} textVariant='meta' className='mb-3' />;
+	return <DottedList items={items} textVariant='meta' className='gap-1.5' />;
 }

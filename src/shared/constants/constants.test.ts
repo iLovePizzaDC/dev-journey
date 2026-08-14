@@ -1,6 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import {
 	BADGE_CATEGORY_BORDER,
+	BADGE_CATEGORY_SURFACE,
 	BUTTON_VARIANT_CLASS,
 	GITHUB_API,
 	LOCALES,
@@ -35,7 +36,8 @@ describe('shared constants', () => {
 
 	it('lists all tech categories', () => {
 		expect(TECH_CATEGORIES).toContain('frontend');
-		expect(TECH_CATEGORIES).toHaveLength(6);
+		expect(TECH_CATEGORIES).toContain('database');
+		expect(TECH_CATEGORIES).toHaveLength(7);
 	});
 
 	it('builds github repo urls', () => {
@@ -54,5 +56,6 @@ describe('shared constants', () => {
 		expect(BUTTON_VARIANT_CLASS.primary).toBeTruthy();
 		expect(TEXT_VARIANT_CLASS.body).toBeTruthy();
 		expect(BADGE_CATEGORY_BORDER.frontend).toBeTruthy();
+		expect(BADGE_CATEGORY_SURFACE.frontend).toBeTruthy();
 	});
 });

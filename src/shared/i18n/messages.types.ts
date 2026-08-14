@@ -18,6 +18,7 @@ export type Messages = {
 		title: string;
 		description: string;
 		categoriesAria: string;
+		all: string;
 	};
 	experience: {
 		eyebrow: string;
@@ -63,6 +64,7 @@ export type Messages = {
 	categories: {
 		frontend: string;
 		backend: string;
+		database: string;
 		testing: string;
 		devops: string;
 		tools: string;

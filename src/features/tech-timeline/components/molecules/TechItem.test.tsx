@@ -12,11 +12,12 @@ const tech: Technology = {
 
 describe('TechItem', () => {
 	it('renders tech name', () => {
-		const { getByText } = renderWithProviders(
+		const { getByText, getByTestId } = renderWithProviders(
 			<ul>
 				<TechItem tech={tech} />
 			</ul>,
 		);
 		expect(getByText('React')).toBeInTheDocument();
+		expect(getByTestId('tech-badge')).toHaveAttribute('data-category', 'frontend');
 	});
 });

@@ -22,7 +22,7 @@ export function ProjectCard({ project, github, loading, delay = 0 }: IProjectCar
 		<Reveal
 			as='article'
 			delay={delay}
-			className='group flex flex-col gap-3 border-t border-line py-5 transition duration-300 hover:-translate-y-0.5 md:border md:border-line md:bg-surface md:p-5 md:hover:border-accent/35'
+			className='group flex h-full flex-col gap-2.5 border-t border-line py-5 transition duration-300 hover:-translate-y-0.5 md:border md:border-line md:bg-surface md:p-5 md:hover:border-accent/35'
 			data-testid='project-card'
 		>
 			<div className='flex flex-col gap-2'>
@@ -44,33 +44,33 @@ export function ProjectCard({ project, github, loading, delay = 0 }: IProjectCar
 				)}
 			</div>
 
-			<Text variant='body' className='flex-1'>
-				{description}
-			</Text>
+			<Text variant='body'>{description}</Text>
 
 			{project.highlights ? (
 				<ProjectHighlights items={localize(locale, project.highlights)} />
 			) : null}
 
-			<StackList items={project.stack} />
+			<div className='mt-auto flex flex-col gap-2.5'>
+				<StackList items={project.stack} />
 
-			{repoUrl ? (
-				<div className='mt-2'>
-					<Button
-						href={repoUrl}
-						variant='link'
-						target='_blank'
-						rel='noreferrer'
-						className='group/link inline-flex items-center gap-1.5'
-					>
-						{messages.projects.openGithub}
-						<Icon
-							icon={ArrowTopRightOnSquareIcon}
-							className='h-3.5 w-3.5 transition-transform duration-300 group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5'
-						/>
-					</Button>
-				</div>
-			) : null}
+				{repoUrl ? (
+					<div>
+						<Button
+							href={repoUrl}
+							variant='link'
+							target='_blank'
+							rel='noreferrer'
+							className='group/link inline-flex items-center gap-1.5'
+						>
+							{messages.projects.openGithub}
+							<Icon
+								icon={ArrowTopRightOnSquareIcon}
+								className='h-3.5 w-3.5 transition-transform duration-300 group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5'
+							/>
+						</Button>
+					</div>
+				) : null}
+			</div>
 		</Reveal>
 	);
 }

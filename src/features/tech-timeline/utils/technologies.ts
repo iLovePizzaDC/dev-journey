@@ -1,3 +1,4 @@
+import type { TechCategoryFilter } from '@/features/tech-timeline/types';
 import type { Technology } from '@/shared/types';
 
 export function sortTechnologiesByAcquisition(items: Technology[]): Technology[] {
@@ -18,4 +19,12 @@ export function groupTechnologiesByYear(items: Technology[]): Map<number, Techno
 		groups.set(tech.acquiredYear, list);
 	}
 	return groups;
+}
+
+export function filterTechnologiesByCategory(
+	items: Technology[],
+	category: TechCategoryFilter,
+): Technology[] {
+	if (category === 'all') return items;
+	return items.filter((item) => item.category === category);
 }
