@@ -15,6 +15,7 @@ export const STORAGE_KEYS = {
 export const TECH_CATEGORIES = [
 	'frontend',
 	'backend',
+	'database',
 	'testing',
 	'devops',
 	'tools',
@@ -61,6 +62,7 @@ export { MONTH_LABELS } from '@/shared/constants/date';
 
 export {
 	BADGE_CATEGORY_BORDER,
+	BADGE_CATEGORY_SURFACE,
 	BUTTON_VARIANT_CLASS,
 	TEXT_VARIANT_CLASS,
 } from '@/shared/constants/ui';

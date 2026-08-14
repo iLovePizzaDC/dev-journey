@@ -1,6 +1,7 @@
-import { AcademicCapIcon } from '@heroicons/react/24/outline';
 import { education } from '@/shared/content';
-import { Icon, Text } from '@/shared/components/atoms';
+import { Text } from '@/shared/components/atoms';
+import { LabelHeading } from '@/shared/components/molecules';
+import { AcademicCapIcon } from '@heroicons/react/24/outline';
 import { localize, useLocale } from '@/shared/i18n';
 import { formatDateRange, sortByStartDesc } from '@/shared/utils/date';
 
@@ -10,10 +11,7 @@ export function EducationList() {
 
 	return (
 		<div>
-			<Text as='h3' variant='label' className='mb-4 flex items-center gap-2'>
-				<Icon icon={AcademicCapIcon} className='h-3.5 w-3.5' />
-				{messages.experience.education}
-			</Text>
+			<LabelHeading icon={AcademicCapIcon}>{messages.experience.education}</LabelHeading>
 			<ul className='grid gap-0'>
 				{items.map((item) => (
 					<li

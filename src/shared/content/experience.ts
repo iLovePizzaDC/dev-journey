@@ -13,18 +13,8 @@ export const experiences: Experience[] = [
 		end: null,
 		stack: ['React', 'TypeScript', 'ProvideX'],
 		bullets: {
-			de: [
-				'Full-Stack-Entwicklung mit React im Frontend und ProvideX im Backend',
-				'Features von der Anforderung bis zur fertigen Umsetzung — UI, Logik und Anbindungen',
-				'Abstimmung mit Produkt und Fachbereich, was gebraucht wird, und daraus Software machen',
-				'Eigene Tests und ein Auge darauf, dass die Lösung im Alltag auch funktioniert',
-			],
-			en: [
-				'Full-stack development with React in the frontend and ProvideX in the backend',
-				'Features from requirement to done — UI, logic and integrations',
-				'Align with product and domain teams on what’s needed, then turn it into software',
-				'Own the testing and keep an eye on whether it works well in practice',
-			],
+			de: [],
+			en: [],
 		},
 	},
 	{
