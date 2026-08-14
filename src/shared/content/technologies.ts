@@ -149,6 +149,13 @@ export const technologies: Technology[] = [
 		acquiredMonth: 11,
 	},
 	{
+		id: 'vue',
+		name: 'Vue',
+		category: 'frontend',
+		acquiredYear: 2023,
+		acquiredMonth: 12,
+	},
+	{
 		id: 'cloudflare',
 		name: 'Cloudflare',
 		category: 'devops',
@@ -196,13 +203,6 @@ export const technologies: Technology[] = [
 		category: 'testing',
 		acquiredYear: 2024,
 		acquiredMonth: 8,
-	},
-	{
-		id: 'vue',
-		name: 'Vue',
-		category: 'frontend',
-		acquiredYear: 2024,
-		acquiredMonth: 10,
 	},
 	{
 		id: 'github-actions',
