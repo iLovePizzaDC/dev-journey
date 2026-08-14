@@ -1,5 +1,8 @@
 import { useState } from 'react';
-import { groupTechnologiesByYear, filterTechnologiesByCategory } from '@/features/tech-timeline/utils/technologies';
+import {
+	groupTechnologiesByYear,
+	filterTechnologiesByCategory,
+} from '@/features/tech-timeline/utils/technologies';
 import { technologies } from '@/shared/content';
 import { TechYearGroup } from '@/features/tech-timeline/components/molecules/TechYearGroup';
 import { TechCategoryFilter } from '@/features/tech-timeline/components/molecules/TechCategoryFilter';

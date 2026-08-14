@@ -46,11 +46,7 @@ export function TechCategoryFilter({ value, onChange }: ITechCategoryFilter) {
 						className={cn(
 							'inline-flex cursor-pointer items-center gap-1 rounded-sm border px-2 py-1 text-[0.72rem] font-semibold uppercase tracking-[0.04em] transition duration-200',
 							selected
-								? cn(
-										'text-ink',
-										BADGE_CATEGORY_BORDER[category],
-										BADGE_CATEGORY_SURFACE[category],
-									)
+								? cn('text-ink', BADGE_CATEGORY_BORDER[category], BADGE_CATEGORY_SURFACE[category])
 								: 'border-line bg-transparent text-muted hover:border-ink hover:text-ink',
 						)}
 					>
