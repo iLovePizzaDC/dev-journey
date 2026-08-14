@@ -1,6 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import type { Technology } from '@/shared/types';
 import {
+	filterTechnologiesByCategory,
 	groupTechnologiesByYear,
 	sortTechnologiesByAcquisition,
 } from '@/features/tech-timeline/utils/technologies';
@@ -41,5 +42,15 @@ describe('groupTechnologiesByYear', () => {
 		const groups = groupTechnologiesByYear(sample);
 		expect([...groups.keys()]).toEqual([2021, 2023]);
 		expect(groups.get(2023)?.map((tech) => tech.name)).toEqual(['React', 'TypeScript']);
+	});
+});
+
+describe('filterTechnologiesByCategory', () => {
+	it('keeps only matching categories', () => {
+		const mixed: Technology[] = [
+			...sample,
+			{ id: 'd', name: 'Jest', category: 'testing', acquiredYear: 2023 },
+		];
+		expect(filterTechnologiesByCategory(mixed, 'testing').map((tech) => tech.id)).toEqual(['d']);
 	});
 });

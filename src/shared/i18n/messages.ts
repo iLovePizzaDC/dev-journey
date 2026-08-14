@@ -28,6 +28,7 @@ export const messages: MessagesByLocale = {
 			title: 'Wann ich was gelernt habe',
 			description: 'Technologien nach dem Jahr, in dem sie dazugekommen sind.',
 			categoriesAria: 'Kategorien',
+			all: 'Alle',
 		},
 		projects: {
 			eyebrow: 'Projekte',
@@ -64,6 +65,7 @@ export const messages: MessagesByLocale = {
 		categories: {
 			frontend: 'Frontend',
 			backend: 'Backend',
+			database: 'Datenbank',
 			testing: 'Testing',
 			devops: 'DevOps',
 			tools: 'Tools',
@@ -97,6 +99,7 @@ export const messages: MessagesByLocale = {
 			title: 'When I learned what',
 			description: 'Technologies by the year they became part of my stack.',
 			categoriesAria: 'Categories',
+			all: 'All',
 		},
 		projects: {
 			eyebrow: 'Projects',
@@ -133,6 +136,7 @@ export const messages: MessagesByLocale = {
 		categories: {
 			frontend: 'Frontend',
 			backend: 'Backend',
+			database: 'Database',
 			testing: 'Testing',
 			devops: 'DevOps',
 			tools: 'Tools',

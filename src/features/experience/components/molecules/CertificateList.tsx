@@ -1,7 +1,8 @@
-import { CheckBadgeIcon } from '@heroicons/react/24/outline';
 import { certificates } from '@/shared/content';
 import { sortCertificatesByDateDesc } from '@/features/experience/utils/sortCertificates';
-import { Icon, Text } from '@/shared/components/atoms';
+import { Text } from '@/shared/components/atoms';
+import { LabelHeading } from '@/shared/components/molecules';
+import { CheckBadgeIcon } from '@heroicons/react/24/outline';
 import { localize, useLocale } from '@/shared/i18n';
 import { formatMonthYear } from '@/shared/utils/date';
 
@@ -11,10 +12,7 @@ export function CertificateList() {
 
 	return (
 		<div>
-			<Text as='h3' variant='label' className='mb-4 flex items-center gap-2'>
-				<Icon icon={CheckBadgeIcon} className='h-3.5 w-3.5' />
-				{messages.experience.certificates}
-			</Text>
+			<LabelHeading icon={CheckBadgeIcon}>{messages.experience.certificates}</LabelHeading>
 			<ul className='grid gap-0'>
 				{items.map((cert) => (
 					<li

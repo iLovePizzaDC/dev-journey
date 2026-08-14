@@ -31,7 +31,15 @@ export const projects: Project[] = [
 			en: 'Web app for logging and reviewing migraine episodes, including Google Calendar integration.',
 		},
 		githubRepo: 'iLovePizzaDC/migrainetracker-gui-v4',
-		stack: ['Vite', 'React', 'TypeScript', 'Spring Boot', 'Google Calendar API'],
+		stack: [
+			'Vite',
+			'React',
+			'TypeScript',
+			'Tailwind CSS',
+			'Vitest',
+			'Spring Boot',
+			'Google Calendar API',
+		],
 		highlights: {
 			de: [
 				'Episoden erfassen und auswerten',
@@ -53,7 +61,7 @@ export const projects: Project[] = [
 			en: 'Dashboard for visualizing and exploring market and system data.',
 		},
 		githubRepo: 'iLovePizzaDC/trading-dashboard',
-		stack: ['Vite', 'React', 'TypeScript', 'Python'],
+		stack: ['Vite', 'React', 'TypeScript', 'Tailwind CSS', 'Vitest', 'Python'],
 		highlights: {
 			de: ['Daten visualisieren und aufbereiten', 'Python-Backend', 'React-Oberfläche'],
 			en: ['Visualize and prepare data', 'Python backend', 'React UI'],
@@ -66,7 +74,7 @@ export const projects: Project[] = [
 			de: 'Haushalts-App mit wiederkehrenden Aufgaben, Login und Nutzerverwaltung.',
 			en: 'Household app with recurring chores, login and user management.',
 		},
-		stack: ['Next.js', 'TypeScript', 'API Routes', 'BFF'],
+		stack: ['Next.js', 'TypeScript', 'Tailwind CSS', 'API Routes', 'BFF'],
 		highlights: {
 			de: [
 				'Wiederkehrende Aufgaben',
