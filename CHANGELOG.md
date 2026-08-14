@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.2.0](https://github.com/iLovePizzaDC/dev-journey/compare/v1.1.0...v1.2.0) (2026-08-13)
+
+
+### Features
+
+* rewrite content ([#12](https://github.com/iLovePizzaDC/dev-journey/issues/12)) ([c96b8aa](https://github.com/iLovePizzaDC/dev-journey/commit/c96b8aa3e3f21240a44b0ee9494faabf061f9f3c))
+* rewrite content ([#12](https://github.com/iLovePizzaDC/dev-journey/issues/12)) ([9ea92cd](https://github.com/iLovePizzaDC/dev-journey/commit/9ea92cd513bf2e0797a09cd36729f008fd816ee9))
+
 ## [1.1.0](https://github.com/iLovePizzaDC/dev-journey/compare/v1.0.0...v1.1.0) (2026-08-13)
 
 
