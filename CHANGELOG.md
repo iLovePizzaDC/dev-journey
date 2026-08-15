@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.2.1](https://github.com/iLovePizzaDC/dev-journey/compare/v1.2.0...v1.2.1) (2026-08-15)
+
+
+### Bug Fixes
+
+* update technologies ([4612eca](https://github.com/iLovePizzaDC/dev-journey/commit/4612eca607fac4e260b19e4d9fafebe93ccb388b))
+* update technologies ([c84585d](https://github.com/iLovePizzaDC/dev-journey/commit/c84585db7cd03fe5068ba3a6d1ed73c1bd85f2d3))
+
 ## [1.2.0](https://github.com/iLovePizzaDC/dev-journey/compare/v1.1.0...v1.2.0) (2026-08-13)
 
 ### Features
