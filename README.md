@@ -30,9 +30,9 @@ Imports use the `@/` alias (`src/`).
 | Rule               | Detail                                                                                                                         |
 | ------------------ | ------------------------------------------------------------------------------------------------------------------------------ |
 | Context / Provider | Split files (`FooContext.tsx` + `FooProvider.tsx`). Value types live in the Context file; `IFooProvider` in the Provider file. |
-| Props              | `interface IButton` (etc.) in the same `.tsx` as the component — no `Props` suffix.                                            |
+| Props              | `interface IButton` (etc.) in the same `.tsx` as the component, no `Props` suffix.                                              |
 | Everything else    | `type` for domain/helpers. Constants & utils → `shared/*` if shared, else `features/<name>/{constants,utils,types}/`.          |
-| Tests              | Colocated `*.test.ts(x)` — unit for pure logic, Testing Library for UI.                                                        |
+| Tests              | Colocated `*.test.ts(x)`: unit for pure logic, Testing Library for UI.                                                          |
 
 ## Setup
 

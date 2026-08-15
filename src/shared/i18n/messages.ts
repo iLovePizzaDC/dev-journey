@@ -17,7 +17,7 @@ export const messages: MessagesByLocale = {
 		experience: {
 			eyebrow: 'Berufsweg',
 			title: 'Wo ich gearbeitet habe',
-			description: 'Von neu nach alt — Rollen, Zeiträume und was ich dort gemacht habe.',
+			description: 'Von neu nach alt: Rollen, Zeiträume und was ich dort gemacht habe.',
 			work: 'Berufliche Stationen',
 			education: 'Ausbildung & Schule',
 			certificates: 'Zertifikate',
@@ -88,7 +88,7 @@ export const messages: MessagesByLocale = {
 		experience: {
 			eyebrow: 'Career',
 			title: 'Where I have worked',
-			description: 'Newest first — roles, time ranges and what I did there.',
+			description: 'Newest first: roles, time ranges and what I did there.',
 			work: 'Work history',
 			education: 'Education & school',
 			certificates: 'Certificates',
