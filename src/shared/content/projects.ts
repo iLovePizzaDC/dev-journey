@@ -5,8 +5,8 @@ export const projects: Project[] = [
 		id: 'dev-journey',
 		name: 'Dev Journey',
 		description: {
-			de: 'Mein öffentliches Portfolio: Berufsweg, Skills und Projekte — mit Live-Daten von GitHub.',
-			en: 'My public portfolio: career, skills and projects — with live data from GitHub.',
+			de: 'Mein öffentliches Portfolio: Berufsweg, Skills und Projekte, mit Live-Daten von GitHub.',
+			en: 'My public portfolio: career, skills and projects, with live data from GitHub.',
 		},
 		githubRepo: 'iLovePizzaDC/dev-journey',
 		stack: ['Vite', 'React', 'TypeScript', 'Tailwind CSS', 'Vitest'],
