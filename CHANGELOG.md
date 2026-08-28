@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.4.0](https://github.com/iLovePizzaDC/dev-journey/compare/v1.3.0...v1.4.0) (2026-08-28)
+
+
+### Features
+
+* update schadenakte policy ([#24](https://github.com/iLovePizzaDC/dev-journey/issues/24)) ([1f6f361](https://github.com/iLovePizzaDC/dev-journey/commit/1f6f361703048ba20a41c301cbecafed2b0ff9e5))
+* update schadenakte policy ([#24](https://github.com/iLovePizzaDC/dev-journey/issues/24)) ([4a4daab](https://github.com/iLovePizzaDC/dev-journey/commit/4a4daab34b3e0f5a37b57119c289be86e1eab04f))
+
 ## [1.3.0](https://github.com/iLovePizzaDC/dev-journey/compare/v1.2.1...v1.3.0) (2026-08-27)
 
 
