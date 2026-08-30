@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.4.1](https://github.com/iLovePizzaDC/dev-journey/compare/v1.4.0...v1.4.1) (2026-08-30)
+
+
+### Bug Fixes
+
+* primary hover button ([#27](https://github.com/iLovePizzaDC/dev-journey/issues/27)) ([5e1f194](https://github.com/iLovePizzaDC/dev-journey/commit/5e1f194a4762b14109e2358deeecf30a597767b3))
+* primary hover button ([#27](https://github.com/iLovePizzaDC/dev-journey/issues/27)) ([389d904](https://github.com/iLovePizzaDC/dev-journey/commit/389d904dadd5b70429bda384bcb76c513d7d072c))
+
 ## [1.4.0](https://github.com/iLovePizzaDC/dev-journey/compare/v1.3.0...v1.4.0) (2026-08-28)
 
 
