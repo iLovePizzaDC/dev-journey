@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.5.0](https://github.com/iLovePizzaDC/dev-journey/compare/v1.4.1...v1.5.0) (2026-09-05)
+
+
+### Features
+
+* add mealping legal sites ([#31](https://github.com/iLovePizzaDC/dev-journey/issues/31)) ([df9d85c](https://github.com/iLovePizzaDC/dev-journey/commit/df9d85cf0f81ac561576f46cc3b4e5d88353cbb5))
+
 ## [1.4.1](https://github.com/iLovePizzaDC/dev-journey/compare/v1.4.0...v1.4.1) (2026-08-30)
 
 
