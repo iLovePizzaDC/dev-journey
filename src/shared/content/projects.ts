@@ -2,6 +2,28 @@ import type { Project } from '@/shared/types';
 
 export const projects: Project[] = [
 	{
+		id: 'schadenakte',
+		name: 'Schadenakte',
+		description: {
+			de: 'iOS-App für Wasserschäden vor Ort: Fotos, Checkliste, Zeitlinie und Inventar — daraus ein PDF für die Versicherung. Alles bleibt auf dem iPhone.',
+			en: 'iOS app for documenting water damage on site: photos, checklist, timeline and inventory — then a PDF for the insurer. Everything stays on the iPhone.',
+		},
+		appStoreUrl: 'https://apps.apple.com/de/app/schadenakte/id6806029264',
+		stack: ['Expo', 'React Native', 'TypeScript', 'StoreKit'],
+		highlights: {
+			de: [
+				'Akte mit Kamera, Checkliste und Zeitlinie',
+				'PDF-Export für die Versicherung',
+				'Offline auf dem Gerät, ohne Konto',
+			],
+			en: [
+				'Case file with camera, checklist and timeline',
+				'PDF export for the insurer',
+				'Offline on device, no account',
+			],
+		},
+	},
+	{
 		id: 'dev-journey',
 		name: 'Dev Journey',
 		description: {

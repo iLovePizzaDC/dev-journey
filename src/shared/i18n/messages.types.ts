@@ -34,6 +34,8 @@ export type Messages = {
 		title: string;
 		description: string;
 		openGithub: string;
+		openAppStore: string;
+		onAppStore: string;
 		noRepo: string;
 		commitLoading: string;
 		commitUnavailable: string;

@@ -50,6 +50,8 @@ export type Project = {
 	description: Localized;
 	githubRepo?: string;
 	url?: string;
+	/** Live App Store URL for published iOS apps. */
+	appStoreUrl?: string;
 	stack: string[];
 	highlights?: Localized<string[]>;
 };
