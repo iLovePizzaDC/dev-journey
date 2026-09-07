@@ -50,6 +50,7 @@ export type Project = {
 	description: Localized;
 	githubRepo?: string;
 	url?: string;
+	appStoreUrl?: string;
 	stack: string[];
 	highlights?: Localized<string[]>;
 };

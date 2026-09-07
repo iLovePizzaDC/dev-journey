@@ -44,6 +44,24 @@ describe('ProjectCard (Vitest + Testing Library)', () => {
 		);
 	});
 
+	it('renders an App Store link when appStoreUrl is set', () => {
+		renderWithProviders(
+			<ProjectCard
+				project={{
+					...project,
+					githubRepo: undefined,
+					appStoreUrl: 'https://apps.apple.com/de/app/schadenakte/id6806029264',
+				}}
+			/>,
+		);
+
+		expect(screen.getByText('Im App Store')).toBeInTheDocument();
+		expect(screen.getByRole('link', { name: /Im App Store öffnen/i })).toHaveAttribute(
+			'href',
+			'https://apps.apple.com/de/app/schadenakte/id6806029264',
+		);
+	});
+
 	it('switches description with locale', () => {
 		renderWithProviders(<ProjectCard project={project} loading />, {
 			locale: 'en',
