@@ -33,8 +33,10 @@ export const messages: MessagesByLocale = {
 		projects: {
 			eyebrow: 'Projekte',
 			title: 'Eigene Projekte',
-			description: 'Stacks, Kurzbeschreibungen und Live-Daten vom öffentlichen GitHub-Repo.',
+			description: 'Apps und Side Projects — Stack, Kurzinfo und Link zu GitHub oder App Store.',
 			openGithub: 'Auf GitHub öffnen',
+			openAppStore: 'Im App Store öffnen',
+			onAppStore: 'Im App Store',
 			noRepo: 'Kein öffentliches Repo verknüpft',
 			commitLoading: 'Commit-Status wird geladen…',
 			commitUnavailable: 'Letzter Commit nicht verfügbar',
@@ -104,8 +106,10 @@ export const messages: MessagesByLocale = {
 		projects: {
 			eyebrow: 'Projects',
 			title: 'Personal projects',
-			description: 'Stacks, short descriptions and live data from the public GitHub repo.',
+			description: 'Apps and side projects — stack, short notes, and a link to GitHub or the App Store.',
 			openGithub: 'Open on GitHub',
+			openAppStore: 'Open in App Store',
+			onAppStore: 'On the App Store',
 			noRepo: 'No public repository linked',
 			commitLoading: 'Loading commit status…',
 			commitUnavailable: 'Last commit unavailable',
