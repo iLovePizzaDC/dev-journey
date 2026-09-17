@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.7.0](https://github.com/iLovePizzaDC/dev-journey/compare/v1.6.0...v1.7.0) (2026-09-17)
+
+
+### Features
+
+* update mealpin legal sites ([#39](https://github.com/iLovePizzaDC/dev-journey/issues/39)) ([5794213](https://github.com/iLovePizzaDC/dev-journey/commit/57942133dadf976d63813ed53399728e3f9a57d0))
+* update mealpin legal sites ([#39](https://github.com/iLovePizzaDC/dev-journey/issues/39)) ([af54768](https://github.com/iLovePizzaDC/dev-journey/commit/af5476888da2f7a45b7d8eebc5b3911875efa7bb))
+
 ## [1.6.0](https://github.com/iLovePizzaDC/dev-journey/compare/v1.5.0...v1.6.0) (2026-09-07)
 
 
