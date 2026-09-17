@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.6.0](https://github.com/iLovePizzaDC/dev-journey/compare/v1.5.0...v1.6.0) (2026-09-07)
+
+
+### Features
+
+* add english legal sitees to mealpin ([#34](https://github.com/iLovePizzaDC/dev-journey/issues/34)) ([c17e6c2](https://github.com/iLovePizzaDC/dev-journey/commit/c17e6c2fd131f69cce7531507711c34cd9ffa92c))
+
+
+### Bug Fixes
+
+* unify app/web legal sites ([#36](https://github.com/iLovePizzaDC/dev-journey/issues/36)) ([bdfde73](https://github.com/iLovePizzaDC/dev-journey/commit/bdfde733c0e0547cc17964f33489f52e373f53e4))
+
 ## [1.5.0](https://github.com/iLovePizzaDC/dev-journey/compare/v1.4.1...v1.5.0) (2026-09-05)
 
 
