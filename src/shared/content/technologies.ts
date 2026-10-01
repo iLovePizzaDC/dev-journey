@@ -239,4 +239,11 @@ export const technologies: Technology[] = [
 		acquiredYear: 2026,
 		acquiredMonth: 6,
 	},
+	{
+		id: 'pvxplus',
+		name: 'PvxPlus',
+		category: 'backend',
+		acquiredYear: 2026,
+		acquiredMonth: 9,
+	},
 ];
