@@ -17,8 +17,8 @@ export function SiteHeader({ brand = profile.name }: ISiteHeader) {
 	const activeSectionId = useScrollSpy(NAV_SECTION_IDS);
 
 	return (
-		<header className='sticky top-0 z-20 border-b border-transparent bg-paper/78 backdrop-blur-md transition-[background-color,border-color] duration-300'>
-			<div className='mx-auto flex w-full max-w-6xl items-center gap-3 px-4 py-4 md:gap-4'>
+		<header className='sticky top-0 z-20 border-b border-transparent bg-paper/78 pt-[env(safe-area-inset-top)] backdrop-blur-md transition-[background-color,border-color] duration-300'>
+			<div className='mx-auto flex w-full max-w-6xl items-center gap-3 py-4 pl-[max(1rem,env(safe-area-inset-left))] pr-[max(1rem,env(safe-area-inset-right))] md:gap-4'>
 				<button
 					type='button'
 					onClick={() => scrollToSection(SECTION_IDS.top)}
