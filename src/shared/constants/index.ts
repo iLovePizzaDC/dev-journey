@@ -50,8 +50,6 @@ export const GITHUB_API = {
 	repoUrl: (repo: string) => `https://api.github.com/repos/${repo}`,
 } as const;
 
-export const THEMES = ['light', 'dark'] as const satisfies readonly Theme[];
-
 export const THEME_COLORS = {
 	light: '#f3f6f4',
 	dark: '#121614',

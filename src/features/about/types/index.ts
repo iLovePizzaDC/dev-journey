@@ -1,9 +1,7 @@
 import type { IconComponent } from '@/shared/types';
 
-export type AboutFactIcon = IconComponent;
-
 export type AboutFact = {
-	icon: AboutFactIcon;
+	icon: IconComponent;
 	label: string;
 	value: string;
 	href?: string;

@@ -22,13 +22,10 @@ export function githubProfileUrl(username: string): string {
 
 function toGitHubRepoInfo(apiRepo: GitHubApiRepo): GitHubRepoInfo {
 	return {
-		fullName: apiRepo.full_name,
 		description: apiRepo.description,
-		htmlUrl: apiRepo.html_url,
 		pushedAt: apiRepo.pushed_at,
 		language: apiRepo.language,
 		stars: apiRepo.stargazers_count,
-		topics: apiRepo.topics ?? [],
 	};
 }
 

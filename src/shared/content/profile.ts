@@ -8,7 +8,6 @@ export const profile: Profile = {
 	},
 	location: 'Waiblingen',
 	email: 'n.betz1102@gmail.com',
-	phone: '0178-4512503',
 	githubUsername: 'iLovePizzaDC',
 	summary: {
 		de: 'Frontend Developer aus Waiblingen mit zwei Jahren Erfahrung in React und TypeScript. Ich baue Web-Apps, arbeite mich gerne in neue Stacks ein und entwickle nebenbei eigene Projekte.',

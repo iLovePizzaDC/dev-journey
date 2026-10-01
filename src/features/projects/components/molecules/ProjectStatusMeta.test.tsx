@@ -11,13 +11,10 @@ const baseProject: Project = {
 };
 
 const github: GitHubRepoInfo = {
-	fullName: 'owner/demo',
 	description: null,
-	htmlUrl: 'https://github.com/owner/demo',
 	pushedAt: new Date().toISOString(),
 	language: 'TypeScript',
 	stars: 2,
-	topics: [],
 };
 
 describe('ProjectStatusMeta', () => {
