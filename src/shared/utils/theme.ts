@@ -1,4 +1,4 @@
-import { STORAGE_KEYS } from '@/shared/constants';
+import { STORAGE_KEYS, THEME_COLORS } from '@/shared/constants';
 import type { Theme } from '@/shared/types';
 
 export function getPreferredTheme(): Theme {
@@ -10,4 +10,16 @@ export function getPreferredTheme(): Theme {
 
 export function applyTheme(theme: Theme) {
 	document.documentElement.classList.toggle('dark', theme === 'dark');
+	syncThemeColor(theme);
+}
+
+function syncThemeColor(theme: Theme) {
+	const color = THEME_COLORS[theme];
+	let meta = document.querySelector('meta[name="theme-color"]');
+	if (!meta) {
+		meta = document.createElement('meta');
+		meta.setAttribute('name', 'theme-color');
+		document.head.appendChild(meta);
+	}
+	meta.setAttribute('content', color);
 }

@@ -5,5 +5,9 @@ interface IAppShell {
 }
 
 export function AppShell({ children }: IAppShell) {
-	return <div className='mx-auto w-full max-w-6xl px-4 pb-16'>{children}</div>;
+	return (
+		<div className='mx-auto w-full max-w-6xl pb-[calc(4rem+env(safe-area-inset-bottom))] pl-[max(1rem,env(safe-area-inset-left))] pr-[max(1rem,env(safe-area-inset-right))]'>
+			{children}
+		</div>
+	);
 }
