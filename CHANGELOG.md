@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.7.1](https://github.com/iLovePizzaDC/dev-journey/compare/v1.7.0...v1.7.1) (2026-10-01)
+
+
+### Bug Fixes
+
+* add theme meta ([#44](https://github.com/iLovePizzaDC/dev-journey/issues/44)) ([ece0caf](https://github.com/iLovePizzaDC/dev-journey/commit/ece0caf1bcb3b7179d5082cb7326b366d3fc65ee))
+
 ## [1.7.0](https://github.com/iLovePizzaDC/dev-journey/compare/v1.6.0...v1.7.0) (2026-09-17)
 
 
