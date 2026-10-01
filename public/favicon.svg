@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img" aria-label="Dev Journey">
+  <rect width="32" height="32" rx="8" fill="#0f766e"/>
+  <rect x="6.5" y="7.5" width="19" height="17" rx="3.2" fill="#f3f6f4"/>
+  <path fill="#0b5c56" d="M6.5 10.7V9.2c0-.9.8-1.7 1.7-1.7h15.6c.9 0 1.7.8 1.7 1.7v1.5H6.5z"/>
+  <circle cx="9.3" cy="9.55" r="0.9" fill="#f3f6f4"/>
+  <path fill="#0f766e" d="M10.1 14.8v1.85l2.05 1.35-2.05 1.35V21.2L14.4 18l-4.3-3.2z"/>
+  <rect x="15.3" y="19.6" width="4.4" height="1.7" rx="0.7" fill="#0f766e"/>
+</svg>
