@@ -6,6 +6,7 @@ import { useLocale } from '@/shared/i18n';
 
 export function AboutActions() {
 	const { messages } = useLocale();
+	const githubUrl = githubProfileUrl(profile.githubUsername);
 
 	return (
 		<div className='flex flex-col gap-3'>
@@ -13,12 +14,8 @@ export function AboutActions() {
 				<Icon icon={EnvelopeIcon} />
 				{messages.about.writeMessage}
 			</Button>
-			<Button
-				href={githubProfileUrl(profile.githubUsername)}
-				variant='ghost'
-				target='_blank'
-				rel='noreferrer'
-			>
+
+			<Button href={githubUrl} variant='ghost' target='_blank' rel='noreferrer'>
 				{messages.about.githubProfile}
 				<Icon icon={ArrowTopRightOnSquareIcon} className='h-3.5 w-3.5 opacity-70' />
 			</Button>

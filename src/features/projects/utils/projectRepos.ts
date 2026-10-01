@@ -1,7 +1,13 @@
 import type { Project } from '@/shared/types';
 
 export function getProjectGithubRepoIds(projects: Project[]): string[] {
-	return projects
-		.map((project) => project.githubRepo)
-		.filter((repo): repo is string => Boolean(repo));
+	const repoIds: string[] = [];
+
+	for (const project of projects) {
+		if (project.githubRepo) {
+			repoIds.push(project.githubRepo);
+		}
+	}
+
+	return repoIds;
 }

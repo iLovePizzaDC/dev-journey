@@ -9,8 +9,13 @@ interface ITechItem {
 
 export function TechItem({ tech }: ITechItem) {
 	const { locale, messages } = useLocale();
+
 	const note = tech.note ? localize(locale, tech.note) : undefined;
-	const category = categoryLabel(tech.category, messages.categories);
+	const categoryName = categoryLabel(tech.category, messages.categories);
+
+	const ariaLabel = note
+		? `${tech.name}, ${categoryName}. ${note}`
+		: `${tech.name}, ${categoryName}`;
 
 	return (
 		<li className='transition duration-300 hover:-translate-y-px'>
@@ -18,7 +23,7 @@ export function TechItem({ tech }: ITechItem) {
 				name={tech.name}
 				category={tech.category}
 				title={note}
-				aria-label={note ? `${tech.name}, ${category}. ${note}` : `${tech.name}, ${category}`}
+				aria-label={ariaLabel}
 			/>
 		</li>
 	);

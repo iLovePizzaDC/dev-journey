@@ -21,6 +21,7 @@ export function HeroActions() {
 					className='transition-transform duration-300 group-hover:translate-x-0.5'
 				/>
 			</Button>
+
 			<Button href={`mailto:${profile.email}`} variant='ghost'>
 				<Icon icon={EnvelopeIcon} />
 				{messages.hero.contact}

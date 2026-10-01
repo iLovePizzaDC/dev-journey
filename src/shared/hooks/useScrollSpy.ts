@@ -11,14 +11,14 @@ import {
 import { useEffect, useState } from 'react';
 
 export function useScrollSpy(sectionIds: readonly string[], rootMargin = SCROLL_SPY_ROOT_MARGIN) {
-	const [activeId, setActiveId] = useState<string | null>(null);
+	const [activeSectionId, setActiveSectionId] = useState<string | null>(null);
 
 	useEffect(() => {
-		const elements = resolveSectionElements(sectionIds);
-		if (elements.length === 0) return;
+		const sectionElements = resolveSectionElements(sectionIds);
+		if (sectionElements.length === 0) return;
 
 		const visibilityBySectionId = new Map<string, number>(
-			elements.map((element) => [element.id, 0]),
+			sectionElements.map((element) => [element.id, 0]),
 		);
 
 		const syncActiveSection = () => {
@@ -29,23 +29,33 @@ export function useScrollSpy(sectionIds: readonly string[], rootMargin = SCROLL_
 				document.documentElement.scrollHeight,
 			);
 
-			setActiveId(pickActiveSectionId(visibilityBySectionId, sectionIds, nearBottom));
+			const nextActiveId = pickActiveSectionId(
+				visibilityBySectionId,
+				sectionIds,
+				nearBottom,
+			);
+
+			setActiveSectionId(nextActiveId);
 		};
 
 		const observer = new IntersectionObserver(
 			(entries) => {
 				for (const entry of entries) {
-					visibilityBySectionId.set(
-						entry.target.id,
-						entry.isIntersecting ? entry.intersectionRatio : 0,
-					);
+					const visibilityRatio = entry.isIntersecting ? entry.intersectionRatio : 0;
+					visibilityBySectionId.set(entry.target.id, visibilityRatio);
 				}
+
 				syncActiveSection();
 			},
-			{ rootMargin, threshold: [...SCROLL_SPY_THRESHOLDS] },
+			{
+				rootMargin,
+				threshold: [...SCROLL_SPY_THRESHOLDS],
+			},
 		);
 
-		for (const element of elements) observer.observe(element);
+		for (const element of sectionElements) {
+			observer.observe(element);
+		}
 
 		window.addEventListener('scroll', syncActiveSection, { passive: true });
 		window.addEventListener('resize', syncActiveSection);
@@ -59,5 +69,5 @@ export function useScrollSpy(sectionIds: readonly string[], rootMargin = SCROLL_
 		};
 	}, [sectionIds, rootMargin]);
 
-	return activeId;
+	return activeSectionId;
 }

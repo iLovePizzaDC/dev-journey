@@ -8,6 +8,9 @@ import { localize, useLocale } from '@/shared/i18n';
 export function HeroSection() {
 	const { locale, messages } = useLocale();
 
+	const title = localize(locale, profile.title);
+	const summary = localize(locale, profile.summary);
+
 	return (
 		<section
 			id={SECTION_IDS.top}
@@ -18,25 +21,30 @@ export function HeroSection() {
 				className='pointer-events-none fixed top-[10svh] -right-[min(12vw,7rem)] h-[min(52vw,28rem)] w-[min(52vw,28rem)] animate-drift rounded-full bg-[radial-gradient(circle,var(--color-glow-a)_0%,transparent_70%)] blur-md dark:opacity-70'
 				aria-hidden='true'
 			/>
+
 			<div className='relative max-w-xl'>
 				<div className='animate-fade-up' style={{ animationDelay: '40ms' }}>
 					<HeroKicker>{messages.hero.kicker}</HeroKicker>
 				</div>
+
 				<div className='animate-fade-up' style={{ animationDelay: '120ms' }}>
 					<Text as='h1' variant='display' className='mb-3' id='hero-name'>
 						{profile.name}
 					</Text>
 				</div>
+
 				<div className='animate-fade-up' style={{ animationDelay: '200ms' }}>
 					<Text as='p' variant='subtitle' className='mb-5 text-accent-strong'>
-						{localize(locale, profile.title)}
+						{title}
 					</Text>
 				</div>
+
 				<div className='animate-fade-up' style={{ animationDelay: '280ms' }}>
 					<Text variant='body' className='mb-6 max-w-md text-[1.05rem]'>
-						{localize(locale, profile.summary)}
+						{summary}
 					</Text>
 				</div>
+
 				<div className='animate-fade-up' style={{ animationDelay: '360ms' }}>
 					<HeroActions />
 				</div>

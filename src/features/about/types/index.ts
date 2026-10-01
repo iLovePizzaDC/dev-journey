@@ -1,10 +1,8 @@
-import type { ReactNode } from 'react';
 import type { IconComponent } from '@/shared/types';
 
-export type AboutFactIcon = IconComponent;
-
 export type AboutFact = {
-	icon: AboutFactIcon;
+	icon: IconComponent;
 	label: string;
-	value: ReactNode;
+	value: string;
+	href?: string;
 };

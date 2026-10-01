@@ -3,33 +3,53 @@ import { EMPTY_GITHUB_REPOS } from '@/features/projects/constants';
 import type { GitHubRepoStatusMap, UseGitHubReposResult } from '@/features/projects/types';
 import { useEffect, useState } from 'react';
 
+type CachedRepos = {
+	repoIdsKey: string;
+	repos: GitHubRepoStatusMap;
+};
+
 export function useGitHubRepos(repoIds: string[]): UseGitHubReposResult {
-	const key = repoIds.join(',');
-	const [data, setData] = useState<{ key: string; repos: GitHubRepoStatusMap } | null>(null);
+	const repoIdsKey = repoIds.join(',');
+	const [cachedRepos, setCachedRepos] = useState<CachedRepos | null>(null);
 
 	useEffect(() => {
-		if (!key) return;
+		if (!repoIdsKey) return;
 
-		let cancelled = false;
+		let requestWasCancelled = false;
+		const repoIdsForRequest = repoIdsKey.split(',');
 
-		void fetchGitHubRepos(key.split(',')).then((repos) => {
-			if (!cancelled) {
-				setData({ key, repos });
-			}
+		void fetchGitHubRepos(repoIdsForRequest).then((repos) => {
+			if (requestWasCancelled) return;
+
+			setCachedRepos({
+				repoIdsKey,
+				repos,
+			});
 		});
 
 		return () => {
-			cancelled = true;
+			requestWasCancelled = true;
 		};
-	}, [key]);
+	}, [repoIdsKey]);
 
-	if (!key) {
-		return { repos: EMPTY_GITHUB_REPOS, loading: false };
+	if (!repoIdsKey) {
+		return {
+			repos: EMPTY_GITHUB_REPOS,
+			loading: false,
+		};
 	}
 
-	const ready = data?.key === key;
+	const cacheMatchesCurrentRequest = cachedRepos?.repoIdsKey === repoIdsKey;
+
+	if (!cacheMatchesCurrentRequest) {
+		return {
+			repos: EMPTY_GITHUB_REPOS,
+			loading: true,
+		};
+	}
+
 	return {
-		repos: ready ? data.repos : EMPTY_GITHUB_REPOS,
-		loading: !ready,
+		repos: cachedRepos.repos,
+		loading: false,
 	};
 }

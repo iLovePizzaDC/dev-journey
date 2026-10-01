@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { CommitMeta } from '@/shared/components/molecules/CommitMeta';
+import { CommitMeta } from '@/features/projects/components/molecules/CommitMeta';
 import { renderWithProviders } from '@/test/render';
 
 describe('CommitMeta', () => {

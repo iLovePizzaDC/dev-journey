@@ -13,16 +13,16 @@ interface ILocaleProvider {
 export function LocaleProvider({ children, initialLocale }: ILocaleProvider) {
 	const [locale, setLocaleState] = useState<Locale>(() => initialLocale ?? readInitialLocale());
 
-	const setLocale = useCallback((next: Locale) => {
-		setLocaleState(next);
-		window.localStorage.setItem(STORAGE_KEYS.locale, next);
+	const setLocale = useCallback((nextLocale: Locale) => {
+		setLocaleState(nextLocale);
+		window.localStorage.setItem(STORAGE_KEYS.locale, nextLocale);
 	}, []);
 
 	useEffect(() => {
 		document.documentElement.lang = locale;
 	}, [locale]);
 
-	const value = useMemo(
+	const contextValue = useMemo(
 		() => ({
 			locale,
 			setLocale,
@@ -31,5 +31,5 @@ export function LocaleProvider({ children, initialLocale }: ILocaleProvider) {
 		[locale, setLocale],
 	);
 
-	return <LocaleContext.Provider value={value}>{children}</LocaleContext.Provider>;
+	return <LocaleContext.Provider value={contextValue}>{children}</LocaleContext.Provider>;
 }

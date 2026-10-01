@@ -12,19 +12,28 @@ export class GitHubApiError extends Error {
 	}
 }
 
-export function githubRepoUrl(repo: string): string {
-	return `https://github.com/${repo}`;
+export function githubRepoUrl(repoFullName: string): string {
+	return `https://github.com/${repoFullName}`;
 }
 
 export function githubProfileUrl(username: string): string {
 	return `https://github.com/${username}`;
 }
 
+function toGitHubRepoInfo(apiRepo: GitHubApiRepo): GitHubRepoInfo {
+	return {
+		description: apiRepo.description,
+		pushedAt: apiRepo.pushed_at,
+		language: apiRepo.language,
+		stars: apiRepo.stargazers_count,
+	};
+}
+
 export async function fetchGitHubRepo(
-	repo: string,
+	repoFullName: string,
 	fetchFn: typeof fetch = fetch,
 ): Promise<GitHubRepoInfo> {
-	const response = await fetchFn(GITHUB_API.repoUrl(repo), {
+	const response = await fetchFn(GITHUB_API.repoUrl(repoFullName), {
 		headers: {
 			Accept: GITHUB_API.accept,
 			'X-GitHub-Api-Version': GITHUB_API.version,
@@ -32,35 +41,36 @@ export async function fetchGitHubRepo(
 	});
 
 	if (!response.ok) {
-		throw new GitHubApiError(`GitHub API error for ${repo}: ${response.status}`, response.status);
+		throw new GitHubApiError(
+			`GitHub API error for ${repoFullName}: ${response.status}`,
+			response.status,
+		);
 	}
 
-	const data = (await response.json()) as GitHubApiRepo;
+	const apiRepo = (await response.json()) as GitHubApiRepo;
 
-	return {
-		fullName: data.full_name,
-		description: data.description,
-		htmlUrl: data.html_url,
-		pushedAt: data.pushed_at,
-		language: data.language,
-		stars: data.stargazers_count,
-		topics: data.topics ?? [],
-	};
+	return toGitHubRepoInfo(apiRepo);
+}
+
+async function fetchRepoOrNull(
+	repoFullName: string,
+	fetchFn: typeof fetch,
+): Promise<readonly [string, GitHubRepoInfo | null]> {
+	try {
+		const repoInfo = await fetchGitHubRepo(repoFullName, fetchFn);
+		return [repoFullName, repoInfo];
+	} catch {
+		return [repoFullName, null];
+	}
 }
 
 export async function fetchGitHubRepos(
-	repos: string[],
+	repoFullNames: string[],
 	fetchFn: typeof fetch = fetch,
 ): Promise<Map<string, GitHubRepoInfo | null>> {
 	const results = await Promise.all(
-		repos.map(async (repo) => {
-			try {
-				const info = await fetchGitHubRepo(repo, fetchFn);
-				return [repo, info] as const;
-			} catch {
-				return [repo, null] as const;
-			}
-		}),
+		repoFullNames.map((repoFullName) => fetchRepoOrNull(repoFullName, fetchFn)),
 	);
+
 	return new Map(results);
 }

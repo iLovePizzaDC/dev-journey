@@ -1,6 +1,7 @@
-export function scrollToSection(id: string) {
-	const element = document.getElementById(id);
+export function scrollToSection(sectionId: string) {
+	const element = document.getElementById(sectionId);
 	if (!element) return;
+
 	element.scrollIntoView({ behavior: 'smooth', block: 'start' });
 }
 
@@ -10,7 +11,8 @@ export function isNearDocumentBottom(
 	viewportHeight: number,
 	documentHeight: number,
 ): boolean {
-	return scrollY + viewportHeight >= documentHeight - offsetPx;
+	const distanceFromBottom = documentHeight - (scrollY + viewportHeight);
+	return distanceFromBottom <= offsetPx;
 }
 
 export function pickActiveSectionId(
@@ -19,26 +21,34 @@ export function pickActiveSectionId(
 	nearBottom: boolean,
 ): string | null {
 	const lastSectionId = sectionIds[sectionIds.length - 1] ?? null;
+	const lastSectionIsTracked = lastSectionId != null && visibilityBySectionId.has(lastSectionId);
 
-	if (nearBottom && lastSectionId && visibilityBySectionId.has(lastSectionId)) {
+	if (nearBottom && lastSectionIsTracked) {
 		return lastSectionId;
 	}
 
-	let nextActiveId: string | null = null;
-	let bestRatio = 0;
+	let mostVisibleSectionId: string | null = null;
+	let highestVisibilityRatio = 0;
 
-	for (const [id, ratio] of visibilityBySectionId) {
-		if (ratio > bestRatio) {
-			bestRatio = ratio;
-			nextActiveId = id;
+	for (const [sectionId, visibilityRatio] of visibilityBySectionId) {
+		if (visibilityRatio > highestVisibilityRatio) {
+			highestVisibilityRatio = visibilityRatio;
+			mostVisibleSectionId = sectionId;
 		}
 	}
 
-	return bestRatio > 0 ? nextActiveId : null;
+	if (highestVisibilityRatio <= 0) return null;
+
+	return mostVisibleSectionId;
 }
 
 export function resolveSectionElements(sectionIds: readonly string[]): HTMLElement[] {
-	return sectionIds
-		.map((id) => document.getElementById(id))
-		.filter((element): element is HTMLElement => element != null);
+	const elements: HTMLElement[] = [];
+
+	for (const sectionId of sectionIds) {
+		const element = document.getElementById(sectionId);
+		if (element) elements.push(element);
+	}
+
+	return elements;
 }

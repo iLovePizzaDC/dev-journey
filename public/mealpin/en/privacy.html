@@ -22,24 +22,34 @@
       <h2>What the app stores</h2>
       <p>
         Recipes (title, notes, ingredients, steps, optional source URL), planned meals, settings
-        (for example your chosen Reminders list), and optional NFC bindings. If you delete the app,
-        local data is gone — unless it is already in your iCloud.
+        (for example your chosen Reminders list and meal-reminder times), optional NFC bindings, and
+        a short on-device cache of today’s meal for the Home Screen widget, shared with the widget
+        through an App Group. If you delete the app, local data is gone, unless it is already in
+        your iCloud.
       </p>
 
       <h2>iCloud</h2>
       <p>
         When iCloud is available, Mealpin can sync recipes and plans across your devices with Apple
-        CloudKit. Sync data lives in your Apple iCloud account, not on a server we run. You can see
-        the sync status under More.
+        CloudKit. A cook session in progress can also follow via iCloud Key-Value storage so another
+        of your devices can pick up the same step and timers. Sync data lives in your Apple iCloud
+        account, not on a server we run. You can see the sync status under More.
       </p>
 
       <h2>Sharing your plan (optional)</h2>
       <p>
         If you share your plan, Mealpin puts a copy of the current weeks and the recipes they use
-        into your iCloud and gives the people you invite read access through Apple CloudKit sharing.
-        They can see that plan and those recipes and copy recipes into their own library. Invited
-        people are visible to you in the app. You can stop sharing at any time under
+        into your iCloud and hands out read access through Apple CloudKit sharing. Anyone holding
+        the invite link can read that plan and those recipes and copy recipes into their own
+        library; in the iOS sharing screen you can limit access to the people you invite. Everyone
+        who accepts is visible to you in the app. You can stop sharing at any time under
         Plan&nbsp;→&nbsp;Sharing; access then ends for everyone.
+      </p>
+
+      <h2>Recipe files</h2>
+      <p>
+        If you send a recipe with the iOS share sheet, a copy of that recipe leaves this device. The
+        recipient keeps their own copy.
       </p>
 
       <h2>Apple Reminders</h2>
@@ -47,6 +57,19 @@
         When you export a shopping list, Mealpin writes items into the Reminders list you choose.
         That needs your permission. You manage those items in Apple Reminders (on device and/or in
         your iCloud). We cannot see your lists.
+      </p>
+
+      <h2>Meal reminders (optional)</h2>
+      <p>
+        If you turn on meal reminders, Mealpin schedules local notifications on this device for
+        planned breakfasts, lunches, and dinners. Timers in cook mode can also notify you here when
+        time is up. Times stay on this device. Nothing is sent to a server. You can turn meal
+        reminders off under More. Mealpin does not badge the app icon.
+      </p>
+
+      <h2>Siri and Shortcuts</h2>
+      <p>
+        Spoken phrases and shortcuts only open Mealpin on this device. Nothing is sent to us.
       </p>
 
       <h2>NFC (optional)</h2>

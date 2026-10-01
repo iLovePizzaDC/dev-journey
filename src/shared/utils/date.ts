@@ -1,10 +1,18 @@
 import { MONTH_LABELS } from '@/shared/constants';
 import type { Locale, RelativeTimeMessages } from '@/shared/types';
 
+const MS_PER_DAY = 1000 * 60 * 60 * 24;
+const DAYS_IN_WEEK = 7;
+const DAYS_IN_MONTH = 30;
+const DAYS_IN_YEAR = 365;
+
 export function formatMonthYear(value: string, locale: Locale = 'de'): string {
 	const [year, month] = value.split('-').map(Number);
+
 	if (!year || !month) return value;
-	return `${MONTH_LABELS[locale][month - 1]} ${year}`;
+
+	const monthName = MONTH_LABELS[locale][month - 1];
+	return `${monthName} ${year}`;
 }
 
 export function formatCareerRange(
@@ -15,6 +23,7 @@ export function formatCareerRange(
 ): { startLabel: string; endLabel: string; rangeLabel: string } {
 	const startLabel = formatMonthYear(start, locale);
 	const endLabel = end ? formatMonthYear(end, locale) : presentLabel;
+
 	return {
 		startLabel,
 		endLabel,
@@ -42,13 +51,27 @@ export function formatRelativeTime(
 ): string {
 	const then = new Date(isoDate);
 	const diffMs = now.getTime() - then.getTime();
-	const days = Math.floor(diffMs / (1000 * 60 * 60 * 24));
+	const daysAgo = Math.floor(diffMs / MS_PER_DAY);
 
-	if (days < 0) return formatMonthYear(isoDate.slice(0, 7));
-	if (days === 0) return messages.today;
-	if (days === 1) return messages.yesterday;
-	if (days < 7) return messages.daysAgo(days);
-	if (days < 30) return messages.weeksAgo(Math.floor(days / 7));
-	if (days < 365) return messages.monthsAgo(Math.floor(days / 30));
-	return messages.yearsAgo(Math.floor(days / 365));
+	if (daysAgo < 0) {
+		const yearMonth = isoDate.slice(0, 7);
+		return formatMonthYear(yearMonth);
+	}
+
+	if (daysAgo === 0) return messages.today;
+	if (daysAgo === 1) return messages.yesterday;
+	if (daysAgo < DAYS_IN_WEEK) return messages.daysAgo(daysAgo);
+
+	if (daysAgo < DAYS_IN_MONTH) {
+		const weeksAgo = Math.floor(daysAgo / DAYS_IN_WEEK);
+		return messages.weeksAgo(weeksAgo);
+	}
+
+	if (daysAgo < DAYS_IN_YEAR) {
+		const monthsAgo = Math.floor(daysAgo / DAYS_IN_MONTH);
+		return messages.monthsAgo(monthsAgo);
+	}
+
+	const yearsAgo = Math.floor(daysAgo / DAYS_IN_YEAR);
+	return messages.yearsAgo(yearsAgo);
 }

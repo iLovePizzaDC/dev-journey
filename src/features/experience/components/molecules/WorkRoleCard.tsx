@@ -13,12 +13,17 @@ interface IWorkRoleCard {
 
 export function WorkRoleCard({ job, delay = 0, isLast = false }: IWorkRoleCard) {
 	const { locale, messages } = useLocale();
+
 	const { startLabel, endLabel, rangeLabel } = formatCareerRange(
 		job.start,
 		job.end,
 		locale,
 		messages.experience.present,
 	);
+
+	const roleTitle = localize(locale, job.role);
+	const bullets = localize(locale, job.bullets);
+	const timelinePadding = isLast ? 'pb-0' : 'pb-10 md:pb-12';
 
 	return (
 		<Reveal
@@ -37,23 +42,25 @@ export function WorkRoleCard({ job, delay = 0, isLast = false }: IWorkRoleCard) 
 				</time>
 			</div>
 
-			<div
-				className={`relative border-l border-line pl-6 md:pl-8 ${isLast ? 'pb-0' : 'pb-10 md:pb-12'}`}
-			>
+			<div className={`relative border-l border-line pl-6 md:pl-8 ${timelinePadding}`}>
 				<span
 					className='absolute top-2 left-0 h-2.5 w-2.5 -translate-x-1/2 rounded-full bg-accent shadow-[0_0_0_4px_color-mix(in_srgb,var(--color-accent)_16%,transparent)]'
 					aria-hidden='true'
 				/>
+
 				<Text as='h3' variant='subtitle' className='text-[1.25rem]'>
-					{localize(locale, job.role)}
+					{roleTitle}
 				</Text>
+
 				<Text variant='body' className='mt-1 font-medium text-ink'>
 					{job.company}
 					<span className='font-normal text-muted'> · {job.location}</span>
 				</Text>
+
 				<div className='mt-4'>
-					<BulletList items={localize(locale, job.bullets)} />
+					<BulletList items={bullets} />
 				</div>
+
 				{job.stack ? <StackList className='mt-3' items={job.stack} /> : null}
 			</div>
 		</Reveal>

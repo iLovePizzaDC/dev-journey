@@ -2,11 +2,33 @@ import type { Project } from '@/shared/types';
 
 export const projects: Project[] = [
 	{
+		id: 'mealpin',
+		name: 'Mealpin',
+		description: {
+			de: 'iOS-App für den Wochenplan: Rezepte, Einkauf und Kochmodus, den Plan kannst du mit dem Haushalt teilen. Daten liegen auf dem Gerät und in deiner iCloud.',
+			en: 'iOS app for the weekly plan: recipes, shopping and cook mode, you can share the plan with your household. Data stays on the device and in your iCloud.',
+		},
+		githubRepo: 'iLovePizzaDC/Mealpin',
+		stack: ['Swift', 'SwiftUI', 'SwiftData', 'CloudKit', 'WidgetKit'],
+		highlights: {
+			de: [
+				'Wochenplan, Rezepte und Einkaufsliste',
+				'Kochmodus mit Live Activity und Timern',
+				'Plan mit dem Haushalt teilen',
+			],
+			en: [
+				'Weekly plan, recipes and shopping list',
+				'Cook mode with Live Activity and timers',
+				'Share the plan with the household',
+			],
+		},
+	},
+	{
 		id: 'schadenakte',
 		name: 'Schadenakte',
 		description: {
-			de: 'iOS-App für Wasserschäden vor Ort: Fotos, Checkliste, Zeitlinie und Inventar — daraus ein PDF für die Versicherung. Alles bleibt auf dem iPhone.',
-			en: 'iOS app for documenting water damage on site: photos, checklist, timeline and inventory — then a PDF for the insurer. Everything stays on the iPhone.',
+			de: 'iOS-App für Wasserschäden vor Ort: Fotos, Checkliste, Zeitlinie und Inventar, daraus ein PDF für die Versicherung. Alles bleibt auf dem iPhone.',
+			en: 'iOS app for documenting water damage on site: photos, checklist, timeline and inventory, then a PDF for the insurer. Everything stays on the iPhone.',
 		},
 		appStoreUrl: 'https://apps.apple.com/de/app/schadenakte/id6806029264',
 		stack: ['Expo', 'React Native', 'TypeScript', 'StoreKit'],

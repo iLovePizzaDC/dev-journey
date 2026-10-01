@@ -11,7 +11,10 @@ interface IThemeToggle {
 export function ThemeToggle({ className }: IThemeToggle) {
 	const { theme, toggleTheme } = useTheme();
 	const { messages } = useLocale();
+
 	const isDark = theme === 'dark';
+	const label = isDark ? messages.common.themeToLight : messages.common.themeToDark;
+	const icon = isDark ? SunIcon : MoonIcon;
 
 	return (
 		<button
@@ -22,10 +25,10 @@ export function ThemeToggle({ className }: IThemeToggle) {
 				'[&_svg]:transition-transform [&_svg]:duration-300 hover:[&_svg]:rotate-12',
 				className,
 			)}
-			aria-label={isDark ? messages.common.themeToLight : messages.common.themeToDark}
-			title={isDark ? messages.common.themeToLight : messages.common.themeToDark}
+			aria-label={label}
+			title={label}
 		>
-			<Icon icon={isDark ? SunIcon : MoonIcon} className='h-[1.05rem] w-[1.05rem]' />
+			<Icon icon={icon} className='h-[1.05rem] w-[1.05rem]' />
 		</button>
 	);
 }

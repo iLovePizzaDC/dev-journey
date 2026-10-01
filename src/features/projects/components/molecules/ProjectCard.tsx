@@ -1,9 +1,10 @@
-import { ArrowTopRightOnSquareIcon } from '@heroicons/react/24/outline';
+import { ProjectExternalLink } from '@/features/projects/components/molecules/ProjectExternalLink';
 import { ProjectHighlights } from '@/features/projects/components/molecules/ProjectHighlights';
-import { Button, Icon, Text } from '@/shared/components/atoms';
+import { ProjectStatusMeta } from '@/features/projects/components/molecules/ProjectStatusMeta';
+import { Text } from '@/shared/components/atoms';
 import { localize, useLocale } from '@/shared/i18n';
 import { githubRepoUrl } from '@/shared/api/github';
-import { CommitMeta, Reveal, StackList } from '@/shared/components/molecules';
+import { Reveal, StackList } from '@/shared/components/molecules';
 import type { GitHubRepoInfo, Project } from '@/shared/types';
 
 interface IProjectCard {
@@ -15,11 +16,16 @@ interface IProjectCard {
 
 export function ProjectCard({ project, github, loading, delay = 0 }: IProjectCard) {
 	const { locale, messages } = useLocale();
-	const description = localize(locale, project.description) || github?.description || '';
+
+	const localizedDescription = localize(locale, project.description);
+	const description = localizedDescription || github?.description || '';
+
 	const appStoreUrl = project.appStoreUrl;
 	const githubUrl = project.githubRepo ? githubRepoUrl(project.githubRepo) : undefined;
 	const externalUrl = appStoreUrl ?? githubUrl ?? project.url;
 	const linkLabel = appStoreUrl ? messages.projects.openAppStore : messages.projects.openGithub;
+
+	const highlights = project.highlights ? localize(locale, project.highlights) : null;
 
 	return (
 		<Reveal
@@ -32,51 +38,17 @@ export function ProjectCard({ project, github, loading, delay = 0 }: IProjectCar
 				<Text as='h3' variant='subtitle'>
 					{project.name}
 				</Text>
-				{project.githubRepo ? (
-					<CommitMeta
-						pushedAt={github?.pushedAt}
-						language={github?.language}
-						stars={github?.stars}
-						loading={loading}
-						error={!loading && !github}
-					/>
-				) : appStoreUrl ? (
-					<Text as='span' variant='meta' className='opacity-80'>
-						{messages.projects.onAppStore}
-					</Text>
-				) : (
-					<Text as='span' variant='meta' className='opacity-80'>
-						{messages.projects.noRepo}
-					</Text>
-				)}
+				<ProjectStatusMeta project={project} github={github} loading={loading} />
 			</div>
 
 			<Text variant='body'>{description}</Text>
 
-			{project.highlights ? (
-				<ProjectHighlights items={localize(locale, project.highlights)} />
-			) : null}
+			{highlights ? <ProjectHighlights items={highlights} /> : null}
 
 			<div className='mt-auto flex flex-col gap-2.5'>
 				<StackList items={project.stack} />
 
-				{externalUrl ? (
-					<div>
-						<Button
-							href={externalUrl}
-							variant='link'
-							target='_blank'
-							rel='noreferrer'
-							className='group/link inline-flex items-center gap-1.5'
-						>
-							{linkLabel}
-							<Icon
-								icon={ArrowTopRightOnSquareIcon}
-								className='h-3.5 w-3.5 transition-transform duration-300 group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5'
-							/>
-						</Button>
-					</div>
-				) : null}
+				{externalUrl ? <ProjectExternalLink url={externalUrl} label={linkLabel} /> : null}
 			</div>
 		</Reveal>
 	);

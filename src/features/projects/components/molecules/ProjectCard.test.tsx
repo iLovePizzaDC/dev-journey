@@ -1,6 +1,6 @@
 import { screen } from '@testing-library/react';
 import { describe, expect, it } from 'vitest';
-import type { Project } from '@/shared/content';
+import type { Project } from '@/shared/types';
 import { ProjectCard } from '@/features/projects';
 import { renderWithProviders } from '@/test/render';
 
@@ -25,13 +25,10 @@ describe('ProjectCard (Vitest + Testing Library)', () => {
 			<ProjectCard
 				project={project}
 				github={{
-					fullName: 'iLovePizzaDC/demo',
 					description: null,
-					htmlUrl: 'https://github.com/iLovePizzaDC/demo',
 					pushedAt: '2026-08-11T10:00:00Z',
 					language: 'TypeScript',
 					stars: 0,
-					topics: [],
 				}}
 			/>,
 		);
