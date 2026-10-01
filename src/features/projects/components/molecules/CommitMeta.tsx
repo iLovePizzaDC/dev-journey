@@ -11,14 +11,6 @@ interface ICommitMeta {
 	error?: boolean;
 }
 
-function MetaSeparator() {
-	return (
-		<span className='mx-1.5 text-muted/50' aria-hidden='true'>
-			·
-		</span>
-	);
-}
-
 export function CommitMeta({ pushedAt, language, stars, loading, error }: ICommitMeta) {
 	const { messages } = useLocale();
 
@@ -38,24 +30,31 @@ export function CommitMeta({ pushedAt, language, stars, loading, error }: ICommi
 		);
 	}
 
-	const showStars = typeof stars === 'number' && stars > 0;
-	const showLanguage = Boolean(language);
+	const hasStars = typeof stars === 'number' && stars > 0;
+	const hasLanguage = Boolean(language);
+	const relativePushTime = formatRelativeTime(pushedAt, messages.common);
 
 	return (
 		<Text as='span' variant='meta' className='inline-flex flex-wrap items-center gap-y-1'>
 			<span>
 				{messages.projects.lastPush}{' '}
-				<time dateTime={pushedAt}>{formatRelativeTime(pushedAt, messages.common)}</time>
+				<time dateTime={pushedAt}>{relativePushTime}</time>
 			</span>
-			{showLanguage ? (
+
+			{hasLanguage ? (
 				<>
-					<MetaSeparator />
+					<span className='mx-1.5 text-muted/50' aria-hidden='true'>
+						·
+					</span>
 					<span className='text-muted'>{language}</span>
 				</>
 			) : null}
-			{showStars ? (
+
+			{hasStars ? (
 				<>
-					<MetaSeparator />
+					<span className='mx-1.5 text-muted/50' aria-hidden='true'>
+						·
+					</span>
 					<span
 						className='inline-flex items-center gap-0.5 text-muted'
 						title={messages.projects.stars}

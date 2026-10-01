@@ -13,8 +13,9 @@ interface IProjectsSection {
 
 export function ProjectsSection({ items = defaultProjects }: IProjectsSection) {
 	const { messages } = useLocale();
-	const repoIds = getProjectGithubRepoIds(items);
-	const { repos, loading } = useGitHubRepos(repoIds);
+
+	const githubRepoIds = getProjectGithubRepoIds(items);
+	const { repos, loading } = useGitHubRepos(githubRepoIds);
 
 	return (
 		<Section
@@ -24,15 +25,20 @@ export function ProjectsSection({ items = defaultProjects }: IProjectsSection) {
 			description={messages.projects.description}
 		>
 			<div className='grid gap-5 md:grid-cols-2'>
-				{items.map((project, index) => (
-					<ProjectCard
-						key={project.id}
-						project={project}
-						github={project.githubRepo ? repos.get(project.githubRepo) : undefined}
-						loading={Boolean(project.githubRepo) && loading}
-						delay={index * 80}
-					/>
-				))}
+				{items.map((project, index) => {
+					const hasGithubRepo = Boolean(project.githubRepo);
+					const githubInfo = project.githubRepo ? repos.get(project.githubRepo) : undefined;
+
+					return (
+						<ProjectCard
+							key={project.id}
+							project={project}
+							github={githubInfo}
+							loading={hasGithubRepo && loading}
+							delay={index * 80}
+						/>
+					);
+				})}
 			</div>
 		</Section>
 	);

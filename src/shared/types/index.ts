@@ -89,8 +89,6 @@ export type ButtonVariant = 'primary' | 'ghost' | 'link';
 
 export type StatusDotTone = 'accent' | 'ink';
 
-export type BadgeTone = 'neutral' | 'accent';
-
 export type RevealTag = 'div' | 'li' | 'article' | 'section';
 
 export type IconComponent = ComponentType<SVGProps<SVGSVGElement>>;

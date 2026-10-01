@@ -18,9 +18,12 @@ interface ITechTimeline {
 
 export function TechTimeline({ items = technologies }: ITechTimeline) {
 	const { messages } = useLocale();
-	const [category, setCategory] = useState<TechCategoryFilterValue>('all');
-	const groups = groupTechnologiesByYear(filterTechnologiesByCategory(items, category));
-	const years = [...groups.keys()];
+	const [selectedCategory, setSelectedCategory] = useState<TechCategoryFilterValue>('all');
+
+	const filteredTechs = filterTechnologiesByCategory(items, selectedCategory);
+	const techsByYear = groupTechnologiesByYear(filteredTechs);
+	const years = [...techsByYear.keys()];
+	const lastYearIndex = years.length - 1;
 
 	return (
 		<Section
@@ -29,15 +32,16 @@ export function TechTimeline({ items = technologies }: ITechTimeline) {
 			title={messages.journey.title}
 			description={messages.journey.description}
 		>
-			<TechCategoryFilter value={category} onChange={setCategory} />
+			<TechCategoryFilter value={selectedCategory} onChange={setSelectedCategory} />
+
 			<ol className='grid'>
 				{years.map((year, index) => (
 					<TechYearGroup
 						key={year}
 						year={year}
-						techs={groups.get(year) ?? []}
+						techs={techsByYear.get(year) ?? []}
 						delay={index * 50}
-						isLast={index === years.length - 1}
+						isLast={index === lastYearIndex}
 					/>
 				))}
 			</ol>

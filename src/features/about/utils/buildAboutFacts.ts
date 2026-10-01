@@ -4,6 +4,16 @@ import type { Messages } from '@/shared/i18n/messages.types';
 import type { Locale, Profile } from '@/shared/types';
 import { localize } from '@/shared/i18n';
 
+function formatLanguages(locale: Locale, profile: Profile): string {
+	return profile.languages
+		.map((language) => {
+			const name = localize(locale, language.name);
+			const level = localize(locale, language.level);
+			return `${name} (${level})`;
+		})
+		.join(' · ');
+}
+
 export function buildAboutFacts(locale: Locale, messages: Messages, profile: Profile): AboutFact[] {
 	return [
 		{
@@ -14,20 +24,13 @@ export function buildAboutFacts(locale: Locale, messages: Messages, profile: Pro
 		{
 			icon: EnvelopeIcon,
 			label: messages.about.email,
-			value: (
-				<a href={`mailto:${profile.email}`} className='transition-colors'>
-					{profile.email}
-				</a>
-			),
+			value: profile.email,
+			href: `mailto:${profile.email}`,
 		},
 		{
 			icon: LanguageIcon,
 			label: messages.about.languages,
-			value: profile.languages
-				.map(
-					(language) => `${localize(locale, language.name)} (${localize(locale, language.level)})`,
-				)
-				.join(' · '),
+			value: formatLanguages(locale, profile),
 		},
 	];
 }

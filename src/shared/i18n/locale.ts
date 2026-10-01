@@ -11,7 +11,15 @@ export function isLocale(value: string): value is Locale {
 
 export function readInitialLocale(): Locale {
 	if (typeof window === 'undefined') return 'de';
-	const stored = window.localStorage.getItem(STORAGE_KEYS.locale);
-	if (stored && isLocale(stored)) return stored;
-	return navigator.language.toLowerCase().startsWith('de') ? 'de' : 'en';
+
+	const storedLocale = window.localStorage.getItem(STORAGE_KEYS.locale);
+
+	if (storedLocale && isLocale(storedLocale)) {
+		return storedLocale;
+	}
+
+	const browserLanguage = navigator.language.toLowerCase();
+	const prefersGerman = browserLanguage.startsWith('de');
+
+	return prefersGerman ? 'de' : 'en';
 }
