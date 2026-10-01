@@ -8,7 +8,7 @@ export const projects: Project[] = [
 			de: 'iOS-App für den Wochenplan: Rezepte, Einkauf und Kochmodus, den Plan kannst du mit dem Haushalt teilen. Daten liegen auf dem Gerät und in deiner iCloud.',
 			en: 'iOS app for the weekly plan: recipes, shopping and cook mode, you can share the plan with your household. Data stays on the device and in your iCloud.',
 		},
-		githubRepo: 'iLovePizzaDC/Mealpin',
+		appStoreUrl: 'https://apps.apple.com/de/app/schadenakte/id6806029264',
 		stack: ['Swift', 'SwiftUI', 'SwiftData', 'CloudKit', 'WidgetKit'],
 		highlights: {
 			de: [
