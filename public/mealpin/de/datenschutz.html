@@ -22,24 +22,35 @@
       <h2>Was die App speichert</h2>
       <p>
         Rezepte (Titel, Notizen, Zutaten, Schritte, optionale Quell-URL), geplante Mahlzeiten,
-        Einstellungen (z.&nbsp;B. gewählte Erinnerungsliste) und optional NFC-Zuordnungen. Löschst du
-        die App, sind die lokalen Daten weg — außer sie liegen in deiner iCloud.
+        Einstellungen (z.&nbsp;B. gewählte Erinnerungsliste und Uhrzeiten für Essenserinnerungen),
+        optional NFC-Zuordnungen und einen kurzen Cache der heutigen Mahlzeit für das
+        Home-Screen-Widget, geteilt mit dem Widget über eine App Group. Löschst du die App, sind die
+        lokalen Daten weg, außer sie liegen in deiner iCloud.
       </p>
 
       <h2>iCloud</h2>
       <p>
         Wenn iCloud verfügbar ist, kann Mealpin Rezepte und Pläne über Apple CloudKit mit deinen
-        Geräten synchronisieren. Die Sync-Daten liegen bei Apple in deinem iCloud-Konto, nicht auf
-        einem Server von uns. Ob Sync läuft, siehst du in der App unter Mehr.
+        Geräten synchronisieren. Ein laufender Kochmodus kann über iCloud Key-Value mitkommen, damit
+        ein anderes deiner Geräte denselben Schritt und die Timer übernehmen kann. Die Sync-Daten
+        liegen bei Apple in deinem iCloud-Konto, nicht auf einem Server von uns. Ob Sync läuft,
+        siehst du in der App unter Mehr.
       </p>
 
       <h2>Plan teilen (optional)</h2>
       <p>
         Wenn du deinen Plan teilst, legt Mealpin eine Kopie der aktuellen Wochen und der darin
-        verwendeten Rezepte in deiner iCloud ab und gibt den eingeladenen Personen über Apple
-        CloudKit Lesezugriff darauf. Sie sehen diesen Plan und diese Rezepte und können Rezepte in
-        ihre eigene Sammlung übernehmen. Wer eingeladen ist, siehst du in der App. Du kannst das
-        Teilen jederzeit unter Plan&nbsp;→&nbsp;Teilen beenden; der Zugriff endet dann für alle.
+        verwendeten Rezepte in deiner iCloud ab und vergibt über Apple CloudKit Lesezugriff darauf.
+        Wer den Einladungslink hat, sieht diesen Plan und diese Rezepte und kann Rezepte in die
+        eigene Sammlung übernehmen; im Teilen-Dialog von iOS kannst du den Zugriff auf eingeladene
+        Personen beschränken. Wer zugesagt hat, siehst du in der App. Du kannst das Teilen jederzeit
+        unter Plan&nbsp;→&nbsp;Teilen beenden; der Zugriff endet dann für alle.
+      </p>
+
+      <h2>Rezeptdateien</h2>
+      <p>
+        Wenn du ein Rezept über das Teilen-Menü sendest, verlässt eine Kopie dieses Rezepts das
+        Gerät. Die empfangende Person behält ihre eigene Kopie.
       </p>
 
       <h2>Apple Erinnerungen</h2>
@@ -47,6 +58,20 @@
         Wenn du eine Einkaufsliste exportierst, schreibt Mealpin Einträge in die von dir gewählte
         Erinnerungsliste. Dafür braucht die App deine Erlaubnis. Die Einträge verwaltest du in
         Apple Erinnerungen (lokal bzw. in deiner iCloud). Wir sehen deine Listen nicht.
+      </p>
+
+      <h2>Essenserinnerungen (optional)</h2>
+      <p>
+        Wenn du Essenserinnerungen einschaltest, plant Mealpin lokale Mitteilungen auf diesem Gerät
+        für geplante Frühstücke, Mittag- und Abendessen. Timer im Kochmodus können dich hier
+        ebenfalls benachrichtigen, wenn die Zeit um ist. Die Uhrzeiten bleiben auf dem Gerät. Es
+        geht nichts an einen Server. Du kannst Essenserinnerungen unter Mehr wieder ausschalten.
+        Mealpin setzt keinen Punkt auf dem App-Icon.
+      </p>
+
+      <h2>Siri und Kurzbefehle</h2>
+      <p>
+        Gesprochene Sätze und Kurzbefehle öffnen nur Mealpin auf diesem Gerät. Es geht nichts an uns.
       </p>
 
       <h2>NFC (optional)</h2>
