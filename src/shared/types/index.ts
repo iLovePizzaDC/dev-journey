@@ -60,23 +60,19 @@ export type Profile = {
 	title: Localized;
 	location: string;
 	email: string;
-	phone?: string;
 	githubUsername: string;
 	summary: Localized;
 	languages: { name: Localized; level: Localized }[];
 };
 
 export type GitHubRepoInfo = {
-	fullName: string;
 	description: string | null;
-	htmlUrl: string;
 	pushedAt: string;
 	language: string | null;
 	stars: number;
-	topics: string[];
 };
 
-export type NavSectionId = 'experience' | 'projects' | 'journey' | 'about';
+type NavSectionId = 'experience' | 'projects' | 'journey' | 'about';
 
 export type NavLink = {
 	sectionId: NavSectionId;
@@ -86,10 +82,6 @@ export type NavLink = {
 export type TextVariant = 'display' | 'title' | 'subtitle' | 'body' | 'meta' | 'label';
 
 export type ButtonVariant = 'primary' | 'ghost' | 'link';
-
-export type StatusDotTone = 'accent' | 'ink';
-
-export type BadgeTone = 'neutral' | 'accent';
 
 export type RevealTag = 'div' | 'li' | 'article' | 'section';
 

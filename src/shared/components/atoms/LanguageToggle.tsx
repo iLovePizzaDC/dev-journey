@@ -17,20 +17,24 @@ export function LanguageToggle({ className }: ILanguageToggle) {
 			role='group'
 			aria-label={messages.common.languageSwitch}
 		>
-			{LOCALES.map((code) => (
-				<button
-					key={code}
-					type='button'
-					className={cn(
-						'cursor-pointer rounded-sm px-2 py-1 text-xs font-semibold tracking-wide transition duration-200',
-						locale === code ? 'bg-ink text-paper' : 'bg-transparent text-muted hover:text-ink',
-					)}
-					aria-pressed={locale === code}
-					onClick={() => setLocale(code)}
-				>
-					{LOCALE_LABELS[code]}
-				</button>
-			))}
+			{LOCALES.map((localeCode) => {
+				const isActive = locale === localeCode;
+
+				return (
+					<button
+						key={localeCode}
+						type='button'
+						className={cn(
+							'cursor-pointer rounded-sm px-2 py-1 text-xs font-semibold tracking-wide transition duration-200',
+							isActive ? 'bg-ink text-paper' : 'bg-transparent text-muted hover:text-ink',
+						)}
+						aria-pressed={isActive}
+						onClick={() => setLocale(localeCode)}
+					>
+						{LOCALE_LABELS[localeCode]}
+					</button>
+				);
+			})}
 		</div>
 	);
 }

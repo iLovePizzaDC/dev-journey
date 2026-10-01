@@ -6,11 +6,20 @@ import { messages } from '@/shared/i18n';
 describe('buildAboutFacts', () => {
 	it('returns 3 facts with expected de labels', () => {
 		const facts = buildAboutFacts('de', messages.de, profile);
+
 		expect(facts).toHaveLength(3);
 		expect(facts.map((fact) => fact.label)).toEqual([
 			messages.de.about.location,
 			messages.de.about.email,
 			messages.de.about.languages,
 		]);
+	});
+
+	it('exposes mailto href for the email fact', () => {
+		const facts = buildAboutFacts('de', messages.de, profile);
+		const emailFact = facts.find((fact) => fact.label === messages.de.about.email);
+
+		expect(emailFact?.href).toBe(`mailto:${profile.email}`);
+		expect(emailFact?.value).toBe(profile.email);
 	});
 });

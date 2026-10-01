@@ -27,39 +27,49 @@ export function Reveal<T extends RevealTag = 'div'>({
 	...rest
 }: IReveal<T>) {
 	const Tag = (as ?? 'div') as ElementType;
-	const ref = useRef<HTMLElement | null>(null);
-	const [visible, setVisible] = useState(prefersReducedMotion);
+	const elementRef = useRef<HTMLElement | null>(null);
+	const [isVisible, setIsVisible] = useState(prefersReducedMotion);
 
 	useEffect(() => {
-		const node = ref.current;
-		if (!node || prefersReducedMotion()) return;
+		const element = elementRef.current;
+		if (!element || prefersReducedMotion()) return;
 
 		const observer = new IntersectionObserver(
 			([entry]) => {
-				if (entry?.isIntersecting) {
-					setVisible(true);
-					observer.disconnect();
-				}
+				if (!entry?.isIntersecting) return;
+
+				setIsVisible(true);
+				observer.disconnect();
 			},
-			{ threshold: 0.12, rootMargin: '0px 0px -8% 0px' },
+			{
+				threshold: 0.12,
+				rootMargin: '0px 0px -8% 0px',
+			},
 		);
 
-		observer.observe(node);
+		observer.observe(element);
+
 		return () => observer.disconnect();
 	}, []);
 
+	const visibilityClass = isVisible
+		? 'translate-y-0 opacity-100'
+		: 'translate-y-4 opacity-0';
+
+	const transitionDelay = isVisible ? `${delay}ms` : '0ms';
+
 	return (
 		<Tag
-			ref={ref}
+			ref={elementRef}
 			className={cn(
 				'transition-[opacity,transform] duration-700 ease-[cubic-bezier(0.22,1,0.36,1)]',
-				visible ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0',
+				visibilityClass,
 				className,
 			)}
 			style={
 				{
 					...(style as CSSProperties | undefined),
-					transitionDelay: visible ? `${delay}ms` : '0ms',
+					transitionDelay,
 				} as CSSProperties
 			}
 			{...rest}

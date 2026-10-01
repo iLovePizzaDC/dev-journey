@@ -17,15 +17,22 @@ export function ThemeProvider({ children, initialTheme }: IThemeProvider) {
 		window.localStorage.setItem(STORAGE_KEYS.theme, theme);
 	}, [theme]);
 
-	const setTheme = useCallback((next: Theme) => {
-		setThemeState(next);
+	const setTheme = useCallback((nextTheme: Theme) => {
+		setThemeState(nextTheme);
 	}, []);
 
 	const toggleTheme = useCallback(() => {
-		setThemeState((prev) => (prev === 'dark' ? 'light' : 'dark'));
+		setThemeState((currentTheme) => (currentTheme === 'dark' ? 'light' : 'dark'));
 	}, []);
 
-	const value = useMemo(() => ({ theme, setTheme, toggleTheme }), [theme, setTheme, toggleTheme]);
+	const contextValue = useMemo(
+		() => ({
+			theme,
+			setTheme,
+			toggleTheme,
+		}),
+		[theme, setTheme, toggleTheme],
+	);
 
-	return <ThemeContext.Provider value={value}>{children}</ThemeContext.Provider>;
+	return <ThemeContext.Provider value={contextValue}>{children}</ThemeContext.Provider>;
 }

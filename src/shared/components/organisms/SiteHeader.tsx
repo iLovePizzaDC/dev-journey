@@ -1,11 +1,10 @@
 import { ArrowTopRightOnSquareIcon, CodeBracketIcon } from '@heroicons/react/24/outline';
 import { githubProfileUrl } from '@/shared/api/github';
-import { Button, Icon, LanguageToggle, ThemeToggle } from '@/shared/components/atoms';
+import { Button, Icon, LanguageToggle, NavLinkButton, ThemeToggle } from '@/shared/components/atoms';
 import { NAV_LINKS, NAV_SECTION_IDS, SECTION_IDS } from '@/shared/constants';
 import { profile } from '@/shared/content';
 import { useScrollSpy } from '@/shared/hooks';
 import { useLocale } from '@/shared/i18n';
-import { cn } from '@/shared/utils/cn';
 import { scrollToSection } from '@/shared/utils/scroll';
 
 interface ISiteHeader {
@@ -26,34 +25,21 @@ export function SiteHeader({ brand = profile.name }: ISiteHeader) {
 				>
 					{brand}
 				</button>
-				<nav className='hidden gap-4 md:flex' aria-label={messages.nav.aria}>
-					{NAV_LINKS.map((link) => {
-						const isActive = activeSectionId === link.sectionId;
 
-						return (
-							<button
-								key={link.sectionId}
-								type='button'
-								aria-current={isActive ? 'true' : undefined}
-								onClick={() => scrollToSection(link.sectionId)}
-								className={cn(
-									'group relative cursor-pointer border-none bg-transparent p-0 text-[0.92rem] font-medium no-underline transition-colors',
-									isActive ? 'text-ink' : 'text-muted hover:text-ink',
-								)}
-							>
-								{messages.nav[link.labelKey]}
-								<span
-									className={cn(
-										'absolute inset-x-0 -bottom-1 h-px origin-left bg-accent transition-transform duration-300',
-										isActive ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100',
-									)}
-								/>
-							</button>
-						);
-					})}
+				<nav className='hidden gap-4 md:flex' aria-label={messages.nav.aria}>
+					{NAV_LINKS.map((link) => (
+						<NavLinkButton
+							key={link.sectionId}
+							sectionId={link.sectionId}
+							label={messages.nav[link.labelKey]}
+							isActive={activeSectionId === link.sectionId}
+						/>
+					))}
 				</nav>
+
 				<LanguageToggle />
 				<ThemeToggle />
+
 				<Button
 					href={githubProfileUrl(profile.githubUsername)}
 					variant='ghost'

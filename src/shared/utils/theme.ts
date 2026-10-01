@@ -3,23 +3,32 @@ import type { Theme } from '@/shared/types';
 
 export function getPreferredTheme(): Theme {
 	if (typeof window === 'undefined') return 'light';
-	const stored = window.localStorage.getItem(STORAGE_KEYS.theme);
-	if (stored === 'light' || stored === 'dark') return stored;
-	return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+
+	const storedTheme = window.localStorage.getItem(STORAGE_KEYS.theme);
+
+	if (storedTheme === 'light' || storedTheme === 'dark') {
+		return storedTheme;
+	}
+
+	const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+	return prefersDark ? 'dark' : 'light';
 }
 
 export function applyTheme(theme: Theme) {
-	document.documentElement.classList.toggle('dark', theme === 'dark');
+	const root = document.documentElement;
+	root.classList.toggle('dark', theme === 'dark');
 	syncThemeColor(theme);
 }
 
 function syncThemeColor(theme: Theme) {
 	const color = THEME_COLORS[theme];
-	let meta = document.querySelector('meta[name="theme-color"]');
-	if (!meta) {
-		meta = document.createElement('meta');
-		meta.setAttribute('name', 'theme-color');
-		document.head.appendChild(meta);
+	let themeColorMeta = document.querySelector('meta[name="theme-color"]');
+
+	if (!themeColorMeta) {
+		themeColorMeta = document.createElement('meta');
+		themeColorMeta.setAttribute('name', 'theme-color');
+		document.head.appendChild(themeColorMeta);
 	}
-	meta.setAttribute('content', color);
+
+	themeColorMeta.setAttribute('content', color);
 }

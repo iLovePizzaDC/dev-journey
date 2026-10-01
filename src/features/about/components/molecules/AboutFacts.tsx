@@ -21,7 +21,13 @@ export function AboutFacts() {
 						</Text>
 					</dt>
 					<dd className='m-0 pl-5'>
-						{typeof fact.value === 'string' ? <Text variant='body'>{fact.value}</Text> : fact.value}
+						{fact.href ? (
+							<a href={fact.href} className='transition-colors'>
+								{fact.value}
+							</a>
+						) : (
+							<Text variant='body'>{fact.value}</Text>
+						)}
 					</dd>
 				</div>
 			))}

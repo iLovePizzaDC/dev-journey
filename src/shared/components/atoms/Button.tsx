@@ -17,14 +17,18 @@ type IButton = ButtonAsButton | ButtonAsLink;
 
 export function Button(props: IButton) {
 	const { children, variant = 'primary', className, ...rest } = props;
+
 	const classes = cn(
 		'inline-flex cursor-pointer items-center justify-center gap-2 rounded-sm border px-[1.15rem] py-[0.7rem] font-body text-[0.95rem] font-medium no-underline transition duration-200',
 		BUTTON_VARIANT_CLASS[variant],
 		className,
 	);
 
-	if ('href' in props && props.href) {
+	const isLink = 'href' in props && Boolean(props.href);
+
+	if (isLink) {
 		const { href, ...linkRest } = rest as AnchorHTMLAttributes<HTMLAnchorElement>;
+
 		return (
 			<a className={classes} href={href} {...linkRest}>
 				{children}
