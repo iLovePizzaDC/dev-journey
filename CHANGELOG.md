@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.7.2](https://github.com/iLovePizzaDC/dev-journey/compare/v1.7.1...v1.7.2) (2026-10-01)
+
+
+### Bug Fixes
+
+* add mealpin appstoreurl ([#49](https://github.com/iLovePizzaDC/dev-journey/issues/49)) ([#50](https://github.com/iLovePizzaDC/dev-journey/issues/50)) ([19124d8](https://github.com/iLovePizzaDC/dev-journey/commit/19124d85b84fc56b8d5e29d5facc19a13a872bdd))
+
 ## [1.7.1](https://github.com/iLovePizzaDC/dev-journey/compare/v1.7.0...v1.7.1) (2026-10-01)
 
 
