@@ -1,0 +1,10 @@
+import { describe, expect, it } from 'vitest';
+import { HeroKicker } from '@/features/hero/components/atoms/HeroKicker';
+import { renderWithProviders } from '@/test/render';
+
+describe('HeroKicker', () => {
+	it('renders the kicker text', () => {
+		const { getByText } = renderWithProviders(<HeroKicker>Dev Journey</HeroKicker>);
+		expect(getByText('Dev Journey')).toBeInTheDocument();
+	});
+});

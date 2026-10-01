@@ -1,6 +1,6 @@
-import { Text } from '@/shared/components/atoms';
-import { localize, useLocale } from '@/shared/i18n';
 import { CommitMeta } from '@/features/projects/components/molecules/CommitMeta';
+import { Text } from '@/shared/components/atoms';
+import { useLocale } from '@/shared/i18n';
 import type { GitHubRepoInfo, Project } from '@/shared/types';
 
 interface IProjectStatusMeta {
