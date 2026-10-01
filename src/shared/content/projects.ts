@@ -5,8 +5,8 @@ export const projects: Project[] = [
 		id: 'mealpin',
 		name: 'Mealpin',
 		description: {
-			de: 'iOS-App für den Wochenplan: Rezepte, Einkauf und Kochmodus, den Plan kannst du mit dem Haushalt teilen. Daten liegen auf dem Gerät und in deiner iCloud.',
-			en: 'iOS app for the weekly plan: recipes, shopping and cook mode, you can share the plan with your household. Data stays on the device and in your iCloud.',
+			de: 'iOS-App für den Wochenplan: Rezepte, Einkauf und Kochmodus, geteilt im Haushalt. Daten bleiben auf dem Gerät und in iCloud.',
+			en: 'iOS app for the weekly plan: recipes, shopping and cook mode, shared with the household. Data stays on the device and in iCloud.',
 		},
 		appStoreUrl: 'https://apps.apple.com/de/app/mealpin/id6809128468',
 		stack: ['Swift', 'SwiftUI', 'SwiftData', 'CloudKit', 'WidgetKit'],
@@ -27,8 +27,8 @@ export const projects: Project[] = [
 		id: 'schadenakte',
 		name: 'Schadenakte',
 		description: {
-			de: 'iOS-App für Wasserschäden vor Ort: Fotos, Checkliste, Zeitlinie und Inventar, daraus ein PDF für die Versicherung. Alles bleibt auf dem iPhone.',
-			en: 'iOS app for documenting water damage on site: photos, checklist, timeline and inventory, then a PDF for the insurer. Everything stays on the iPhone.',
+			de: 'iOS-App für Wasserschäden vor Ort: Fotos, Checkliste, Zeitlinie und Inventar, mit PDF für die Versicherung. Daten bleiben auf dem Gerät.',
+			en: 'iOS app for water damage on site: photos, checklist, timeline and inventory, with a PDF for the insurer. Data stays on the device.',
 		},
 		appStoreUrl: 'https://apps.apple.com/de/app/schadenakte/id6806029264',
 		stack: ['Expo', 'React Native', 'TypeScript', 'StoreKit'],
