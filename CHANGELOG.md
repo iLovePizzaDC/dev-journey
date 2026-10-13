@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.8.0](https://github.com/iLovePizzaDC/dev-journey/compare/v1.7.3...v1.8.0) (2026-10-13)
+
+
+### Features
+
+* add pasch project ([#57](https://github.com/iLovePizzaDC/dev-journey/issues/57)) ([04f1e29](https://github.com/iLovePizzaDC/dev-journey/commit/04f1e2958dc52e9b95f6c6325c55e55e200d2ed4))
+* add pasch project ([#57](https://github.com/iLovePizzaDC/dev-journey/issues/57)) ([5321875](https://github.com/iLovePizzaDC/dev-journey/commit/532187543f1f30edc83e2e0965ab3bd54f098dca))
+
 ## [1.7.3](https://github.com/iLovePizzaDC/dev-journey/compare/v1.7.2...v1.7.3) (2026-10-01)
 
 
