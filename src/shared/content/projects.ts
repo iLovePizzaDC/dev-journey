@@ -46,6 +46,27 @@ export const projects: Project[] = [
 		},
 	},
 	{
+		id: 'pasch',
+		name: 'Pasch',
+		description: {
+			de: 'iOS-Würfelspiel im Kniffel-Stil: Solo, Pass-and-Play und Nearby über Bluetooth und lokales WLAN. Ohne Konto, Daten bleiben auf dem Gerät.',
+			en: 'iOS Yahtzee-style dice game: solo, pass-and-play, and Nearby over Bluetooth and local Wi‑Fi. No account; data stays on the device.',
+		},
+		stack: ['Swift', 'SwiftUI', 'Multipeer Connectivity'],
+		highlights: {
+			de: [
+				'Solo und Pass-and-Play auf einem Gerät',
+				'Nearby-Multiplayer ohne Server',
+				'DE/EN und Light/Dark',
+			],
+			en: [
+				'Solo and pass-and-play on one device',
+				'Nearby multiplayer without a server',
+				'DE/EN and light/dark',
+			],
+		},
+	},
+	{
 		id: 'dev-journey',
 		name: 'Dev Journey',
 		description: {
