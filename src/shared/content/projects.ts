@@ -2,6 +2,50 @@ import type { Project } from '@/shared/types';
 
 export const projects: Project[] = [
 	{
+		id: 'hoeher',
+		name: 'Höher',
+		description: {
+			de: 'iOS-Würfelspiel im Mäxchen-Stil: Zwei Würfel unter dem Becher, ansagen oder aufdecken. Solo gegen Mika, Pass-and-Play und Nearby über Bluetooth und lokales WLAN. Ohne Konto, ohne Werbung.',
+			en: 'iOS bluffing dice game in the Mäxchen style: two dice under a cup, announce or call the bluff. Solo against Mika, pass-and-play, and Nearby over Bluetooth and local Wi‑Fi. No account, no ads.',
+		},
+		appStoreUrl: 'https://apps.apple.com/de/app/h%C3%B6her/id6822855855',
+		stack: ['Swift', 'SwiftUI', 'Multipeer Connectivity'],
+		highlights: {
+			de: [
+				'Bluff-Spiel: ansagen, glauben oder aufdecken',
+				'Solo gegen Mika, Pass-and-Play (2–4) und Nearby ohne Server',
+				'iCloud-Sync, VoiceOver und große Schrift',
+			],
+			en: [
+				'Bluffing game: announce, believe, or call',
+				'Solo against Mika, pass-and-play (2–4), and nearby without a server',
+				'iCloud sync, VoiceOver, and large text',
+			],
+		},
+	},
+	{
+		id: 'pasch',
+		name: 'Pasch',
+		description: {
+			de: 'iOS-Würfelspiel im Kniffel-Stil: Solo, Pass-and-Play und Nearby über Bluetooth und lokales WLAN. Klassische Regeln oder Hausregeln, ohne Konto und ohne Werbung.',
+			en: 'iOS Yahtzee-style dice game: solo, pass-and-play, and Nearby over Bluetooth and local Wi‑Fi. Classic or house rules, no account, no ads.',
+		},
+		appStoreUrl: 'https://apps.apple.com/de/app/pasch-dice/id6821607952',
+		stack: ['Swift', 'SwiftUI', 'Multipeer Connectivity'],
+		highlights: {
+			de: [
+				'Klassische Regeln oder Hausregeln, per Code teilbar',
+				'Solo, Pass-and-Play und Nearby ohne Server',
+				'iCloud-Sync, VoiceOver und große Schrift',
+			],
+			en: [
+				'Classic or house rules, shareable via code',
+				'Solo, pass-and-play, and nearby without a server',
+				'iCloud sync, VoiceOver, and large text',
+			],
+		},
+	},
+	{
 		id: 'mealpin',
 		name: 'Mealpin',
 		description: {
@@ -42,27 +86,6 @@ export const projects: Project[] = [
 				'Case file with camera, checklist and timeline',
 				'PDF export for the insurer',
 				'Offline on device, no account',
-			],
-		},
-	},
-	{
-		id: 'pasch',
-		name: 'Pasch',
-		description: {
-			de: 'iOS-Würfelspiel im Kniffel-Stil: Solo, Pass-and-Play und Nearby über Bluetooth und lokales WLAN. Ohne Konto, Daten bleiben auf dem Gerät.',
-			en: 'iOS Yahtzee-style dice game: solo, pass-and-play, and Nearby over Bluetooth and local Wi‑Fi. No account; data stays on the device.',
-		},
-		stack: ['Swift', 'SwiftUI', 'Multipeer Connectivity'],
-		highlights: {
-			de: [
-				'Solo und Pass-and-Play auf einem Gerät',
-				'Nearby-Multiplayer ohne Server',
-				'DE/EN und Light/Dark',
-			],
-			en: [
-				'Solo and pass-and-play on one device',
-				'Nearby multiplayer without a server',
-				'DE/EN and light/dark',
 			],
 		},
 	},
