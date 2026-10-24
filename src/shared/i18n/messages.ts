@@ -106,7 +106,8 @@ export const messages: MessagesByLocale = {
 		projects: {
 			eyebrow: 'Projects',
 			title: 'Personal projects',
-			description: 'Apps and side projects — stack, short notes, and a link to GitHub or the App Store.',
+			description:
+				'Apps and side projects — stack, short notes, and a link to GitHub or the App Store.',
 			openGithub: 'Open on GitHub',
 			openAppStore: 'Open in App Store',
 			onAppStore: 'On the App Store',

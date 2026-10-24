@@ -20,7 +20,9 @@ const github: GitHubRepoInfo = {
 describe('ProjectStatusMeta', () => {
 	it('shows App Store copy when only appStoreUrl is set', () => {
 		const { getByText } = renderWithProviders(
-			<ProjectStatusMeta project={{ ...baseProject, appStoreUrl: 'https://apps.apple.com/app/1' }} />,
+			<ProjectStatusMeta
+				project={{ ...baseProject, appStoreUrl: 'https://apps.apple.com/app/1' }}
+			/>,
 		);
 
 		expect(getByText('Im App Store')).toBeInTheDocument();
@@ -34,10 +36,7 @@ describe('ProjectStatusMeta', () => {
 
 	it('shows loading commit status for github projects', () => {
 		const { getByText } = renderWithProviders(
-			<ProjectStatusMeta
-				project={{ ...baseProject, githubRepo: 'owner/demo' }}
-				loading
-			/>,
+			<ProjectStatusMeta project={{ ...baseProject, githubRepo: 'owner/demo' }} loading />,
 		);
 
 		expect(getByText(/geladen/i)).toBeInTheDocument();
@@ -45,10 +44,7 @@ describe('ProjectStatusMeta', () => {
 
 	it('shows commit meta when github data is available', () => {
 		const { getByText } = renderWithProviders(
-			<ProjectStatusMeta
-				project={{ ...baseProject, githubRepo: 'owner/demo' }}
-				github={github}
-			/>,
+			<ProjectStatusMeta project={{ ...baseProject, githubRepo: 'owner/demo' }} github={github} />,
 		);
 
 		expect(getByText(/Letzter Push/i)).toBeInTheDocument();
