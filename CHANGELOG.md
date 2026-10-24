@@ -1,5 +1,18 @@
 # Changelog
 
+## [1.9.0](https://github.com/iLovePizzaDC/dev-journey/compare/v1.8.0...v1.9.0) (2026-10-24)
+
+
+### Features
+
+* separate apps from side projects ([9dbb12a](https://github.com/iLovePizzaDC/dev-journey/commit/9dbb12a8d3fb38c80041f5de3119d615f460f6e2))
+* update game app descriptions ([#64](https://github.com/iLovePizzaDC/dev-journey/issues/64)) ([da33f4c](https://github.com/iLovePizzaDC/dev-journey/commit/da33f4cf7852790dd5977efa592ce58d75858421))
+
+
+### Bug Fixes
+
+* fix misspelling in experience stack ([#65](https://github.com/iLovePizzaDC/dev-journey/issues/65)) ([1ac7c3d](https://github.com/iLovePizzaDC/dev-journey/commit/1ac7c3d3c396cfcc368e23a35e1e4f770ff0f5ed))
+
 ## [1.8.0](https://github.com/iLovePizzaDC/dev-journey/compare/v1.7.3...v1.8.0) (2026-10-13)
 
 ### Features
