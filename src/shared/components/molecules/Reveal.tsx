@@ -52,9 +52,7 @@ export function Reveal<T extends RevealTag = 'div'>({
 		return () => observer.disconnect();
 	}, []);
 
-	const visibilityClass = isVisible
-		? 'translate-y-0 opacity-100'
-		: 'translate-y-4 opacity-0';
+	const visibilityClass = isVisible ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0';
 
 	const transitionDelay = isVisible ? `${delay}ms` : '0ms';
 

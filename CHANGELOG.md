@@ -2,83 +2,72 @@
 
 ## [1.8.0](https://github.com/iLovePizzaDC/dev-journey/compare/v1.7.3...v1.8.0) (2026-10-13)
 
-
 ### Features
 
-* add pasch project ([#57](https://github.com/iLovePizzaDC/dev-journey/issues/57)) ([04f1e29](https://github.com/iLovePizzaDC/dev-journey/commit/04f1e2958dc52e9b95f6c6325c55e55e200d2ed4))
-* add pasch project ([#57](https://github.com/iLovePizzaDC/dev-journey/issues/57)) ([5321875](https://github.com/iLovePizzaDC/dev-journey/commit/532187543f1f30edc83e2e0965ab3bd54f098dca))
+- add pasch project ([#57](https://github.com/iLovePizzaDC/dev-journey/issues/57)) ([04f1e29](https://github.com/iLovePizzaDC/dev-journey/commit/04f1e2958dc52e9b95f6c6325c55e55e200d2ed4))
+- add pasch project ([#57](https://github.com/iLovePizzaDC/dev-journey/issues/57)) ([5321875](https://github.com/iLovePizzaDC/dev-journey/commit/532187543f1f30edc83e2e0965ab3bd54f098dca))
 
 ## [1.7.3](https://github.com/iLovePizzaDC/dev-journey/compare/v1.7.2...v1.7.3) (2026-10-01)
 
-
 ### Bug Fixes
 
-* add mealpin appstore url ([#52](https://github.com/iLovePizzaDC/dev-journey/issues/52)) ([34c6867](https://github.com/iLovePizzaDC/dev-journey/commit/34c6867808fd47246aec1f95ab9552c3ed89241b))
+- add mealpin appstore url ([#52](https://github.com/iLovePizzaDC/dev-journey/issues/52)) ([34c6867](https://github.com/iLovePizzaDC/dev-journey/commit/34c6867808fd47246aec1f95ab9552c3ed89241b))
 
 ## [1.7.2](https://github.com/iLovePizzaDC/dev-journey/compare/v1.7.1...v1.7.2) (2026-10-01)
 
-
 ### Bug Fixes
 
-* add mealpin appstoreurl ([#49](https://github.com/iLovePizzaDC/dev-journey/issues/49)) ([#50](https://github.com/iLovePizzaDC/dev-journey/issues/50)) ([19124d8](https://github.com/iLovePizzaDC/dev-journey/commit/19124d85b84fc56b8d5e29d5facc19a13a872bdd))
+- add mealpin appstoreurl ([#49](https://github.com/iLovePizzaDC/dev-journey/issues/49)) ([#50](https://github.com/iLovePizzaDC/dev-journey/issues/50)) ([19124d8](https://github.com/iLovePizzaDC/dev-journey/commit/19124d85b84fc56b8d5e29d5facc19a13a872bdd))
 
 ## [1.7.1](https://github.com/iLovePizzaDC/dev-journey/compare/v1.7.0...v1.7.1) (2026-10-01)
 
-
 ### Bug Fixes
 
-* add theme meta ([#44](https://github.com/iLovePizzaDC/dev-journey/issues/44)) ([ece0caf](https://github.com/iLovePizzaDC/dev-journey/commit/ece0caf1bcb3b7179d5082cb7326b366d3fc65ee))
+- add theme meta ([#44](https://github.com/iLovePizzaDC/dev-journey/issues/44)) ([ece0caf](https://github.com/iLovePizzaDC/dev-journey/commit/ece0caf1bcb3b7179d5082cb7326b366d3fc65ee))
 
 ## [1.7.0](https://github.com/iLovePizzaDC/dev-journey/compare/v1.6.0...v1.7.0) (2026-09-17)
 
-
 ### Features
 
-* update mealpin legal sites ([#39](https://github.com/iLovePizzaDC/dev-journey/issues/39)) ([5794213](https://github.com/iLovePizzaDC/dev-journey/commit/57942133dadf976d63813ed53399728e3f9a57d0))
-* update mealpin legal sites ([#39](https://github.com/iLovePizzaDC/dev-journey/issues/39)) ([af54768](https://github.com/iLovePizzaDC/dev-journey/commit/af5476888da2f7a45b7d8eebc5b3911875efa7bb))
+- update mealpin legal sites ([#39](https://github.com/iLovePizzaDC/dev-journey/issues/39)) ([5794213](https://github.com/iLovePizzaDC/dev-journey/commit/57942133dadf976d63813ed53399728e3f9a57d0))
+- update mealpin legal sites ([#39](https://github.com/iLovePizzaDC/dev-journey/issues/39)) ([af54768](https://github.com/iLovePizzaDC/dev-journey/commit/af5476888da2f7a45b7d8eebc5b3911875efa7bb))
 
 ## [1.6.0](https://github.com/iLovePizzaDC/dev-journey/compare/v1.5.0...v1.6.0) (2026-09-07)
 
-
 ### Features
 
-* add english legal sitees to mealpin ([#34](https://github.com/iLovePizzaDC/dev-journey/issues/34)) ([c17e6c2](https://github.com/iLovePizzaDC/dev-journey/commit/c17e6c2fd131f69cce7531507711c34cd9ffa92c))
-
+- add english legal sitees to mealpin ([#34](https://github.com/iLovePizzaDC/dev-journey/issues/34)) ([c17e6c2](https://github.com/iLovePizzaDC/dev-journey/commit/c17e6c2fd131f69cce7531507711c34cd9ffa92c))
 
 ### Bug Fixes
 
-* unify app/web legal sites ([#36](https://github.com/iLovePizzaDC/dev-journey/issues/36)) ([bdfde73](https://github.com/iLovePizzaDC/dev-journey/commit/bdfde733c0e0547cc17964f33489f52e373f53e4))
+- unify app/web legal sites ([#36](https://github.com/iLovePizzaDC/dev-journey/issues/36)) ([bdfde73](https://github.com/iLovePizzaDC/dev-journey/commit/bdfde733c0e0547cc17964f33489f52e373f53e4))
 
 ## [1.5.0](https://github.com/iLovePizzaDC/dev-journey/compare/v1.4.1...v1.5.0) (2026-09-05)
 
-
 ### Features
 
-* add mealping legal sites ([#31](https://github.com/iLovePizzaDC/dev-journey/issues/31)) ([df9d85c](https://github.com/iLovePizzaDC/dev-journey/commit/df9d85cf0f81ac561576f46cc3b4e5d88353cbb5))
+- add mealping legal sites ([#31](https://github.com/iLovePizzaDC/dev-journey/issues/31)) ([df9d85c](https://github.com/iLovePizzaDC/dev-journey/commit/df9d85cf0f81ac561576f46cc3b4e5d88353cbb5))
 
 ## [1.4.1](https://github.com/iLovePizzaDC/dev-journey/compare/v1.4.0...v1.4.1) (2026-08-30)
 
-
 ### Bug Fixes
 
-* primary hover button ([#27](https://github.com/iLovePizzaDC/dev-journey/issues/27)) ([5e1f194](https://github.com/iLovePizzaDC/dev-journey/commit/5e1f194a4762b14109e2358deeecf30a597767b3))
-* primary hover button ([#27](https://github.com/iLovePizzaDC/dev-journey/issues/27)) ([389d904](https://github.com/iLovePizzaDC/dev-journey/commit/389d904dadd5b70429bda384bcb76c513d7d072c))
+- primary hover button ([#27](https://github.com/iLovePizzaDC/dev-journey/issues/27)) ([5e1f194](https://github.com/iLovePizzaDC/dev-journey/commit/5e1f194a4762b14109e2358deeecf30a597767b3))
+- primary hover button ([#27](https://github.com/iLovePizzaDC/dev-journey/issues/27)) ([389d904](https://github.com/iLovePizzaDC/dev-journey/commit/389d904dadd5b70429bda384bcb76c513d7d072c))
 
 ## [1.4.0](https://github.com/iLovePizzaDC/dev-journey/compare/v1.3.0...v1.4.0) (2026-08-28)
 
-
 ### Features
 
-* update schadenakte policy ([#24](https://github.com/iLovePizzaDC/dev-journey/issues/24)) ([1f6f361](https://github.com/iLovePizzaDC/dev-journey/commit/1f6f361703048ba20a41c301cbecafed2b0ff9e5))
-* update schadenakte policy ([#24](https://github.com/iLovePizzaDC/dev-journey/issues/24)) ([4a4daab](https://github.com/iLovePizzaDC/dev-journey/commit/4a4daab34b3e0f5a37b57119c289be86e1eab04f))
+- update schadenakte policy ([#24](https://github.com/iLovePizzaDC/dev-journey/issues/24)) ([1f6f361](https://github.com/iLovePizzaDC/dev-journey/commit/1f6f361703048ba20a41c301cbecafed2b0ff9e5))
+- update schadenakte policy ([#24](https://github.com/iLovePizzaDC/dev-journey/issues/24)) ([4a4daab](https://github.com/iLovePizzaDC/dev-journey/commit/4a4daab34b3e0f5a37b57119c289be86e1eab04f))
 
 ## [1.3.0](https://github.com/iLovePizzaDC/dev-journey/compare/v1.2.1...v1.3.0) (2026-08-27)
 
-
 ### Features
 
-* add schadenakte legal sites ([#21](https://github.com/iLovePizzaDC/dev-journey/issues/21)) ([15d66e3](https://github.com/iLovePizzaDC/dev-journey/commit/15d66e3b2e7c08c9b9e57539107024838dc719b2))
-* add schadenakte legal sites ([#21](https://github.com/iLovePizzaDC/dev-journey/issues/21)) ([3a2144b](https://github.com/iLovePizzaDC/dev-journey/commit/3a2144b8f310542097f6b5af7f8a6254f9e853ad))
+- add schadenakte legal sites ([#21](https://github.com/iLovePizzaDC/dev-journey/issues/21)) ([15d66e3](https://github.com/iLovePizzaDC/dev-journey/commit/15d66e3b2e7c08c9b9e57539107024838dc719b2))
+- add schadenakte legal sites ([#21](https://github.com/iLovePizzaDC/dev-journey/issues/21)) ([3a2144b](https://github.com/iLovePizzaDC/dev-journey/commit/3a2144b8f310542097f6b5af7f8a6254f9e853ad))
 
 ## [1.2.1](https://github.com/iLovePizzaDC/dev-journey/compare/v1.2.0...v1.2.1) (2026-08-15)
 
