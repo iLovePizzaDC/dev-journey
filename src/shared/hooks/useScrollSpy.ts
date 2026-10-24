@@ -29,11 +29,7 @@ export function useScrollSpy(sectionIds: readonly string[], rootMargin = SCROLL_
 				document.documentElement.scrollHeight,
 			);
 
-			const nextActiveId = pickActiveSectionId(
-				visibilityBySectionId,
-				sectionIds,
-				nearBottom,
-			);
+			const nextActiveId = pickActiveSectionId(visibilityBySectionId, sectionIds, nearBottom);
 
 			setActiveSectionId(nextActiveId);
 		};

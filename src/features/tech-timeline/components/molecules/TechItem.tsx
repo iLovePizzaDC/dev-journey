@@ -19,12 +19,7 @@ export function TechItem({ tech }: ITechItem) {
 
 	return (
 		<li className='transition duration-300 hover:-translate-y-px'>
-			<TechBadge
-				name={tech.name}
-				category={tech.category}
-				title={note}
-				aria-label={ariaLabel}
-			/>
+			<TechBadge name={tech.name} category={tech.category} title={note} aria-label={ariaLabel} />
 		</li>
 	);
 }

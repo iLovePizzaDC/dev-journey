@@ -1,6 +1,12 @@
 import { ArrowTopRightOnSquareIcon, CodeBracketIcon } from '@heroicons/react/24/outline';
 import { githubProfileUrl } from '@/shared/api/github';
-import { Button, Icon, LanguageToggle, NavLinkButton, ThemeToggle } from '@/shared/components/atoms';
+import {
+	Button,
+	Icon,
+	LanguageToggle,
+	NavLinkButton,
+	ThemeToggle,
+} from '@/shared/components/atoms';
 import { NAV_LINKS, NAV_SECTION_IDS, SECTION_IDS } from '@/shared/constants';
 import { profile } from '@/shared/content';
 import { useScrollSpy } from '@/shared/hooks';

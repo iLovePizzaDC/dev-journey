@@ -37,8 +37,7 @@ export function CommitMeta({ pushedAt, language, stars, loading, error }: ICommi
 	return (
 		<Text as='span' variant='meta' className='inline-flex flex-wrap items-center gap-y-1'>
 			<span>
-				{messages.projects.lastPush}{' '}
-				<time dateTime={pushedAt}>{relativePushTime}</time>
+				{messages.projects.lastPush} <time dateTime={pushedAt}>{relativePushTime}</time>
 			</span>
 
 			{hasLanguage ? (
