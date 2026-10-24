@@ -6,6 +6,7 @@ import { renderWithProviders } from '@/test/render';
 const baseProject: Project = {
 	id: 'demo',
 	name: 'Demo',
+	kind: 'side',
 	description: { de: 'Beschreibung', en: 'Description' },
 	stack: ['React'],
 };

@@ -7,6 +7,7 @@ import { renderWithProviders } from '@/test/render';
 const project: Project = {
 	id: 'demo',
 	name: 'Demo App',
+	kind: 'side',
 	description: {
 		de: 'Eine Demo-Beschreibung',
 		en: 'A demo description',
@@ -64,5 +65,12 @@ describe('ProjectCard (Vitest + Testing Library)', () => {
 			locale: 'en',
 		});
 		expect(screen.getByText('A demo description')).toBeInTheDocument();
+	});
+
+	it('hides highlights in compact variant', () => {
+		renderWithProviders(<ProjectCard project={project} variant='compact' />);
+
+		expect(screen.getByTestId('project-card')).toHaveAttribute('data-variant', 'compact');
+		expect(screen.queryByText('Feature A')).not.toBeInTheDocument();
 	});
 });

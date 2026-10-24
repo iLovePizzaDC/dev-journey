@@ -33,6 +33,8 @@ export type Messages = {
 		eyebrow: string;
 		title: string;
 		description: string;
+		apps: string;
+		sideProjects: string;
 		openGithub: string;
 		openAppStore: string;
 		onAppStore: string;

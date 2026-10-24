@@ -6,16 +6,27 @@ import { localize, useLocale } from '@/shared/i18n';
 import { githubRepoUrl } from '@/shared/api/github';
 import { Reveal, StackList } from '@/shared/components/molecules';
 import type { GitHubRepoInfo, Project } from '@/shared/types';
+import { cn } from '@/shared/utils/cn';
+
+type ProjectCardVariant = 'default' | 'compact';
 
 interface IProjectCard {
 	project: Project;
 	github?: GitHubRepoInfo | null;
 	loading?: boolean;
 	delay?: number;
+	variant?: ProjectCardVariant;
 }
 
-export function ProjectCard({ project, github, loading, delay = 0 }: IProjectCard) {
+export function ProjectCard({
+	project,
+	github,
+	loading,
+	delay = 0,
+	variant = 'default',
+}: IProjectCard) {
 	const { locale, messages } = useLocale();
+	const isCompact = variant === 'compact';
 
 	const localizedDescription = localize(locale, project.description);
 	const description = localizedDescription || github?.description || '';
@@ -31,8 +42,14 @@ export function ProjectCard({ project, github, loading, delay = 0 }: IProjectCar
 		<Reveal
 			as='article'
 			delay={delay}
-			className='group flex h-full flex-col gap-2.5 border-t border-line py-5 transition duration-300 hover:-translate-y-0.5 md:border md:border-line md:bg-surface md:p-5 md:hover:border-accent/35'
+			className={cn(
+				'group flex h-full flex-col border-t border-line transition duration-300 hover:-translate-y-0.5',
+				isCompact
+					? 'gap-2 py-4 md:border-0 md:border-t md:bg-transparent md:p-0 md:py-4'
+					: 'gap-2.5 py-5 md:border md:border-line md:bg-surface md:p-5 md:hover:border-accent/35',
+			)}
 			data-testid='project-card'
+			data-variant={variant}
 		>
 			<div className='flex flex-col gap-2'>
 				<Text as='h3' variant='subtitle'>
@@ -43,9 +60,9 @@ export function ProjectCard({ project, github, loading, delay = 0 }: IProjectCar
 
 			<Text variant='body'>{description}</Text>
 
-			{highlights ? <ProjectHighlights items={highlights} /> : null}
+			{!isCompact && highlights ? <ProjectHighlights items={highlights} /> : null}
 
-			<div className='mt-auto flex flex-col gap-2.5'>
+			<div className={cn('mt-auto flex flex-col', isCompact ? 'gap-2' : 'gap-2.5')}>
 				<StackList items={project.stack} />
 
 				{externalUrl ? <ProjectExternalLink url={externalUrl} label={linkLabel} /> : null}

@@ -44,9 +44,12 @@ export type Certificate = {
 	date: string;
 };
 
+export type ProjectKind = 'app' | 'side';
+
 export type Project = {
 	id: string;
 	name: string;
+	kind: ProjectKind;
 	description: Localized;
 	githubRepo?: string;
 	url?: string;
