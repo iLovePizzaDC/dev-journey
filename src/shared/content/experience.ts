@@ -11,7 +11,7 @@ export const experiences: Experience[] = [
 		location: 'Waiblingen',
 		start: '2026-09',
 		end: null,
-		stack: ['React', 'TypeScript', 'ProvideX'],
+		stack: ['React', 'TypeScript', 'PvxPlus'],
 		bullets: {
 			de: [],
 			en: [],
